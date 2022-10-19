@@ -1,0 +1,16 @@
+## Ignore PL/B temporary files, and build results
+##
+
+# Generated files
+*.plc
+*.sdb
+*.lst
+*.plbm
+*.bk*
+
+# Data Files
+
+*.isi
+*.txt
+*.aam
+
