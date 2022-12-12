@@ -211,7 +211,7 @@ Main            LFUNCTION
 
                 WINHIDE
 
-                CREATE          Table1, *Striped=$ON,*transaction=$OFF
+                CREATE          Table1, *Striped=$ON,*Transaction=$OFF
  
                 FORMLOAD        MainForm
                 CALL            SetupTable

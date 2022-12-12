@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SunIDE_Project_File Version="10.0">
-  <ActiveProfile>datatbl</ActiveProfile>
-  <ProjectTitle>DataTable Examples</ProjectTitle>
-  <SelectedProgram>datatbl_tran.pls</SelectedProgram>
+  <ActiveProfile>plbwebcli</ActiveProfile>
+  <ProjectTitle>plbwebcli</ProjectTitle>
+  <SelectedProgram>appbeacon.pls</SelectedProgram>
   <Profiles>
-    <Name>datatbl</Name>
+    <Name>plbwebcli</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\datatable</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\plbwebcli</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,WS#1</CompilerOptions>
@@ -14,7 +14,7 @@
       <BookmarkErrors>0</BookmarkErrors>
       <ShowCompilerCmd>1</ShowCompilerCmd>
       <MaxErrors>99</MaxErrors>
-      <OptionsPage>0</OptionsPage>
+      <OptionsPage>1</OptionsPage>
       <SymbolFile>1</SymbolFile>
       <OpenEnded>1</OpenEnded>
       <CrossReference>0</CrossReference>
@@ -76,7 +76,11 @@
       <BackupDir>.\Backups\</BackupDir>
     </Properties>
   </Profiles>
-  <Source Name="datatbl_card.pls"/>
-  <Source Name="datatbl_lv.pls"/>
-  <Source Name="datatbl_tran.pls"/>
+  <Source Name="appinfo.pls"/>
+  <Source Name="appcap.pls"/>
+  <Source Name="appcor.pls"/>
+  <Source Name="appbeacon.pls"/>
+  <Source Name="appcon.pls"/>
+  <Source Name="appdlg.pls"/>
+  <Source Name="appfiles.pls"/>
 </SunIDE_Project_File>

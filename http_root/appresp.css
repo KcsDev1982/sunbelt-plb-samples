@@ -1,0 +1,119 @@
+
+@media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
+  body {
+    background: #ccc;
+  }
+  option { background-color: #ff0000 !important; }
+  button { background-color: #005500 !important; }
+}
+
+/* First breakpoint at 576px */
+/* Inherits mobile styles, but floats containers to make columns */
+@media all and (min-width: 36em){
+	.main { float: left; width:60%; }
+	.sidebar { float: left; width:40%; }
+	option { background-color: #00ff00 !important; }
+	button { background-color: #ff00ff !important; }
+}
+
+/* Second breakpoint at 800px */
+/* Adjusts column proportions, tweaks base H1 */
+@media all and (min-width: 50em){
+	.main { width:70%; }
+	.sidebar { width:30%; }
+
+	/* You can also tweak any other styles in a breakpoint */
+	H1 { color: blue; font-size:1.2em }
+	option { background-color: #0000ff !important; }
+	button { background-color: #00ffff !important; }
+}
+
+.appmasterpanel1
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: static !important;
+	height: 15% !important;
+	width: 100% !important;
+}
+
+.appmasterpanel2
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	position: static !important;
+	height: 15% !important;
+	width: 100% !important;
+}
+
+.appmasterpanel3
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	position: static !important;
+	height: 60% !important;
+	width: 100% !important;
+	align-self: center !important;
+}
+
+.appmasterpanel4
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	position: static !important;
+	height: 10% !important;
+	width: 100% !important;
+}
+
+.appmasterbutton
+{
+	position: relative !important;
+	margin: auto !important;	
+	height: 3em !important;
+	width: 7em !important;
+}
+
+.radio
+{
+	margin: auto !important;
+}
+
+.radio input
+{
+	float: left !important;
+}
+
+.radio label
+{
+	font-weight: bold;
+}
+
+.appmasterstattext
+{
+	margin: auto !important;
+	font-weight: bold !important;
+}
+
+.appmasterfooterst
+{
+	position: relative !important;
+	margin: auto !important;
+	font-weight: bold !important;
+	background-color: #ff0000 !important;
+}
+
+.appmastercombo
+{
+	margin: auto !important;
+	font-weight: bold !important;
+}
+
+.appmasterversionst
+{
+	margin: auto !important;
+	font-weight: bold !important;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Plbwin Web Form</title>
+<link href="css/jquery-ui.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/globalize.js"></script>
+<link rel="stylesheet" type="text/css" href="plbwebbasic.css" />
+<script type="text/javascript" src="plbwebctls.js"></script>
+</head>
+<body>
+<div id="C1" class=" wp1 wb5 " style="position: relative; height: 300px; width: 600px"> <div id="C1N" class="fmenu"></div><div id="C1D" tabindex="24" style="position: absolute; height: 300px; width: 600px; background-color: #0f0000; color: #000000; z-index: 10; font-size: 10pt "><script>PlbFrm( { id: "C1", h: 370, w: 620, rsz: true, tl: "Form1" } );</script>
+<div id="C2" tabindex="100" style="position: absolute; left: 61px; top: 20px; height: 251px; width: 484px; z-index: 10; font-size: 10pt "><ul><li><a href="#2-1">Tab1</a></li><li><a href="#2-1">Tab2</a></li></ul><div id="2-1"></div></div><script>PlbTabC( { id: "C2"  } );</script>
+<div id="C3" class="pp pb2" style="position: absolute; left: 65px; top: 45px; height: 222px; width: 476px; background-color: #ffffff; z-index: 20">
+<div id="C4D" class="bs0" style="position: absolute; overflow: hidden; left: 0px; top: 0px; height: 900px; width: 1600px; border-color: #000000; background-color: #ffffff"></div>
+<button id="C5" tabindex="100" style="position: absolute; left: 360px; top: 185px; height: 30px; width: 100px; z-index: 40; font-size: 10pt ">Exit</button>
+<fieldset id="C6" class="bs3" style="position: absolute; left: 2px; top: 2px; height: 100px; width: 312px; border-color: #408080; color: #000000; z-index: 500; font-size: 10pt "><legend id="C6L">GroupBox1</legend></fieldset>
+</div>
+<div id="C7" class="pp pb2" style="position: absolute; display:none; left: 65px; top: 45px; height: 222px; width: 476px; background-color: #ff0000; z-index: 20">
+</div></body>
+</html>

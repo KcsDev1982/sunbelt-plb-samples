@@ -1,0 +1,133 @@
+ <section id="main" data-role="page" >
+      <header data-role="header">
+        <h1>Sunbelt Web Offline Sample</h1>
+      </header>
+      <div data-role="content">
+        <p>This is an application that demonstrates the operation of the Cordova File API. Select one of the buttons below to process the selected file system.</p>
+        <input id="btem" type="button" value="Temporary Storage">
+        <input id="bper" type="button" value="Persistent Sunbelt Storage">
+		<input id="bfil" type="button" value="Make sample file">
+		<input id="bonl" type="button" value="Back on line">
+      </div>
+      <div data-role="footer" data-id="foot_main" data-position="fixed">
+        <h4>Sunviewfile offline</h4>
+      </div>
+    </section>
+
+    <section id="dirList" data-role="page">
+      <header data-role="header">
+        <h1>File API Demo</h1>
+		<a class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" href="#main">Back</a>
+        <a id="bwrt" data-icon="plus" class="ui-btn-right">Write</a>
+      </header>
+      <div data-role="content">
+        <p> File System Contents</p>
+        <ul data-role="listview" id="dirEntryList"></ul>
+      </div>
+      <div data-role="footer" data-id="foot_main" data-position="fixed">
+        <h4>offline</h4>
+      </div>
+    </section>
+
+    <section id="dirListSub" data-role="page">
+      <header data-role="header">
+        <h1>File API Demo</h1>
+		<a class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" href="#dirList">Back</a>
+        <a id="bwrt" data-icon="plus" class="ui-btn-right">Write</a>
+      </header>
+      <div data-role="content">
+        <p> Sub-Directory Contents</p>
+        <ul data-role="listview" id="dirEntryListSub"></ul>
+      </div>
+      <div data-role="footer" data-id="foot_main" data-position="fixed">
+        <h4>offline</h4>
+      </div>
+    </section>
+
+    <section id="fileDetails" data-role="page">
+      <header data-role="header">
+        <h1>File API Demo</h1>
+		<a class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" href="#dirList">Back</a>
+      </header>
+      <div data-role="content">
+        <p><em>Directory Entry Information</em></p>
+        <hr />
+        <div id="fileInfo"></div>
+        <hr />
+        <p><em>File Metadata:</em></p>
+        <div id="fileMetadata"></div>
+        <div id="viewFileButton">
+          <input id="bflv" type="button" value="View File">
+        </div>
+        <div id="viewDirButton">
+          <input id="bdlv" type="button" value="View Directory">
+        </div>
+        <div id="viewRemoveButton">
+          <input id="bflr" type="button" value="Remove File">
+        </div>
+      </div>
+      <div data-role="footer" data-id="foot_main" data-position="fixed">
+        <h4>offline</h4>
+      </div>
+    </section>
+
+    <section id="fileDetailsSub" data-role="page">
+      <header data-role="header">
+        <h1>File API Demo</h1>
+		<a class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" href="#dirListSub">Back</a>
+      </header>
+      <div data-role="content">
+        <p><em>Sub Directory File Entry Information</em></p>
+        <hr />
+        <div id="fileInfoSub"></div>
+        <hr />
+        <p><em>File Metadata:</em></p>
+        <div id="fileMetadataSub"></div>
+        <div id="viewFileButtonSub">
+          <input id="bflvsub" type="button" value="View File">
+        </div>
+        <div id="viewRemoveButtonSub">
+          <input id="bflrsub" type="button" value="Remove File">
+        </div>
+      </div>
+      <div data-role="footer" data-id="foot_main" data-position="fixed">
+        <h4>offline</h4>
+      </div>
+    </section>
+
+    <section id="viewFile" data-role="page">
+      <header data-role="header">
+        <h1>File API Demo</h1>
+		<a class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" href="#fileDetails">Back</a>
+      </header>
+      <div data-role="content">
+        <div id="viewFileName"></div>
+        <div id="fileContents"></div>
+        <hr />
+        <strong>File Reader Activity</strong>
+        <br />
+        <div id="readInfo"></div>
+      </div>
+      <div data-role="footer" data-id="foot_main" data-position="fixed">
+        <h4>offline</h4>
+      </div>
+    </section>
+
+    <section id="viewFileSub" data-role="page">
+      <header data-role="header">
+        <h1>File API Demo</h1>
+		<a class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" href="#fileDetailsSub">Back</a>
+      </header>
+      <div data-role="content">
+        <div id="viewFileNameSub"></div>
+        <div id="fileContentsSub"></div>
+        <hr />
+        <strong>File Reader Activity</strong>
+        <br />
+        <div id="readInfoSub"></div>
+      </div>
+      <div data-role="footer" data-id="foot_main" data-position="fixed">
+        <h4>offline</h4>
+      </div>
+    </section>
+    

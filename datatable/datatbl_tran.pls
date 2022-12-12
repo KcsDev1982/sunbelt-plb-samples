@@ -111,7 +111,7 @@ Main            LFUNCTION
 D20             DIM             20
                 WINHIDE
 
-                CREATE          Table1, *Striped=$ON,*transaction=$ON
+                CREATE          Table1, *Striped=$ON,*Transaction=$ON
  
                 FORMLOAD        MainForm
                 CALL            SetupTable
