@@ -4,9 +4,7 @@
     background: #ccc;
   }
   option { background-color: #ff0000 !important; }
-  button { background-color: LightGreen !important;
-  	   border-radius: 25%;
-  	 }
+  button { background-color: pink !important; }
 }
 
 /* First breakpoint at 576px */
@@ -15,9 +13,7 @@
 	.main { float: left; width:60%; }
 	.sidebar { float: left; width:40%; }
 	option { background-color: #00ff00 !important; }
-	button { background-color: #ff00ff !important;
-	   	 border-radius: 50%;
-		}
+	button { background-color: lightblue !important; }
 }
 
 /* Second breakpoint at 800px */
@@ -28,9 +24,7 @@
 
 	/* You can also tweak any other styles in a breakpoint */
 	option { background-color: lightblue !important; }
-	button { background-color: #00ffff !important;
-	   	 border-radius: 100%;
-		}
+	button { background-color: lime !important; }
 }
 
 .appmasterpanel0

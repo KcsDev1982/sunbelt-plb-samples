@@ -1,0 +1,12 @@
+appbeacon.plc
+appcap.plc
+appcon.plc
+appcor.plc
+appdlg.plc
+appfiles.plc
+appinfo.plc
+appmedia.plc
+appoffline.plc
+appqrcode.plc
+appsb.plc
+

@@ -2,7 +2,7 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>plbwebcli</ActiveProfile>
   <ProjectTitle>plbwebcli</ProjectTitle>
-  <SelectedProgram>appbeacon.pls</SelectedProgram>
+  <SelectedProgram/>
   <Profiles>
     <Name>plbwebcli</Name>
     <Properties>
@@ -83,4 +83,15 @@
   <Source Name="appcon.pls"/>
   <Source Name="appdlg.pls"/>
   <Source Name="appfiles.pls"/>
+  <Source Name="appmaster.pls"/>
+  <Source Name="masterprogapp.txt"/>
+  <Source Name="appmedia.pls"/>
+  <Source Name="appoffline.pls"/>
+  <Source Name="appqrcode.pls"/>
+  <Source Name="appsb.pls"/>
+  <Folder Name="Pdfs">
+    <File Name="PlbWebCli_Android_QuickStart.pdf"/>
+    <File Name="PlbWebCli_iOS_QuickStart.pdf"/>
+    <File Name="PlbWebCli_Windows_QuickStart.pdf"/>
+  </Folder>
 </SunIDE_Project_File>
