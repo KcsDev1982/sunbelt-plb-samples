@@ -77,7 +77,7 @@ TestInfo        LFUNCTION
 TestPict        LFUNCTION
                 ENTRY
                 Client.AppGetPicture Using "{#"cleanUp#":  true }"
-                Client.AppGetPicture Using "{#"sourceType#": 1, #"destinationType#": 2}"
+                Client.AppGetPicture 
                 FUNCTIONEND
 *................................................................
 .
