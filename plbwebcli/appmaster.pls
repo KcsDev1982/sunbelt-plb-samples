@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appmaster
-. Description:  PlbWeCli Application Master 
+. Description:  PlbWebCli Application Master 
 .
 . Revision History:
 .

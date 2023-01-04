@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appsb
-. Description:  PlbWeCli Application Statusbar Sample 
+. Description:  PlbWebCli Application Statusbar Sample 
 .
 . Revision History:
 .

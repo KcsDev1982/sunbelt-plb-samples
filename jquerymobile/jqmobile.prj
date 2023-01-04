@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SunIDE_Project_File Version="10.0">
-  <ActiveProfile>plbwebcli</ActiveProfile>
-  <ProjectTitle>plbwebcli</ProjectTitle>
-  <SelectedProgram>appsb.pls</SelectedProgram>
+  <ActiveProfile>jqmobile</ActiveProfile>
+  <ProjectTitle>jqmobile</ProjectTitle>
+  <SelectedProgram>jqmsamp.pls</SelectedProgram>
   <Profiles>
-    <Name>plbwebcli</Name>
+    <Name>jqmobile</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\plbwebcli</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\jquerymobile</SourceFolder>
       <Compiler/>
       <CompilerIni/>
-      <CompilerOptions>-S,WS#1</CompilerOptions>
+      <CompilerOptions>-S,ZI=0,WS1</CompilerOptions>
       <MinimizeCompiler>1</MinimizeCompiler>
       <BookmarkErrors>0</BookmarkErrors>
       <ShowCompilerCmd>1</ShowCompilerCmd>
@@ -76,22 +76,8 @@
       <BackupDir>.\Backups\</BackupDir>
     </Properties>
   </Profiles>
-  <Source Name="appinfo.pls"/>
-  <Source Name="appcap.pls"/>
-  <Source Name="appcor.pls"/>
-  <Source Name="appbeacon.pls"/>
-  <Source Name="appcon.pls"/>
-  <Source Name="appdlg.pls"/>
-  <Source Name="appfiles.pls"/>
-  <Source Name="appmaster.pls"/>
-  <Source Name="masterprogapp.txt"/>
-  <Source Name="appmedia.pls"/>
-  <Source Name="appoffline.pls"/>
-  <Source Name="appqrcode.pls"/>
-  <Source Name="appsb.pls"/>
-  <Folder Name="Pdfs">
-    <File Name="PlbWebCli_Android_QuickStart.pdf"/>
-    <File Name="PlbWebCli_iOS_QuickStart.pdf"/>
-    <File Name="PlbWebCli_Windows_QuickStart.pdf"/>
+  <Source Name="jqmsamp.pls"/>
+  <Folder Name="Pdf">
+    <File Name="DemoJqmSamp.pdf"/>
   </Folder>
 </SunIDE_Project_File>

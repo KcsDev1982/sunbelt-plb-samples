@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appoffline
-. Description:  PlbWeCli Application Offline Sample 
+. Description:  PlbWebCli Application Offline Sample 
 .
 . Revision History:
 .

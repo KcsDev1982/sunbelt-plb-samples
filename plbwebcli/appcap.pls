@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appcap
-. Description:  PlbWeCli Application Capture Sample 
+. Description:  PlbWebCli Application Capture Sample 
 .
 . Revision History:
 .

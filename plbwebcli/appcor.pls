@@ -2,7 +2,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appcor
-. Description:  PlbWeCli Application Core Sample 
+. Description:  PlbWebCli Application Core Sample 
 .
 . Revision History:
 .

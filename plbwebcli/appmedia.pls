@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appmedia
-. Description:  PlbWeCli Application Media Sample 
+. Description:  PlbWebCli Application Media Sample 
 .
 . Revision History:
 .

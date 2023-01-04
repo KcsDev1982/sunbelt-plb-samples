@@ -2,7 +2,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appbeacon
-. Description:  PlbWeCli Application Beacon Sample 
+. Description:  PlbWebCli Application Beacon Sample 
 .
 . Revision History:
 .

@@ -2,7 +2,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appdlg
-. Description:  PlbWeCli Application Dialog Sample 
+. Description:  PlbWebCli Application Dialog Sample 
 .
 . Revision History:
 .

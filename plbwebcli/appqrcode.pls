@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appqrcode
-. Description:  PlbWeCli Application QRCode Generator 
+. Description:  PlbWebCli Application QRCode Generator 
 .
 . Revision History:
 .

@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appinfo
-. Description:  PlbWeCli Application Sample 
+. Description:  PlbWebCli Application Sample 
 .
 . Revision History:
 .

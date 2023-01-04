@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appcon
-. Description:  PlbWeCli Application Contacts Sample 
+. Description:  PlbWebCli Application Contacts Sample 
 .
 . Revision History:
 .

@@ -1,7 +1,7 @@
 *---------------------------------------------------------------
 .
 . Program Name: appfiles
-. Description:  PlbWeCli Application Files Sample 
+. Description:  PlbWebCli Application Files Sample 
 .
 . Revision History:
 .

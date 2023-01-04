@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Runtime_Errors>
-  <Version>10.4B</Version>
+  <Version>10.5A</Version>
   <Error Number="A01" SubCode= "" Type="Interrupts Prevented" Description="FILEPI already in effect. Another FILEPI may not be initiated until current one expires or a FILEPI 0 or PI 0 is executed." />
   <Error Number="A02" SubCode= "" Type="Interrupts Prevented" Description="A FILEPI referenced one or more unopened files." />
   <Error Number="A03" SubCode= "" Type="Interrupts Prevented" Description="A FILEPI was executed against a file that has been opened with record locking." />
@@ -1608,8 +1608,7 @@
   <Error Number="M99" SubCode= "" Type="Mail" Description="An OPENSSL error occurred." />
   <Error Number="M99" SubCode= "64" Type="Mail" Description="Unable to load the OpenSSL libraries." />
   <Error Number="M99" SubCode= "65" Type="Mail" Description="Unable to create a SSL connection using the OpenSSL libraries." />
-</Runtime_Errors>
-<Runtime_Warnings>
+
   <Warning Number="19"  Description="Array element data significance changed." />
   <Warning Number="54"  Description="Blank filling to complete ARRAY initialization." />
   <Warning Number="63"  Description="Undefined equate assumed to be zero." />
@@ -1647,7 +1646,7 @@
   <Warning Number="313"  Description="GIVING is ignored! Return values require USING!" />
   <Warning Number="328"  Description="Declaration keyword not used!" />
   <Warning Number="331"  Description="Obsolete keyword control!" />
-  <Warning Number="338"  Description="CONST too large for equate! (Must be < 4294967296)" />
+  <Warning Number="338"  Description="CONST too large for equate! (Must be &lt; 4294967296)" />
   <Warning Number="351"  Description="Unclear comment syntax that terminates this line!" />
   <Warning Number="353"  Description="Duplicate property for GUI object operation!" />
   <Warning Number="361"  Description="VERB definition redefined!" />
@@ -1662,4 +1661,5 @@
   <Warning Number="413"  Description="NCHAR array element string truncated!" />
   <Warning Number="416"  Description="Unclear comment syntax. Possible missing USING!" />
   <Warning Number="424"  Description="Possible numeric expression operation ignored!" />
-</Runtime_Warnings>
+</Runtime_Errors>
+
