@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SunIDE_Project_File Version="10.0">
+  <ActiveProfile>conf2019</ActiveProfile>
+  <ProjectTitle>conf2019</ProjectTitle>
+  <SelectedProgram/>
+  <Profiles>
+    <Name>conf2019</Name>
+    <Properties>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\conf2019\</SourceFolder>
+      <Compiler/>
+      <CompilerIni/>
+      <CompilerOptions>-S,ZG,ZT,WS#1,WE#0</CompilerOptions>
+      <MinimizeCompiler>1</MinimizeCompiler>
+      <BookmarkErrors>0</BookmarkErrors>
+      <ShowCompilerCmd>1</ShowCompilerCmd>
+      <MaxErrors>0</MaxErrors>
+      <OptionsPage>1</OptionsPage>
+      <SymbolFile>1</SymbolFile>
+      <OpenEnded>0</OpenEnded>
+      <CrossReference>1</CrossReference>
+      <MetadataMode>2</MetadataMode>
+      <MetadataFolder/>
+      <Graphics>1</Graphics>
+      <NoDuplicate>0</NoDuplicate>
+      <EncryptSymbols>0</EncryptSymbols>
+      <FlagConflicts>0</FlagConflicts>
+      <AbortError>0</AbortError>
+      <PauseError>0</PauseError>
+      <PauseSeconds>0</PauseSeconds>
+      <MultipleTraps>0</MultipleTraps>
+      <ReadMode>1</ReadMode>
+      <Restricted>0</Restricted>
+      <OutputExt>.PLC</OutputExt>
+      <OutputFolder/>
+      <OutputMode>1</OutputMode>
+      <WorkFolder/>
+      <CaseSensitive>0</CaseSensitive>
+      <CommentDelims/>
+      <SourceExt/>
+      <CompatMode>1</CompatMode>
+      <ListMode>3</ListMode>
+      <ListFolder/>
+      <DisableWarnings>0</DisableWarnings>
+      <GeneratedCode>0</GeneratedCode>
+      <NoTimestamp>0</NoTimestamp>
+      <ListErrorDelete>0</ListErrorDelete>
+      <NoOutput>1</NoOutput>
+      <ErrorsOnly>0</ErrorsOnly>
+      <AllSource>0</AllSource>
+      <ExpandedMacros>0</ExpandedMacros>
+      <ListOff>0</ListOff>
+      <FalseIf>0</FalseIf>
+      <SpoolFile>1</SpoolFile>
+      <SpoolAppend>0</SpoolAppend>
+      <IniFile/>
+      <HideMain>0</HideMain>
+      <GlobalData>0</GlobalData>
+      <VirtualMemory>0</VirtualMemory>
+      <Arguments/>
+      <DebugLog>1</DebugLog>
+      <Debugger>1</Debugger>
+      <DebugProcess>0</DebugProcess>
+      <DebugBreakFirst>0</DebugBreakFirst>
+      <DebugHost/>
+      <DebugPort/>
+      <PreBuildEnabled>1</PreBuildEnabled>
+      <PreBuildCommands/>
+      <PostBuildEnabled>1</PostBuildEnabled>
+      <PostBuildCommands/>
+      <FTPUpload>0</FTPUpload>
+      <FTPDebug>0</FTPDebug>
+      <FTPAccount/>
+      <FTPFolder/>
+      <EnableBackups>0</EnableBackups>
+      <MaxBackups>10</MaxBackups>
+      <BackupDir/>
+    </Properties>
+  </Profiles>
+  <Source Name="answer.pls"/>
+  <Source Name="getphoto.pls"/>
+  <Source Name="htmldesigner.pls"/>
+  <Source Name="master.pls"/>
+  <Source Name="webfileselect.pls"/>
+  <Folder Name="Presentations">
+    <File Name="Azure.pdf"/>
+    <File Name="debug2019.pdf"/>
+    <File Name="Future2019.pdf"/>
+    <File Name="HtmlCss2019.pdf"/>
+    <File Name="HtmlCtl2019.pdf"/>
+    <File Name="Nchar2019.pdf"/>
+    <File Name="NoSQL2019.pdf"/>
+    <File Name="plbweb2019.pdf"/>
+    <File Name="PlbWebCli2019.pdf"/>
+    <File Name="print2019.pdf"/>
+    <File Name="PwsPrimer2019.pdf"/>
+    <File Name="responsivedesign2019.pdf"/>
+    <File Name="restapi2019.pdf"/>
+    <File Name="review2019.pdf"/>
+  </Folder>
+</SunIDE_Project_File>
