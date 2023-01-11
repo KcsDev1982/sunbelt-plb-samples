@@ -1,0 +1,14 @@
+<html><head>
+<style>
+.largeFnt 
+{
+ font-size: 24pt;
+}
+</style>
+</head>
+<body>
+<p class='largeFnt'>שלום </p>
+<p  class='largeFnt'>こんにちは </p>
+<p  class='largeFnt'>Hello</p>
+</body>
+</html>

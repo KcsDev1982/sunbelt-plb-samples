@@ -1,0 +1,66 @@
+<html>
+<head>
+<!--Sample of some css styled buttons-->
+<style>
+.bsType1
+{
+margin: 10px 10px;
+padding: 10px 15px 11px ;
+font-size: 18px;
+background-color: #57d6c7;
+font-weight: bold;
+text-shadow: 1px 1px #57D6C7;
+color: #ffffff;
+border-radius: 5px;
+border: 1px solid #57D6C7;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+.bsType2
+{
+margin: 10px 10px;
+padding: 10px 20px 11px;
+font-size: 21px;
+background-color: #F36C8C;
+font-weight: bold;
+text-shadow: 1px 1px #F36C8C;
+color: #ffffff;
+border-radius: 100px;
+border: 1px solid #F36C8C;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+.bsType3 {
+ display: inline-block;
+ border:1px solid #4DB6EB;
+ color: #317596;
+ border-radius: 12px;
+ font-family: Verdana;
+ width: auto;
+ height: auto;
+ font-size: 16px;
+ padding: 10px 40px;
+ box-shadow: inset 0px 0px 1px 0 #FCFCFC;
+ text-shadow: 1px 1px 1px #C1E2FB;
+ background-image: linear-gradient(to top, #4FBCF2, #53C6FF);
+ background-color: #52C3FB;
+}
+.bsType3:hover, .bsType3:active{
+ border:1px solid #46D4D9;
+ color: #317596;
+ box-shadow: inset 0px 2px 9px 0 #3989B0;
+ background-color: #52C3FB;
+}
+</style>
+</head>
+<body>
+  <Button class='bsType1' id='Hello' data-plbenable='on'  data-plbevent='click'>Hello</Button>
+ <br/>
+ <Button class='bsType2' id='Bye' data-plbenable='on'  data-plbevent='click'>Good Bye</Button>
+ <br/>
+ <Button class='bsType3' id='Again' data-plbenable='on'  data-plbevent='click'>Hello Again</Button>
+
+</body>
+</html>

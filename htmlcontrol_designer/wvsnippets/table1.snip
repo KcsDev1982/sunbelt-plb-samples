@@ -1,0 +1,69 @@
+<html>
+<head>
+<!-- Sample of a table -->
+<style>
+#recipe {
+  background-color: DarkOrange;
+}
+#recipe  caption { 
+  color: red; 
+  background-color: DarkOrange;
+  font-size: 24pt; 
+  height: 2em;
+ padding-left: 10px; 
+}
+#recipe img { 
+  float: left; 
+  margin: 20px 20px 
+}
+#recipe table { 
+   border-style: double;  
+   border-width: thick; 
+   border-color: blue; 
+   border-spacing: 1px; 
+}
+#recipe td { 
+  border-spacing: 0px; 
+  padding: 4px 
+}
+#recipe .maincell { 
+  background-color: Orange; 
+  border-color: blue; 
+  border-style: double; 
+  border-width: medium 
+}
+#recipe td.incell { 
+  background-color: Wheat; 
+  border-color: Wheat; 
+  border-style: inset; 
+  border-width: medium 
+}
+</style>
+</head>
+<body>
+  <table id='recipe' summary='Fall recipe table'>
+    <caption>Information Sheet on Fall Recipes</caption>
+    <tr>
+      <th class='maincell'>Photo:</th>
+      <th class='maincell' colspan='2'>Recipe Information</th>
+    </tr>
+    <tr>
+      <td class='maincell' rowspan='4'><img alt='cooked duck' src='http://www.sunbelt-plb.com:8081\images\duckplate.jpg' /></td>
+      <td class='incell' >Recipe Name:</td>
+      <td class='incell'>Five spice duck breast</td>
+    </tr>
+    <tr>
+      <td class='incell'>Sauce:</td>
+      <td class='incell'>Orange, cranberry and star anise gastrique</td>
+    </tr>
+    <tr>
+      <td class='incell'>Sides:</td>
+      <td class='incell'>Pan fried polenta with chanterelle mushrooms<br/>Turned vegetables</td>
+    </tr>
+    <tr>
+      <td class='incell'>Allergy Alert:</td>
+      <td class='incell'>Wheat</td>
+    </tr>
+  </table>
+</body>
+</html>

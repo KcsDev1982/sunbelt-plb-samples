@@ -1,0 +1,143 @@
+<html>
+<head>
+ <!-- Sample of a calculator -->
+<style>
+#calculator {
+  border: solid;
+  background-color: #6633FF;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 10px;
+}
+input.calc {
+  width: 85%;
+  height: 7%;
+  text-align: right;
+  padding: 5px;
+  border: inset;
+}
+button.calc {
+  background-color: #BFB3E6;
+  width: 90%;
+  height: 10%;
+  border: outset;
+}
+  button.calc:hover {
+  background-color: #DFD9F2;
+}
+  button.calc:active {
+  border: inset;
+  border-width: thick;
+  border-color: #FFFFFF;
+}
+input.calc, button.calc {
+  font-family: Arial;
+  font-size: 20pt;
+  border-width: thick;
+  border-color: #FFFFFF;
+  margin: 5px;
+}
+.calc [readonly] {
+  background-color: hsl(255, 50%, 80%);
+}
+table.calc {
+  width: 100%;
+}
+table.calc td {
+  width: 25%;
+}
+</style>
+</head>
+<body>
+  <div id='calculator'>
+    <table class='calc'>
+      <tr>
+        <td colspan="4">
+          <input class='calc' id="txtResult" type="text" readonly="readonly" data-plbenable='on' />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <input class='calc' id="txtInput" type="text" data-plbenable='on' />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><button class='calc' id='btnClearEntry' data-plbenable='on'>CE</button></td>
+        <td><button class='calc' id='btnClear' data-plbenable='on'>C</button></td>
+      </tr>
+      <tr>
+        <td><button class='calc' id='btnNumber7' data-plbenable='on'>7</button></td>
+        <td><button class='calc' id='btnNumber8' data-plbenable='on'>8</button></td>
+        <td><button class='calc' id='btnNumber9' data-plbenable='on'>9</button></td>
+        <td><button class='calc' id='btnPlus' data-plbenable='on'>+</button></td>
+       </tr>
+      <tr>
+        <td><button class='calc' id='btnNumber4' data-plbenable='on' >4</button></td>
+        <td><button class='calc' id='btnNumber5' data-plbenable='on' >5</button></td>
+        <td><button class='calc' id='btnNumber6' data-plbenable='on'>6</button></td>
+        <td><button class='calc' id='btnMinus' data-plbenable='on' >-</button></td>
+      </tr>
+      <tr>
+        <td><button class='calc' id='btnNumber1' data-plbenable='on' >1</button></td>
+        <td><button class='calc' id='btnNumber2' data-plbenable='on' >2</button></td>
+        <td><button class='calc' id='btnNumber3' data-plbenable='on'>3</button></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button class='calc' id='btnNumber0' data-plbenable='on'>0</button></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+<script type="text/javascript">
+var txtInput;
+var txtResult;
+
+    for (var i = 0; i < 10; i++) {
+        document.getElementById('btnNumber'+i).addEventListener('click', numberClick, false);
+    }
+    txtInput = document.getElementById('txtInput');
+    txtResult = document.getElementById('txtResult');
+
+    document.getElementById('btnPlus').addEventListener('click', plusClick, false);
+    document.getElementById('btnMinus').addEventListener('click', minusClick, false);
+    document.getElementById('btnClearEntry').addEventListener('click', clearEntry, false);
+    document.getElementById('btnClear').addEventListener('click', clear, false);
+    clear();
+
+function numberClick() {
+    txtInput.value = txtInput.value == '0' ? this.innerText : txtInput.value + this.innerText;
+     txtInput.focus();
+}
+
+function plusClick() {
+    txtResult.value = Number(txtResult.value) + Number(txtInput.value);
+    clearEntry();
+    txtInput.focus();
+}
+
+function minusClick() {
+    txtResult.value = Number(txtResult.value) - Number(txtInput.value);
+    clearEntry();
+    txtInput.focus();
+}
+
+function clearEntry() {
+    txtInput.value = '0';
+    txtInput.focus();
+}
+
+function clear() {
+    txtInput.value = '0';
+    txtResult.value = '0';
+    txtInput.focus();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+<head>
+  <!--Sample of a calculator keyboard-->
+<style>
+#calculator {
+  border: solid;
+  background-color: #6633FF;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+button.calc {
+  background-color: #BFB3E6;
+  width: 90%;
+  height: 10%;
+  border: outset;
+}
+button.calc:hover {
+  background-color: #DFD9F2;
+}
+button.calc:active {
+  border: inset;
+  border-width: thick;
+  border-color: #FFFFFF;
+}
+button.calc {
+  font-family: Arial;
+  font-size: 20pt;
+  border-width: thick;
+  border-color: #FFFFFF;
+  margin: 5px;
+}
+table.calc {
+  width: 100%;
+}
+table.calc td {
+  width: 25%;
+}
+</style>
+</head>
+<body>
+  <div id='calculator'>
+    <table class='calc'>
+     <tr>
+       <td></td>
+       <td></td>
+       <td><button class='calc' id='btnClearEntry' data-plbenable='on' data-plbevent='click'>CE</button></td>
+       <td><button class='calc' id='btnClear' data-plbenable='on' data-plbevent='click'>C</button></td>
+     </tr>
+     <tr>
+       <td><button class='calc' id='btnNumber7' data-plbenable='on' data-plbevent='click'>7</button></td>
+       <td><button class='calc' id='btnNumber8' data-plbenable='on' data-plbevent='click'>8</button></td>
+       <td><button class='calc' id='btnNumber9' data-plbenable='on' data-plbevent='click'>9</button></td>
+       <td><button class='calc' id='btnPlus' data-plbenable='on' data-plbevent='click'>+</button></td>
+     </tr>
+     <tr>
+       <td><button class='calc' id='btnNumber4' data-plbenable='on' data-plbevent='click'>4</button></td>
+       <td><button class='calc' id='btnNumber5' data-plbenable='on' data-plbevent='click'>5</button></td>
+       <td><button class='calc' id='btnNumber6' data-plbenable='on' data-plbevent='click'>6</button></td>
+       <td><button class='calc' id='btnMinus' data-plbenable='on' data-plbevent='click'>-</button></td>
+     </tr>
+     <tr>
+       <td><button class='calc' id='btnNumber1' data-plbenable='on' data-plbevent='click'>1</button></td>
+       <td><button class='calc' id='btnNumber2' data-plbenable='on' data-plbevent='click'>2</button></td>
+       <td><button class='calc' id='btnNumber3' data-plbenable='on' data-plbevent='click'>3</button></td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td><button class='calc' id='btnNumber0' data-plbenable='on' data-plbevent='click'>0</button></td>
+       <td></td>
+       <td></td>
+     </tr>
+    </table>
+  </div>
+</body>
+</html>
