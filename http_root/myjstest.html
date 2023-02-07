@@ -1,0 +1,16 @@
+<html>
+  <head>
+   <script type="text/javascript" >
+   
+      function MyJsFuncStr(p1) {
+			var el = document.getElementById(p1);
+
+		return JSON.stringify(el.innerText);
+	}
+    </script>
+  </head>
+  <body>
+    <p id="MyJsTest1">The id of this paragraph is MyJsTest1. 
+	Use the function MyJsFuncStr('MyJsTest1') to return the value. </p>
+  </body>
+</html>

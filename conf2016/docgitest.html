@@ -1,0 +1,15 @@
+<html>
+<head>
+</head>
+<body>
+	<form action="http://127.0.0.1:8081/docgi.plc" method="POST" >
+		<label for="UserName" style="display: inline-block; width: 125px; text-align: right;">User:</label>
+		<input type="text" name="UserName"><br><br>
+		<label for="Address" style="display: inline-block;width: 125px; text-align: right;">Address:</label>
+		<input type="text" name="Address"><br><br>
+		<input type="text" name="runopt" value="-g100000" style="display: none">
+		<input type="text" name="cmdline" value="PLB command line;and More upto 250 bytes!" style="display: none">
+		<input type="submit" value="Run 'docgi.plc'">
+	</form> 
+</body>
+</html>
