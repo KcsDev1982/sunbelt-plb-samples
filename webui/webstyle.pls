@@ -119,5 +119,5 @@ NextLabelClick
                 RETURN
 .
 Reset
-                CHAIN           "mb_webstyle.plc"
+                CHAIN           "webstyle.plc"
 .
