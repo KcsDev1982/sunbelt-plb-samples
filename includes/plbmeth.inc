@@ -7,7 +7,7 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 *==============================================================================
 . PLB METHOD support definitions
 .
-. Last Revision Date:  05 Dec 2022
+. Last Revision Date:  06 Mar 2023
 .
 . Revision History:
 .
@@ -139,6 +139,8 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .:: 15 Aug 22 - Added XDATA type named JSON_TYPE_ARRAY_NOLABEL.		 :10.5
 .:: 03 Oct 22 - Reviewed for 10.5 release checking changes since 10.4B.  :10.5
 .:: 05 Dec 22 - Updated the parameters for the DATATABLE methods.	 :10.5A
+.:: 06 Mar 23 - Added $TV_XMLWR_NOLABEL_KEEP flag to TREEVIEW SaveXmlFile:10.5B
+.:: 		method Options.						 :10.5B
 .::
          %ENDIF                                                          :8.3A
 *------------------------------------------------------------------------------
@@ -4624,6 +4626,7 @@ $TV_XMLWR_OUTPUTALLATTR Integer 4,"0x004"
 $TV_XMLWR_ISO8859      Integer 4,"0x008"				  9.2B
 $TV_XMLWR_LOWERCASE    Integer 4,"0x010"				  9.3A
 $TV_XMLWR_UPPERCASE    Integer 4,"0x020"				  9.3A
+$TV_XMLWR_NOLABEL_KEEP Integer 4,"0x040"				 10.5B
 .
 . GetFileItem *Flags Values
 . 
