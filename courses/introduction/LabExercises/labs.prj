@@ -6,7 +6,7 @@
   <Profiles>
     <Name>labs</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\Courseware\plbintro\LabExercises\</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\courses\introduction\LabExercises\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,ZG,ZT,WS#1,WE#0</CompilerOptions>
