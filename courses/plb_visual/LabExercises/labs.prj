@@ -2,17 +2,17 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>labs</ActiveProfile>
   <ProjectTitle>labs</ProjectTitle>
-  <SelectedProgram>lab01.pls</SelectedProgram>
+  <SelectedProgram>noteeditor.pls</SelectedProgram>
   <Profiles>
     <Name>labs</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\courses\introduction\LabExercises\</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\courses\plb_visual\LabExercises\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,ZG,ZT,WS#1,WE#0</CompilerOptions>
       <MinimizeCompiler>1</MinimizeCompiler>
       <BookmarkErrors>0</BookmarkErrors>
-      <ShowCompilerCmd>0</ShowCompilerCmd>
+      <ShowCompilerCmd>1</ShowCompilerCmd>
       <MaxErrors>0</MaxErrors>
       <OptionsPage>1</OptionsPage>
       <SymbolFile>1</SymbolFile>
@@ -30,7 +30,7 @@
       <MultipleTraps>0</MultipleTraps>
       <ReadMode>1</ReadMode>
       <Restricted>0</Restricted>
-      <OutputExt>.PLC</OutputExt>
+      <OutputExt/>
       <OutputFolder/>
       <OutputMode>1</OutputMode>
       <WorkFolder/>
@@ -53,14 +53,15 @@
       <SpoolFile>1</SpoolFile>
       <SpoolAppend>0</SpoolAppend>
       <IniFile/>
+      <WorkingDirectory/>
       <HideMain>0</HideMain>
       <GlobalData>0</GlobalData>
       <VirtualMemory>0</VirtualMemory>
       <Arguments/>
       <DebugLog>1</DebugLog>
-      <Debugger>1</Debugger>
+      <Debugger>3</Debugger>
       <DebugProcess>0</DebugProcess>
-      <DebugBreakFirst>1</DebugBreakFirst>
+      <DebugBreakFirst>0</DebugBreakFirst>
       <DebugHost/>
       <DebugPort/>
       <PreBuildEnabled>1</PreBuildEnabled>
@@ -76,31 +77,16 @@
       <BackupDir/>
     </Properties>
   </Profiles>
-  <Source Name="lab01.pls"/>
-  <Source Name="lab02.pls"/>
-  <Source Name="lab02_2.pls"/>
-  <Source Name="lab02_3.pls"/>
-  <Source Name="lab03.pls"/>
-  <Source Name="lab03_2.pls"/>
-  <Source Name="lab04.pls"/>
-  <Source Name="lab05.pls"/>
-  <Source Name="lab06.pls"/>
-  <Source Name="lab07.pls"/>
-  <Source Name="lab07-1.pls"/>
-  <Source Name="lab08.pls"/>
-  <Source Name="lab09.pls"/>
-  <Source Name="lab10.pls"/>
-  <Source Name="lab11.pls"/>
-  <Source Name="lab12.pls"/>
-  <Source Name="lab13.pls"/>
-  <Source Name="lab14.pls"/>
-  <Source Name="lab15.pls"/>
-  <Source Name="lab16.pls"/>
-  <Source Name="lab16a.pls"/>
-  <Source Name="lab17.pls"/>
-  <Source Name="lab18.pls"/>
-  <Source Name="lab19.pls"/>
-  <Source Name="lab20.pls"/>
-  <Source Name="lab21.pls"/>
-  <Source Name="lab22.pls"/>
+  <Source Name="treeview.pls"/>
+  <Source Name="alert.pls"/>
+  <Source Name="calc.pls"/>
+  <Source Name="datetime.pls"/>
+  <Source Name="employee.pls"/>
+  <Source Name="events.pls"/>
+  <Source Name="exercise1.pls"/>
+  <Source Name="loops.pls"/>
+  <Source Name="math.pls"/>
+  <Source Name="noteeditor.pls"/>
+  <Source Name="radiocheck.pls"/>
+  <Source Name="equipment.pls"/>
 </SunIDE_Project_File>
