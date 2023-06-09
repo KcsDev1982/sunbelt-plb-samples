@@ -52,7 +52,7 @@ Result          FORM            2
                 SETPROP         ObjectPtr;Text=DefinitionData
                 RETURN
 .
-. Paramter error. See the plberrors.xml file for descriptopn og error.
+. Parameter error. See the plberrors.xml file for description of error.
 .
 ParamErr        ALERT           STOP,S$ERROR$,Result
                 FUNCTIONEND
