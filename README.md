@@ -12,6 +12,7 @@ Sample code and projects for the Programming Language for Business (PL/B).
 * http_root    - Additional files for the plbwebsrv http_root
 * includes     - Latest Sunbelt include files
 * jquerymobile - Jquery Mobile sample for plbwebsrv
+* legacy_demo  - Legacy sample programs originally released with PLBWIN
 * plbwebcli    - Samples for use with PlbWebCli application
 * rest_client  - Sample programs accessing REST services
 * templates    - Sample program templates 

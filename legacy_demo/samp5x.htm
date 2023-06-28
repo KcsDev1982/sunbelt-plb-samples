@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Untitled Normal Page</title>
+<script language="javascript">
+<!--
+
+function stopServerPgm()
+{
+    var result = document.PlbProgNE.EventSend(2);
+    document.PlbTest.ShowData.value = result;
+    document.PlbTest.FillBut.disabled = true;
+    document.PlbTest.StopBut.disabled = true;
+}
+
+function fillWithData()
+{
+    var name="";
+    var result="";
+    document.PlbTest.ShowData.value = "";
+    name = document.PlbTest.WhichName.value;
+    alert("Search Name =" + name)
+    result = document.PlbProgNE.EventSend(1,name);
+    document.PlbTest.ShowData.value = ( "Result = " + result + "\n" );
+}
+
+//-->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF">
+<p><font size="5">Sunbelt Sample HTML Page Using PL/B & JavaScript</font></p>
+<p><object id="PlbProgNE" name="PlbProgNE"
+CLASSID="clsid:7B8BCB91-BC42-45A6-BC18-4D7D4497DE6E"
+align="baseline" border="0" width="1" height="1">
+  <param name="Visible">
+  <param name="ErrorText">
+</object>
+<form name="PlbTest" method="POST" >
+<p><textarea name="ShowData" rows="10" cols="60"></textarea></p>
+<p><input type=text name=WhichName size=30></p>
+<p><input type="button" name="FillBut" value="Get The Name" onclick="fillWithData()";></p>
+<p><input type="button" name="StopBut" value="Stop Server Pgm" onclick="stopServerPgm()";></p>
+<p>
+<script language="JavaScript">
+<!--
+//    var progname = "f:\\eudora\\attach\\sansom\\jscript\\samp5srv.plc";
+    var progname = "samp5srv.plc";
+    PlbProgNE.Run(progname);
+    var text = "";
+    var text = PlbProgNE.ErrorText;
+    if ( text != 0 )
+    {
+    	document.PlbTest.ShowData.value = ( "Error = " + text + "\n");
+	alert("Problem executing PL/B program:\n" + progname);
+	document.PlbTest.FillBut.disabled = true;
+	document.PlbTest.StopBut.disabled = true;
+    }
+    else
+    {
+    	document.PlbTest.ShowData.value = ( "Server program started!\n\n" +
+				            "Enter Search Name: (example = 'Smith')" );
+        document.PlbTest.WhichName.value = "Smith";
+	document.PlbTest.WhichName.focus();
+    }
+//-->
+</script>
+</p>
+
+</form>
+</body>
+</html>
