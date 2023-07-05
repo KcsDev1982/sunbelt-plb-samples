@@ -25,7 +25,7 @@ DISP_E_PARAMNOTFOUND INTEGER    4,"0x80020004"
 AutoTrue        INTEGER         4,"0xffffffff"
 FILENAME        DIM             50 
 
-TESTCHARTS	EQU		0
+TESTCHARTS      EQU             0
 .
 . Lets make up a standard optional variant
 .
@@ -61,7 +61,7 @@ TESTCHARTS	EQU		0
 .
 . Now stuff some data into the sheet
 .
-                SETPROP         Sheet.Range( "A3", "A3"),*Value="March"
+                SETPROP         Sheet.Range("A3", "A3"),*Value="March"
                 SETPROP         Sheet.Range( "B3", "B3"),*Value="12"
  
                 SETPROP         Sheet.Range( "A4", "A4"),*Value="April"
@@ -76,7 +76,7 @@ TESTCHARTS	EQU		0
                 SETPROP         Sheet.Range( "A7", "A7"),*Value="July"
                 SETPROP         Sheet.Range( "B7", "B7"),*Value="16"
 
- 		%IFNZ		TESTCHARTS
+                %IFNZ           TESTCHARTS
 .
 . Get a chart object and add a chart, then get the actual chart object 
 .
@@ -128,12 +128,13 @@ TESTCHARTS	EQU		0
                 DESTROY         Range
                 DESTROY         Chart
                 DESTROY         Charts
-		%ELSE
-		PAUSE           "5"
-		%ENDIF
+                %ELSE
+                PAUSE           "5"
+                %ENDIF
 .
 . Now add the next set of data
 .
+		Sheet.Range("A1","W40").Clear
                 SETPROP         Sheet.Range( "B3", "B3"),*Value="Chocolate"
                 SETPROP         Sheet.Range( "B4", "B4"),*Value="12"
  
@@ -143,7 +144,7 @@ TESTCHARTS	EQU		0
                 SETPROP         Sheet.Range( "D3", "D3"),*Value="Orange"
                 SETPROP         Sheet.Range( "D4", "D4"),*Value="6"
 
-		%IFNZ		TESTCHARTS
+                %IFNZ           TESTCHARTS
 .
 . Get a chart object and add a chart, then get the actual chart object 
 .
@@ -177,9 +178,9 @@ TESTCHARTS	EQU		0
                 DESTROY         Sheet
                 DESTROY         Sheets
 
-		%ELSE
-		 PAUSE           "2"
-		%ENDIF
+                %ELSE
+                PAUSE           "2"
+                %ENDIF
 .
 . Lets avoid the Save Changes? dialog
 .
