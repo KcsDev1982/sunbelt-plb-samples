@@ -41,7 +41,7 @@ Main            LFUNCTION
                 MOVE            "Bill" To Name
                 KEYIN           *ES,*HD,"Enter your name: ", *RV, Name
 
-                JsonData.DeleteNode Using MOVE_DOCUMENT_NODE
+                JsonData.DeleteNode Using DELETE_DOCUMENT_NODE
 .....
 .
 . Create the JSON root object
@@ -51,31 +51,31 @@ Main            LFUNCTION
 .
 . Add an integer field
 .
-                JsonData.CreateElement Using MOVE_FIRST_CHILD, "value",*Text="1", *JsonType=JSON_TYPE_INTEGER 
+                JsonData.CreateElement Using CREATE_AS_FIRST_CHILD, "value",*Text="1", *JsonType=JSON_TYPE_INTEGER 
 .....
 .
 . Add a text field
 .
-                JsonData.CreateElement Using MOVE_LAST_CHILD, "FirstName",*Text=Name, *JsonType=JSON_TYPE_STRING 
+                JsonData.CreateElement Using CREATE_AS_LAST_CHILD, "FirstName",*Text=Name, *JsonType=JSON_TYPE_STRING 
 .....
 .
 . Add an array
 .
-                JsonData.CreateElement Using MOVE_LAST_CHILD, "Actions", *Options=MOVE_TO_CREATED_NODE
-                JsonData.CreateElement Using MOVE_FIRST_CHILD, "array", *JsonType=JSON_TYPE_ARRAY, *Options=MOVE_TO_CREATED_NODE
+                JsonData.CreateElement Using CREATE_AS_LAST_CHILD, "Actions", *Options=MOVE_TO_CREATED_NODE
+                JsonData.CreateElement Using CREATE_AS_FIRST_CHILD, "array", *JsonType=JSON_TYPE_ARRAY, *Options=MOVE_TO_CREATED_NODE
 .....
 .
 . Add an object with a boolean field in the array
 .
-                JsonData.CreateElement Using MOVE_FIRST_CHILD, "object", *JsonType=JSON_TYPE_OBJECT, *Options=MOVE_TO_CREATED_NODE
-                JsonData.CreateElement Using MOVE_FIRST_CHILD, "action",*Text="true", *JsonType=JSON_TYPE_BOOLEAN 
+                JsonData.CreateElement Using CREATE_AS_FIRST_CHILD, "object", *JsonType=JSON_TYPE_OBJECT, *Options=MOVE_TO_CREATED_NODE
+                JsonData.CreateElement Using CREATE_AS_FIRST_CHILD, "action",*Text="true", *JsonType=JSON_TYPE_BOOLEAN 
 
 .....
 .
 . Add another object with a boolean field in the array
 .
-                JsonData.CreateElement Using MOVE_NEXT_SIBLING, "object", *JsonType=JSON_TYPE_OBJECT, *Options=MOVE_TO_CREATED_NODE
-                JsonData.CreateElement Using MOVE_FIRST_CHILD, "action",*Text="false", *JsonType=JSON_TYPE_BOOLEAN 
+                JsonData.CreateElement Using CREATE_AS_NEXT_SIBLING, "object", *JsonType=JSON_TYPE_OBJECT, *Options=MOVE_TO_CREATED_NODE
+                JsonData.CreateElement Using CREATE_AS_FIRST_CHILD, "action",*Text="false", *JsonType=JSON_TYPE_BOOLEAN 
 
 .....
 .
