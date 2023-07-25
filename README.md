@@ -15,6 +15,7 @@ Sample code and projects for the Programming Language for Business (PL/B).
 * legacy_demo  - Legacy sample programs originally released with PLBWIN
 * plbwebcli    - Samples for use with PlbWebCli application
 * rest_client  - Sample programs accessing REST services
+* rest_server  - Sample program for providing REST services
 * templates    - Sample program templates 
 * webui        - Samples programs for WebView and Web Server
 * xdata        - XDATA object samples 
