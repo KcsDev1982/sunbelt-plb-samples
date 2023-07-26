@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SunIDE_Project_File Version="10.0">
-  <ActiveProfile>phonemsg</ActiveProfile>
-  <ProjectTitle>phonemsg</ProjectTitle>
-  <SelectedProgram>phonemsg.pls</SelectedProgram>
+  <ActiveProfile>Sales</ActiveProfile>
+  <ProjectTitle>Sales</ProjectTitle>
+  <SelectedProgram>SALES.PLS</SelectedProgram>
   <Profiles>
-    <Name>phonemsg</Name>
+    <Name>Sales</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\rest_server\</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\courses\plb_visual\LabExercises\sales\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
-      <CompilerOptions>-S,ZI=0,WS1</CompilerOptions>
+      <CompilerOptions>-S,ZG,ZT,WS#1,WE#0</CompilerOptions>
       <MinimizeCompiler>0</MinimizeCompiler>
       <BookmarkErrors>0</BookmarkErrors>
       <ShowCompilerCmd>0</ShowCompilerCmd>
-      <MaxErrors>99</MaxErrors>
-      <OptionsPage>0</OptionsPage>
+      <MaxErrors>0</MaxErrors>
       <SymbolFile>1</SymbolFile>
-      <OpenEnded>1</OpenEnded>
-      <CrossReference>0</CrossReference>
+      <OpenEnded>0</OpenEnded>
+      <CrossReference>1</CrossReference>
       <MetadataMode>2</MetadataMode>
       <MetadataFolder/>
-      <Graphics>0</Graphics>
+      <Graphics>1</Graphics>
       <NoDuplicate>0</NoDuplicate>
       <EncryptSymbols>0</EncryptSymbols>
       <FlagConflicts>0</FlagConflicts>
       <AbortError>0</AbortError>
       <PauseError>0</PauseError>
-      <PauseSeconds>2</PauseSeconds>
+      <PauseSeconds>0</PauseSeconds>
       <MultipleTraps>0</MultipleTraps>
-      <ReadMode>0</ReadMode>
+      <ReadMode>1</ReadMode>
       <Restricted>0</Restricted>
-      <OutputExt/>
+      <OutputExt>.PLC</OutputExt>
       <OutputFolder/>
       <OutputMode>1</OutputMode>
       <WorkFolder/>
@@ -38,7 +37,7 @@
       <CommentDelims/>
       <SourceExt/>
       <CompatMode>1</CompatMode>
-      <ListMode>1</ListMode>
+      <ListMode>3</ListMode>
       <ListFolder/>
       <DisableWarnings>0</DisableWarnings>
       <GeneratedCode>0</GeneratedCode>
@@ -50,18 +49,18 @@
       <ExpandedMacros>0</ExpandedMacros>
       <ListOff>0</ListOff>
       <FalseIf>0</FalseIf>
-      <SpoolFile>0</SpoolFile>
+      <SpoolFile>1</SpoolFile>
       <SpoolAppend>0</SpoolAppend>
       <IniFile/>
       <WorkingDirectory/>
       <HideMain>0</HideMain>
-      <GlobalData>64</GlobalData>
-      <VirtualMemory>20</VirtualMemory>
+      <GlobalData>0</GlobalData>
+      <VirtualMemory>0</VirtualMemory>
       <Arguments/>
       <DebugLog>1</DebugLog>
-      <Debugger>1</Debugger>
+      <Debugger>3</Debugger>
       <DebugProcess>0</DebugProcess>
-      <DebugBreakFirst>1</DebugBreakFirst>
+      <DebugBreakFirst>0</DebugBreakFirst>
       <DebugHost/>
       <DebugPort/>
       <PreBuildEnabled>0</PreBuildEnabled>
@@ -72,10 +71,11 @@
       <FTPDebug>0</FTPDebug>
       <FTPAccount/>
       <FTPFolder/>
-      <EnableBackups>1</EnableBackups>
-      <MaxBackups>10</MaxBackups>
-      <BackupDir>.\Backups\</BackupDir>
+      <EnableBackups>0</EnableBackups>
+      <MaxBackups>0</MaxBackups>
+      <BackupDir/>
+      <OptionsPage>0</OptionsPage>
     </Properties>
   </Profiles>
-  <Source Name="phonemsg.pls"/>
+  <Source Name="SALES.PLS"/>
 </SunIDE_Project_File>
