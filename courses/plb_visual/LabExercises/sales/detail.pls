@@ -6,7 +6,6 @@ DtlOpen
                 TRAP            DtlPrep IF IO
                 OPEN            DTLFILE,"DETAIL.ISI"
                 TRAPCLR         IO
-xFactor         INTEGER         4
 *
 .Build a collection of the input objects
 .
@@ -16,10 +15,10 @@ xFactor         INTEGER         4
 *
 .Format the ListView
 .
-                ord_lvDetail.INSERTCOLUMN USING "Item ##",(50 * xFactor),0,LVCFMT_CENTER
-                ord_lvDetail.INSERTCOLUMN USING "Quantity",(60 * xFactor),1,LVCFMT_CENTER
-                ord_lvDetail.INSERTCOLUMN USING "Description",(165 * xFactor),2,LVCFMT_LEFT
-                ord_lvDetail.INSERTCOLUMN USING "Price",(60 * xFactor),3,LVCFMT_RIGHT
+                ord_lvDetail.INSERTCOLUMN USING "Item ##",50,0,LVCFMT_CENTER
+                ord_lvDetail.INSERTCOLUMN USING "Quantity",60,1,LVCFMT_CENTER
+                ord_lvDetail.INSERTCOLUMN USING "Description",165,2,LVCFMT_LEFT
+                ord_lvDetail.INSERTCOLUMN USING "Price",60,3,LVCFMT_RIGHT
 . 
                 RETURN
 *....................................................
