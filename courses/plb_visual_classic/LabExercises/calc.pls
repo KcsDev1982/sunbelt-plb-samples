@@ -10,7 +10,6 @@ HMENU           MENU
 MAIN            PLFORM          CALC.PLF
 RESULT          INTEGER         1
 .
-		//SETMODE		*WEBMODEPLF=3
                 WINHIDE
 .
                 FORMLOAD        MAIN

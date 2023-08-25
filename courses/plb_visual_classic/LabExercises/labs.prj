@@ -2,11 +2,11 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>labs</ActiveProfile>
   <ProjectTitle>labs</ProjectTitle>
-  <SelectedProgram/>
+  <SelectedProgram>noteeditor.pls</SelectedProgram>
   <Profiles>
     <Name>labs</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\courses\plb_visual\LabExercises\</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\courses\plb_visual_classic\LabExercises\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,ZG,ZT,WS#1,WE#0</CompilerOptions>
@@ -94,5 +94,4 @@
   <Source Name="noteeditor.pls"/>
   <Source Name="radiocheck.pls"/>
   <Source Name="equipment.pls"/>
-  <Source Name="listview.pls"/>
 </SunIDE_Project_File>

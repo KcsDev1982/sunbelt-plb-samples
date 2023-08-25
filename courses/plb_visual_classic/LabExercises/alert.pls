@@ -1,12 +1,10 @@
 *---------------------------------------------------------------
 .
-. Program Name: radiocheck.pls
+. Program Name: alert.pls
 . Description:  Visual PL/B Programming program
-.  
-Result		FORM		5
-MAIN            PLFORM          radiocheck.plf
+.           
+MAIN            PLFORM          alert.plf
 .
-		//SETMODE		*WEBMODEPLF=3
                 WINHIDE
                 FORMLOAD        MAIN
                 LOOP

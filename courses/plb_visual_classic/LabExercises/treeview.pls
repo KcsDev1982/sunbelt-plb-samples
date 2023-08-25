@@ -37,7 +37,6 @@ NAME            DIM             30
 *
 .Create the TREEVIEW and Associate the Icons
 .
-		SETMODE		*WEBMODEPLF=3
 		WINHIDE
 		FORMLOAD        MAIN
                 TV.SetImageList USING IL

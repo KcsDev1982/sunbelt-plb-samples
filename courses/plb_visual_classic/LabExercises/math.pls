@@ -12,7 +12,6 @@ Length2         INTEGER         1
 Result          INTEGER         1
 MAIN            PLFORM          MATH.PLF
 .
-		//SETMODE		*WEBMODEPLF=3
                 WINHIDE
                 FORMLOAD        MAIN
                 LOOP

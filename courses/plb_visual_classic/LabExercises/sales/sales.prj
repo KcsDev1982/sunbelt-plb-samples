@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SunIDE_Project_File Version="10.0">
-  <ActiveProfile>labs</ActiveProfile>
-  <ProjectTitle>labs</ProjectTitle>
-  <SelectedProgram/>
+  <ActiveProfile>Sales</ActiveProfile>
+  <ProjectTitle>Sales</ProjectTitle>
+  <SelectedProgram>SALES.PLS</SelectedProgram>
   <Profiles>
-    <Name>labs</Name>
+    <Name>Sales</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\courses\plb_visual\LabExercises\</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\courses\plb_visual\LabExercises\sales\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,ZG,ZT,WS#1,WE#0</CompilerOptions>
-      <MinimizeCompiler>1</MinimizeCompiler>
+      <MinimizeCompiler>0</MinimizeCompiler>
       <BookmarkErrors>0</BookmarkErrors>
-      <ShowCompilerCmd>1</ShowCompilerCmd>
+      <ShowCompilerCmd>0</ShowCompilerCmd>
       <MaxErrors>0</MaxErrors>
       <SymbolFile>1</SymbolFile>
       <OpenEnded>0</OpenEnded>
@@ -29,7 +29,7 @@
       <MultipleTraps>0</MultipleTraps>
       <ReadMode>1</ReadMode>
       <Restricted>0</Restricted>
-      <OutputExt/>
+      <OutputExt>.PLC</OutputExt>
       <OutputFolder/>
       <OutputMode>1</OutputMode>
       <WorkFolder/>
@@ -63,36 +63,19 @@
       <DebugBreakFirst>0</DebugBreakFirst>
       <DebugHost/>
       <DebugPort/>
-      <PreBuildEnabled>1</PreBuildEnabled>
+      <PreBuildEnabled>0</PreBuildEnabled>
       <PreBuildCommands/>
-      <PostBuildEnabled>1</PostBuildEnabled>
+      <PostBuildEnabled>0</PostBuildEnabled>
       <PostBuildCommands/>
       <FTPUpload>0</FTPUpload>
       <FTPDebug>0</FTPDebug>
       <FTPAccount/>
       <FTPFolder/>
       <EnableBackups>0</EnableBackups>
-      <MaxBackups>10</MaxBackups>
+      <MaxBackups>0</MaxBackups>
       <BackupDir/>
-      <GitEnabled>0</GitEnabled>
-      <GitFolder/>
-      <GitBranch/>
-      <GitUserName/>
-      <GitEmail/>
-      <GitRemote/>
+      <OptionsPage>0</OptionsPage>
     </Properties>
   </Profiles>
-  <Source Name="treeview.pls"/>
-  <Source Name="alert.pls"/>
-  <Source Name="calc.pls"/>
-  <Source Name="datetime.pls"/>
-  <Source Name="employee.pls"/>
-  <Source Name="events.pls"/>
-  <Source Name="exercise1.pls"/>
-  <Source Name="loops.pls"/>
-  <Source Name="math.pls"/>
-  <Source Name="noteeditor.pls"/>
-  <Source Name="radiocheck.pls"/>
-  <Source Name="equipment.pls"/>
-  <Source Name="listview.pls"/>
+  <Source Name="SALES.PLS"/>
 </SunIDE_Project_File>

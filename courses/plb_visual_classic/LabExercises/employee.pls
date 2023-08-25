@@ -17,7 +17,6 @@ LENGTH          FORM            5
 MAIN            PLFORM          employee.plf
 
 .
-		//SETMODE		*WEBMODEPLF=3
                 WINHIDE
                 FORMLOAD        MAIN
                 LOOP

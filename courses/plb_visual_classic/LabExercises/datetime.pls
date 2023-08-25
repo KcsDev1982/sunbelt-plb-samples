@@ -1,12 +1,11 @@
 *---------------------------------------------------------------
 .
-. Program Name: radiocheck.pls
+. Program Name: datetime.pls
 . Description:  Visual PL/B Programming program
 .  
-Result		FORM		5
-MAIN            PLFORM          radiocheck.plf
+RESULT          INTEGER         1
+MAIN            PLFORM          datetime.plf
 .
-		//SETMODE		*WEBMODEPLF=3
                 WINHIDE
                 FORMLOAD        MAIN
                 LOOP

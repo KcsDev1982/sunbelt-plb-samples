@@ -10,9 +10,9 @@
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,ZG,ZT,WS#1,WE#0</CompilerOptions>
-      <MinimizeCompiler>0</MinimizeCompiler>
+      <MinimizeCompiler>1</MinimizeCompiler>
       <BookmarkErrors>0</BookmarkErrors>
-      <ShowCompilerCmd>0</ShowCompilerCmd>
+      <ShowCompilerCmd>1</ShowCompilerCmd>
       <MaxErrors>0</MaxErrors>
       <SymbolFile>1</SymbolFile>
       <OpenEnded>0</OpenEnded>
@@ -74,7 +74,12 @@
       <EnableBackups>0</EnableBackups>
       <MaxBackups>0</MaxBackups>
       <BackupDir/>
-      <OptionsPage>0</OptionsPage>
+      <GitEnabled>0</GitEnabled>
+      <GitFolder/>
+      <GitBranch/>
+      <GitUserName/>
+      <GitEmail/>
+      <GitRemote/>
     </Properties>
   </Profiles>
   <Source Name="SALES.PLS"/>

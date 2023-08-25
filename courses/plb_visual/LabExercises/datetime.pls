@@ -6,6 +6,7 @@
 RESULT          INTEGER         1
 MAIN            PLFORM          datetime.plf
 .
+		//SETMODE		*WEBMODEPLF=3
                 WINHIDE
                 FORMLOAD        MAIN
                 LOOP
