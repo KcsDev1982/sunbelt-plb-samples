@@ -7,7 +7,7 @@ $ADMEQU_LOADED EQU  1			;Flag that ADMEQU is loaded
 *==============================================================================
 . ADMIN	support	equates
 .
-. Last Revision	Date:  01 Oct 2021
+. Last Revision	Date:  02 Oct 2023
 .
 . Revision History:
 .
@@ -59,6 +59,7 @@ $ADMEQU_LOADED EQU  1			;Flag that ADMEQU is loaded
 .:: 05 Oct 20 - Reviewed for 10.3 release.				  :10.3
 .:: 23 Apr 21 - Reviewed for 10.3A release.				  :10.3A
 .:: 01 Oct 21 - Reviewed for 10.4 release.                                :10.4
+.:: 02 Oct 23 - Reviewed for 10.6 release.				  :10.6
 	 %ENDIF
 
  	 %IFDEF	   $ADMEQU_USE_EQU					  :10.0A

@@ -7,7 +7,7 @@ $PLBEQU_LOADED EQU  1			;Flag that PLBEQU is loaded
 *==============================================================================
 . GUI designer support equates
 .
-. Last Revision	Date:  03 Oct 2022
+. Last Revision	Date:  02 Oct 2023
 .
 . Revision History:
 .
@@ -237,7 +237,8 @@ $PLBEQU_LOADED EQU  1			;Flag that PLBEQU is loaded
 .:: 		Added WEBMODE property for HTMLCONTROL and WINDOW.	 :10.5
 .:: 		Added WEBOBJECT property for PL/B objects.		 :10.5
 .::		Added DATACOLUMN, DATAROW, and DATATABLE properties.	 :10.5
-.::
+.:: 18 May 23 - Added color constants for Bootstrap 5 Contexts           :10.6
+.:: 02 Oct 23 - Reviewed for the 10.6 release.				 :10.6
 .::
 	 %ENDIF								 :8.3A
 .
@@ -965,6 +966,8 @@ $TRANSPARENT  EQU	2
 .	COLOR_WINDOWFRAME		Window frame.
 .	COLOR_WINDOWTEXT		Text in	windows.
 .
+.       CONTEXT_xxx                     Bootstrap 5 Context colors.
+.
 .
 . Objects:
 .	CHECKGRP
@@ -1003,6 +1006,16 @@ $GRAYTEXT	      CONST   "2147483665"    ;Hex value 0x80000011
 $BTNTEXT	      CONST   "2147483666"    ;Hex value 0x80000012
 $INACTIVECAPTIONTEXT  CONST   "2147483667"    ;Hex value 0x80000013
 $BTNHIGHLIGHT	      CONST   "2147483668"    ;Hex value 0x80000014
+.
+$CONTEXT_DEFAULT      CONST   "2147483904"    ;Hex value 0x80000100
+$CONTEXT_DANGER	      CONST   "2147483905"    ;Hex value 0x80000101
+$CONTEXT_DARK         CONST   "2147483906"    ;Hex value 0x80000102
+$CONTEXT_INFO         CONST   "2147483907"    ;Hex value 0x80000103
+$CONTEXT_LIGHT        CONST   "2147483908"    ;Hex value 0x80000104
+$CONTEXT_PRIMARY      CONST   "2147483909"    ;Hex value 0x80000105
+$CONTEXT_SECONDARY    CONST   "2147483910"    ;Hex value 0x80000106
+$CONTEXT_SUCCESS      CONST   "2147483911"    ;Hex value 0x80000107
+$CONTEXT_WARNING      CONST   "2147483912"    ;Hex value 0x80000108
 .
 *------------------------------------------------------------------------------
 .   BDRPATTERN=dnumnvar				CREATE	SETPROP	GETPROP

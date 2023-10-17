@@ -7,7 +7,7 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 *==============================================================================
 . PLB METHOD support definitions
 .
-. Last Revision Date:  06 Mar 2023
+. Last Revision Date:  02 Oct 2023
 .
 . Revision History:
 .
@@ -141,6 +141,8 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .:: 05 Dec 22 - Updated the parameters for the DATATABLE methods.	 :10.5A
 .:: 06 Mar 23 - Added $TV_XMLWR_NOLABEL_KEEP flag to TREEVIEW SaveXmlFile:10.5B
 .:: 		method Options.						 :10.5B
+.:: 02 Oct 23 - Added the MODULE object.                                 :10.6
+.::             Updated methods for the 10.6 release.
 .::
          %ENDIF                                                          :8.3A
 *------------------------------------------------------------------------------
@@ -358,6 +360,8 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}   OPTIONAL 
 .   IoCancelMode         GIVING {nvar} USING *Value={dnumnvar}
 .   GetFileCount         GIVING {nvar}                           PWS ONLY 9.7A
 .   GetFileItem          GIVING {svar} USING *Index={dnumnvar}:  PWS ONLY 9.7A
@@ -376,6 +380,8 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -447,6 +453,8 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}   OPTIONAL 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -459,6 +467,8 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   CHECKGRP                                                              
@@ -851,6 +861,8 @@ CC_ANYCOLOR         Integer 4,"0x0100"
 .   AddString            GIVING {nvar} USING *String={svarlit}:
 .                                            *Flags={dnumnvar}:		  9.6
 .                                            *Delimiter={dnumnvar}	  9.6
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}   OPTIONAL 
 .   DeleteString         GIVING {nvar} USING *Index={dnumnvar}
 .   Dir                  GIVING {nvar} USING *FileSpec={svarlit}:
 .                                            *Flags={dnumnvar}
@@ -884,6 +896,8 @@ CC_ANYCOLOR         Integer 4,"0x0100"
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -1096,6 +1110,8 @@ OLEDiscardUndoState CONST "-6"  ;Used when the object is activated for
 . Methods:
 .
 .   AddString            GIVING {nvar} USING *String={svarlit}
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}   OPTIONAL 
 .   AllowEmptyTab        GIVING {nvar} USING *Value={dnumnvar}            8.7B
 .   DeleteString         GIVING {nvar} USING *Index={dnumnvar}
 .   Dir                  GIVING {nvar} USING *FileSpec={svarlit}:
@@ -1143,6 +1159,8 @@ OLEDiscardUndoState CONST "-6"  ;Used when the object is activated for
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -1231,6 +1249,8 @@ DDL_EXCLUSIVE    Integer 4,"0x8000"
 .   DeleteAllRows       GIVING {nvar}   
 .   DeleteColumn        GIVING {nvar} USING *Col={dnumnvar}
 .   DeleteRow           GIVING {nvar} USING *Row={dnumnvar}
+.   EnsureVisible       GIVING {nvar} USING *Row={dnumnvar}:               10.6
+.                                           *Col={dnumnvar}           Optional
 .   FindRow             GIVING {nvar} USING *Start={dnumnvar}:        Optional
 .                                           *Text={svarlit}:          Optional
 .                                           *Param={dnumnvar}:        Optional
@@ -1453,6 +1473,8 @@ $TBL_CSVRD_BYORDERARRAY	EQU	128	//0x80
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}   OPTIONAL 
 .   GetDTFlags           GIVING {nvar}
 .   SetDTFlags           GIVING {nvar} USING *Value={dnumnvar}
 .   UtcMode              GIVING {nvar} USING *Value={dnumnvar}    Optional
@@ -1468,6 +1490,8 @@ $TBL_CSVRD_BYORDERARRAY	EQU	128	//0x80
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -1548,6 +1572,8 @@ $TBL_CSVRD_BYORDERARRAY	EQU	128	//0x80
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}   OPTIONAL 
 .   CanUndo              GIVING {nvar}
 .   Clear                GIVING {nvar}
 .   ClearUndo            GIVING {nvar}
@@ -1572,6 +1598,8 @@ $TBL_CSVRD_BYORDERARRAY	EQU	128	//0x80
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -1663,6 +1691,8 @@ $TBL_CSVRD_BYORDERARRAY	EQU	128	//0x80
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}   OPTIONAL 
 .   CanUndo              GIVING {nvar}
 .   Clear                GIVING {nvar}
 .   ClearUndo            GIVING {nvar}
@@ -1702,6 +1732,8 @@ $TBL_CSVRD_BYORDERARRAY	EQU	128	//0x80
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 ....
@@ -1818,6 +1850,8 @@ $ERRLOGRESET                  EQU 4   ;Reset the error log file.
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}        Optional 
 .   AddItem              GIVING {nvar} USING *CHECKED={dnumnvar}:     Optional
 .                                            *DEFAULT={dnumnvar}:     Optional
 .                                            *ENABLED={dnumnvar}:     Optional
@@ -1853,6 +1887,8 @@ $ERRLOGRESET                  EQU 4   ;Reset the error log file.
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -2049,6 +2085,8 @@ $FTP_LIST_NAMES_ONLY     EQU 1
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -2061,6 +2099,8 @@ $FTP_LIST_NAMES_ONLY     EQU 1
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   HSCROLLBAR
@@ -2148,6 +2188,8 @@ $FTP_LIST_NAMES_ONLY     EQU 1
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}     Optional 
 .   ContextMenu          GIVING {nvar} USING *Flags={dnumnvar}
 .   DisableJqEvent       GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY
 .                                            *Selector={svarslit}: Optional
@@ -2181,7 +2223,8 @@ $FTP_LIST_NAMES_ONLY     EQU 1
 .                                            *Flags={dnumnvar}     Optional
 .   UpdateEvents         GIVING {nvar} USING *Flags={dnumnvar}     Optional
 .   MakePict             GIVING {pict}
-
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -2244,6 +2287,8 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -2256,6 +2301,8 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   IMAGELIST
@@ -2351,6 +2398,8 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -2363,6 +2412,8 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   LINE                                                                
@@ -2397,6 +2448,8 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -2409,6 +2462,8 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   LISTVIEW
@@ -2492,6 +2547,8 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   Arrange              GIVING {nvar} USING *Code={dnumnvar}
 .   DeleteAllContents    GIVING {nvar}
 .   DeleteAllItems       GIVING {nvar}
@@ -2725,6 +2782,8 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -2863,6 +2922,8 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .                                            *HELPID={dnumnvar}:      Optional
 .                                            *HELPTOPIC={svarslit}:   Optional
 .                                            *USERDATA={svarslit}     Optional
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   GetItem              GIVING {menuitem object} USING *KEY={svarslit}
 .   GetItemCount         GIVING {nvar} USING *KEY={nvar | svarslit}       9.0F
 .   GetItemName          GIVING {svar} USING *KEY={nvar | svarslit}       9.0F
@@ -2881,6 +2942,8 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -2947,6 +3010,24 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .MFS_ENABLED             Integer 4,"0x00000000"
 .MFS_HILITE              Integer 4,"0x00000080"
 .
+.
+*------------------------------------------------------------------------------
+.   MODULE                                                                10.6
+.
+. Events:
+.
+.   None
+.
+. Properties:
+.
+.   None
+.
+. Methods:
+.
+.   InitializeUda   GIVING {nvar} USING *Flags={dnumnvar}
+.   
+.   UnLoad          GIVING {nvar} USING *Flags={dnumnvar}
+. 
 *------------------------------------------------------------------------------
 .   MOVIE                                                                
 .
@@ -3025,6 +3106,8 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -3037,6 +3120,8 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   NETCONTROL
@@ -3156,6 +3241,8 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   GetChildCount        GIVING {nvar}
 .   GetObjectAsPointer   GIVING (object} USING *Key={dnumnvar|svarlit}:   9.2C
 .                                              *Flags={dnumnvar} Optional 9.2C
@@ -3185,6 +3272,8 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -3282,6 +3371,8 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   GetPageCount         GIVING {nvar}
 .   GetZBottom           GIVING {nvar}
 .   GetZLeft             GIVING {nvar}
@@ -3301,6 +3392,8 @@ $LV_SCWALL_AUTOSIZEHEADER Integer 4,"0x00008005"                          9.5A
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -3356,6 +3449,8 @@ DEG_270  Integer 4,"270"
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -3368,6 +3463,8 @@ DEG_270  Integer 4,"270"
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   RADIO                                                             
@@ -3433,6 +3530,8 @@ DEG_270  Integer 4,"270"
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -3445,6 +3544,8 @@ DEG_270  Integer 4,"270"
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   RADIOGRP                                                              
@@ -3703,6 +3804,9 @@ $ACTIONPASTE       Integer 4,"5"
 .                                       *Position={dnumnvar}:    Optional
 .                                       *Transition={svarslit}:  Optional
 .                                       *Options={dnumnvar}      Optional
+.   SetWebTheme     GIVING {nvar} USING *Theme={dnumnvar}:       Optional 10.6
+.                                       *Context={dnumnvar}:     Optional
+.                                       *Options={dnumnvar}      Optional
 .   SignalChild     GIVING {nvar} USING *ChildId={svarslit}:		  9.8
 .                                       *Options={dnumnvar}   Optional
 .   VerifyUtf       GIVING {nvar} USING *STRING={svarslit}:               10.1B
@@ -3810,6 +3914,11 @@ $VERIFYUTF_DEFAULT      EQU 0 ;Verify that input string is valid UTF-8.    10.1B
 $VERIFYUTF_LOGICAL_LEN  EQU 1 ;Return evaluated logical length of string.  10.1B
 $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .
+. SetWebTheme Method *Options Values
+.
+$BS5_OPTION_GRADIENT    EQU 1 ;Use JQueryUI '.bg-gradient' class.          10.6
+$BS5_OPTION_PROGRESS    EQU 2 ;Spply Bootstrap 5 style to PROGRESS bar.    10.6
+.
 *------------------------------------------------------------------------------
 .
 .   SHAPE                                                                
@@ -3860,6 +3969,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -3872,6 +3983,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   SLIDER                                                                
@@ -3931,6 +4044,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -3943,6 +4058,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   SPLITTER                                                                
@@ -4036,6 +4153,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}: PWS ONLY9.7C
 .                                            *StrValue={svarslit}:        9.7C
 .                                            *Flags={dnumnvar}   OPTIONAL 9.7C
@@ -4048,6 +4167,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 *------------------------------------------------------------------------------
 .   STATUSBAR
@@ -4164,6 +4285,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .                                            *HELPID={dnumnvar}:      Optional
 .                                            *HELPTOPIC={svarslit}:   Optional
 .                                            *USERDATA={svarslit}     Optional
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   GetItem              GIVING {menuitem object} USING *KEY={svarslit}
 .   GetItemCount         GIVING {nvar} USING *KEY={nvar | svarslit}       9.0F
 .   GetItemState         GIVING {nvar} USING *KEY={nvar | svarslit}       9.0F
@@ -4182,6 +4305,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -4258,6 +4383,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   DeleteTab            GIVING {nvar} USING *Index={dnumnvar}            9.4C
 .   GetStyle             GIVING {nvar}                                    9.4C
 .   GetTabCount          GIVING {nvar}                                    9.4C
@@ -4294,6 +4421,8 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Collection Support:
 .
@@ -4514,6 +4643,8 @@ $TB_STATE_AUTOSIZE Integer 4,"5"                                          9.1A
 .
 . Methods:
 .
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   DeleteAll            GIVING {nvar}
 .   DeleteItem           GIVING {nvar} USING *Item={dnumnvar}
 .   EnsureVisible        GIVING {nvar} USING *Item={dnumnvar}
@@ -4581,6 +4712,8 @@ $TB_STATE_AUTOSIZE Integer 4,"5"                                          9.1A
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
 .
@@ -4840,6 +4973,8 @@ $TV_XMLWR_NOLABEL_KEEP Integer 4,"0x040"				 10.5B
 . Methods:
 .
 .   Activate             GIVING {nvar}
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .   BackGrndMouseMove    GIVING {nvar} USING *Mode={dnumnvar}         Optional
 .   BrowseForFolder      GIVING {svar} USING *Instructions={svarslit}:    9.1D
 .                                            *Csidlvalue={dnumnvar}: opt  9.1D
@@ -4904,6 +5039,8 @@ $TV_XMLWR_NOLABEL_KEEP Integer 4,"0x040"				 10.5B
 .   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY 9.9A
 .                                            *Selector={svarslit}: Optional 9.9A
 .                                            *Flags={dnumnvar}     Optional 9.9A
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.                                            *Flags={dnumnvar}    Optional 
 .
 . WINDOW Method Constants:
 .
