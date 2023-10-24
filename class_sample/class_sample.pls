@@ -8,6 +8,9 @@
 .   17 Jul 23   W Keech
 .      Original code
 .
+.
+. The plbwin.ini file must contain: PLB_DYNAMICLOADMOD=ON
+.
                 INCLUDE         plbequ.inc
                 INCLUDE         plbmeth.inc
                 INCLUDE         plbstdlib.inc
