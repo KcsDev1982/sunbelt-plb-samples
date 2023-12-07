@@ -18,5 +18,6 @@ Sample code and projects for the Programming Language for Business (PL/B).
 * rest_client  - Sample programs accessing REST services
 * rest_server  - Sample program for providing REST services
 * templates    - Sample program templates 
+* videoSamples - Sample programs from the YouTube videos
 * webui        - Samples programs for WebView and Web Server
 * xdata        - XDATA object samples 

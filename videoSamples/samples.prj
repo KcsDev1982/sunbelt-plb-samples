@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SunIDE_Project_File Version="10.0">
+  <ActiveProfile>release</ActiveProfile>
+  <ProjectTitle>Sample</ProjectTitle>
+  <SelectedProgram/>
+  <Profiles>
+    <Name>release</Name>
+    <Properties>
+      <SourceFolder>C:\Sunbelt\videoSamples\</SourceFolder>
+      <Compiler/>
+      <CompilerIni/>
+      <CompilerOptions>-S,L,WS#1,WE#0,P ""</CompilerOptions>
+      <BookmarkErrors>0</BookmarkErrors>
+      <ShowCompilerCmd>1</ShowCompilerCmd>
+      <MaxErrors>99</MaxErrors>
+      <SymbolFile>1</SymbolFile>
+      <CrossReference>0</CrossReference>
+      <MetadataMode>2</MetadataMode>
+      <MetadataFolder/>
+      <Graphics>0</Graphics>
+      <NoDuplicate>0</NoDuplicate>
+      <EncryptSymbols>0</EncryptSymbols>
+      <FlagConflicts>0</FlagConflicts>
+      <AbortError>0</AbortError>
+      <PauseError>0</PauseError>
+      <PauseSeconds>2</PauseSeconds>
+      <MultipleTraps>0</MultipleTraps>
+      <ReadMode>0</ReadMode>
+      <Restricted>0</Restricted>
+      <OutputExt/>
+      <OutputFolder/>
+      <OutputMode>1</OutputMode>
+      <WorkFolder/>
+      <CaseSensitive>0</CaseSensitive>
+      <CommentDelims/>
+      <SourceExt/>
+      <CompatMode>1</CompatMode>
+      <ListMode>1</ListMode>
+      <ListFolder/>
+      <DisableWarnings>0</DisableWarnings>
+      <GeneratedCode>0</GeneratedCode>
+      <NoTimestamp>0</NoTimestamp>
+      <ListErrorDelete>0</ListErrorDelete>
+      <NoOutput>0</NoOutput>
+      <ErrorsOnly>0</ErrorsOnly>
+      <AllSource>1</AllSource>
+      <ExpandedMacros>0</ExpandedMacros>
+      <ListOff>0</ListOff>
+      <FalseIf>0</FalseIf>
+      <SpoolFile>1</SpoolFile>
+      <SpoolAppend>0</SpoolAppend>
+      <IniFile/>
+      <HideMain>0</HideMain>
+      <GlobalData>64</GlobalData>
+      <VirtualMemory>20</VirtualMemory>
+      <Arguments/>
+      <DebugLog>1</DebugLog>
+      <Debugger>1</Debugger>
+      <DebugProcess>0</DebugProcess>
+      <DebugBreakFirst>1</DebugBreakFirst>
+      <DebugHost/>
+      <DebugPort/>
+      <MinimizeCompiler>1</MinimizeCompiler>
+      <OpenEnded>0</OpenEnded>
+      <PreBuildEnabled>0</PreBuildEnabled>
+      <PreBuildCommands/>
+      <PostBuildEnabled>0</PostBuildEnabled>
+      <PostBuildCommands/>
+      <FTPUpload>0</FTPUpload>
+      <FTPDebug>0</FTPDebug>
+      <FTPAccount/>
+      <FTPFolder/>
+      <EnableBackups>1</EnableBackups>
+      <MaxBackups>10</MaxBackups>
+      <BackupDir>.\Backups\</BackupDir>
+      <WorkingDirectory/>
+      <GitEnabled>0</GitEnabled>
+      <GitFolder/>
+      <GitBranch/>
+      <GitUserName>MyUser</GitUserName>
+      <GitEmail>myuser@gmail.com</GitEmail>
+      <GitRemote/>
+    </Properties>
+  </Profiles>
+  <Source Name="answer.pls"/>
+  <Source Name="ex_loadmod.pls"/>
+  <Source Name="ex_module.pls"/>
+  <Source Name="htmldesigner.pls"/>
+  <Source Name="jsonarrray.pls"/>
+  <Source Name="skeleton.pls"/>
+  <Source Name="stacktest.pls"/>
+  <Source Name="errsample.pls"/>
+  <Source Name="WebViewSamp.pls"/>
+  <Source Name="webstyle.pls"/>
+  <Source Name="datatbl_card.pls"/>
+  <Source Name="datatbl_lv.pls"/>
+  <Source Name="datatbl_tran.pls"/>
+  <Source Name="wordlookup.pls"/>
+  <Source Name="funcexample.pls"/>
+  <Source Name="theme_samp.pls"/>
+  <Folder Name="Info">
+    <File Name="cmdlines.txt"/>
+  </Folder>
+</SunIDE_Project_File>

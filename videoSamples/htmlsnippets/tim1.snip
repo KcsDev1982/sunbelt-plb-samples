@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+   </head>
+    <body>
+        <div style="width: 95%;text-align: center; margin-left: auto; margin-right:auto;">
+            <canvas id="plbChart" style="border: 1px solid black;"></canvas>
+        </div>
+<script>
+
+var ctx = document.getElementById('plbChart').getContext('2d');
+
+var plbChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [ "2018-05", "2018-06", "2018-07", "2018-08", "2018-09", "2018-10", "2018-11", "2018-12", "2019-01", "2019-02", "2019-03", "2019-04", "2019-05", ],
+        datasets: [
+            { backgroundColor: ['Red'], borderColor: ['Red'], label: 'Ford', fill: false, data: [ '12.3377','8.5004','9.7561','11.7688','13.3784','11.1392','7.1302','8.1178','9.6070','7.8412','10.1059','7.5017','8.4254' ] }, { backgroundColor: ['Blue'], borderColor: ['Blue'], label: 'General Motors', fill: false, data: [ '6.3492','5.2660','4.4681','5.1804','6.3420','4.3651','3.8854','3.7152','5.3090','5.4722','6.0510','5.4567','3.4894' ] }, { backgroundColor: ['Orange'], borderColor: ['Orange'], label: 'Unknown', fill: false, data: [ ' 0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.6711','0.0000' ] }, { backgroundColor: ['Green'], borderColor: ['Green'], label: 'Nissan', fill: false, data: [ ' 0.0000','0.0000','0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000','7.4607','6.2500' ] }, { backgroundColor: ['Purple'], borderColor: ['Purple'], label: 'FCA', fill: false, data: [ ' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000','100.000','100.000',' 0.0000','0.0000',' 0.0000' ] }, { backgroundColor: ['DarkRed'], borderColor: ['DarkRed'], label: 'Auto Alliance', fill: false, data: [ ' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000',' 0.0000','0.0000','0.0000' ] }, { backgroundColor: ['CadetBlue'], borderColor: ['CadetBlue'], label: 'Average', fill: false, data: [ ' 3.1144',' 2.2944',' 2.3707',' 2.8248',' 3.2867',' 2.5840',' 1.8359',' 1.9721',' 2.4860',' 2.2189',' 2.6928',' 3.5150',' 3.0274' ] }
+        ]
+    },
+    options: {
+        legend: { display: true },
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 3.5,
+        title: {
+            display: true,
+            text: ['Title'],
+            fontSize: 16
+        },
+        tooltips: {
+            enabled: false
+        },
+        events: [],
+        scales: {
+            xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Report Generated Report Date',
+                    fontColor: '#333333',
+                    fontSize: 11
+                },
+            }],
+            yAxes: [{
+                ticks: {
+                    min: 0,
+                }
+            }],
+        },
+
+        animation: {
+            duration: 500,
+            onComplete: function(animation) {
+                // puts labels to the right of the bars
+                var chartInstance = this.chart,
+                ctx = chartInstance.ctx;
+                ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'bottom';
+                ctx.fillStyle = 'black';
+
+                this.data.datasets.forEach(function (dataset, i) {
+                    var meta = chartInstance.controller.getDatasetMeta(i);
+                    meta.data.forEach(function (bar, index) {
+                        var data = dataset.data[index];
+                        var thisy = bar._model.y - 5;
+                        if ( thisy < 0 ) {
+                            thisy = 100;
+                        }
+                        if ( data > 0 ) {
+                            ctx.fillText(data, bar._model.x , thisy );
+                        }
+                    });
+                });
+
+             //   $('#[[HTMLID]]').trigger('plbevent'); //
+                // this.options.animation.onComplete = undefined; //
+                // alert("all done");
+            }
+       }
+
+    }
+});
+
+</script>
+    </body>
+</html>                                      

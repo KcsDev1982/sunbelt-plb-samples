@@ -1,0 +1,23 @@
+<html>
+<head>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<style>
+</style>
+</head>
+<body>
+ <p>Resize the browser window to fire the <code>resize</code> event.</p>
+<p>Window height: <span id="height"></span></p>
+<p>Window width: <span id="width"></span></p>
+<script type="text/javascript">
+const heightOutput = document.querySelector('#height');
+const widthOutput = document.querySelector('#width');
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+  widthOutput.textContent = window.innerWidth;
+}
+
+window.onresize = reportWindowSize;
+</script>
+</body>
+</html>

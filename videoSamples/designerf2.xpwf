@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PLFORM>
+	<Header>
+		<NamePrefix>Form2</NamePrefix>
+		<IsWebForm>True</IsWebForm>
+		<IsUtf8Form>False</IsUtf8Form>
+		<DoNotCache>False</DoNotCache>
+		<Requires96>False</Requires96>
+		<IsCultureSet>False</IsCultureSet>
+	</Header>
+	<Object type="Window">
+		<Properties>
+			<Name>Form2</Name>
+			<Appearance>2</Appearance>
+			<AutoRedraw>0</AutoRedraw>
+			<AutoScroll>0</AutoScroll>
+			<BgColor>-2147483633</BgColor>
+			<Bold>0</Bold>
+			<ButtonEnterKey>0</ButtonEnterKey>
+			<Caption>1</Caption>
+			<ClipCtrl>0</ClipCtrl>
+			<DivisionId/>
+			<DockPadB>0</DockPadB>
+			<DockPadL>0</DockPadL>
+			<DockPadR>0</DockPadR>
+			<DockPadT>0</DockPadT>
+			<Enabled>1</Enabled>
+			<FgColor>0</FgColor>
+			<FloatMenu>0</FloatMenu>
+			<FontName>MS Sans Serif</FontName>
+			<GridAlign>0</GridAlign>
+			<GridSizeH>10</GridSizeH>
+			<GridSizeV>10</GridSizeV>
+			<Height>493</Height>
+			<Icon>0</Icon>
+			<InTaskbar>0</InTaskbar>
+			<Italic>0</Italic>
+			<Left>359</Left>
+			<MaxBox>1</MaxBox>
+			<MdiBorder>0</MdiBorder>
+			<MdiHeight>0</MdiHeight>
+			<MdiLeft>0</MdiLeft>
+			<MdiScroll>3</MdiScroll>
+			<MdiTop>0</MdiTop>
+			<MdiWidth>0</MdiWidth>
+			<MinBox>1</MinBox>
+			<MinHeight>0</MinHeight>
+			<MinScrollH>0</MinScrollH>
+			<MinScrollV>0</MinScrollV>
+			<MinWidth>0</MinWidth>
+			<NegBorders>0</NegBorders>
+			<NegMenus>0</NegMenus>
+			<NoMenuResize>0</NoMenuResize>
+			<ObjectId>0</ObjectId>
+			<Prefix>Form2</Prefix>
+			<ParentWin>0</ParentWin>
+			<RibDll/>
+			<RibMode>0</RibMode>
+			<RibName/>
+			<RightToLeft>0</RightToLeft>
+			<ScrollBar>3</ScrollBar>
+			<ShowWebMenu>0</ShowWebMenu>
+			<Size>100</Size>
+			<SysMenu>1</SysMenu>
+			<TabId>65535</TabId>
+			<Theme/>
+			<Title>HTMLCONTROL Test</Title>
+			<Top>189</Top>
+			<Topmost>0</Topmost>
+			<Units>5</Units>
+			<UseCss/>
+			<UserData/>
+			<Visible>1</Visible>
+			<WebClass/>
+			<WebHeight/>
+			<WebLeft/>
+			<WebPosition>0</WebPosition>
+			<WebTop/>
+			<WebWidth/>
+			<Width>708</Width>
+			<WinBorder>6</WinBorder>
+			<WinOffsetH>0</WinOffsetH>
+			<WinOffsetV>0</WinOffsetV>
+			<WinPos>2</WinPos>
+			<WinType>5</WinType>
+			<ZOrder>10</ZOrder>
+		</Properties>
+		<Events>
+			<Load>#Designer_Load</Load>
+			<Close>Close_Form2</Close>
+		</Events>
+	</Object>
+	<Object type="Panel">
+		<Properties>
+			<Name>Panel1</Name>
+			<Anchor>5</Anchor>
+			<AutoRedraw>0</AutoRedraw>
+			<AutoScroll>0</AutoScroll>
+			<BdrStyle>1</BdrStyle>
+			<BgColor>-2147483633</BgColor>
+			<ClipCtrl>0</ClipCtrl>
+			<Dock>3</Dock>
+			<DockPadB>0</DockPadB>
+			<DockPadL>0</DockPadL>
+			<DockPadR>0</DockPadR>
+			<DockPadT>0</DockPadT>
+			<Enabled>1</Enabled>
+			<Height>440</Height>
+			<Left>0</Left>
+			<MinScrollH>0</MinScrollH>
+			<MinScrollV>0</MinScrollV>
+			<ObjectId>0</ObjectId>
+			<ScrollBar>3</ScrollBar>
+			<ToolTip/>
+			<Top>0</Top>
+			<UserData/>
+			<Visible>1</Visible>
+			<WebClass/>
+			<WebHeight/>
+			<WebLeft/>
+			<WebPosition>0</WebPosition>
+			<WebTop/>
+			<WebWidth/>
+			<Width>708</Width>
+			<Window>Form2</Window>
+			<WinOffsetH>0</WinOffsetH>
+			<WinOffsetV>0</WinOffsetV>
+			<ZOrder>10</ZOrder>
+		</Properties>
+	</Object>
+	<Object type="Button">
+		<Properties>
+			<Name>ButtonFocus</Name>
+			<Anchor>1</Anchor>
+			<Appearance>1</Appearance>
+			<Bold>0</Bold>
+			<ButtonType>0</ButtonType>
+			<Cancel>0</Cancel>
+			<CauseValid>1</CauseValid>
+			<CmdNote/>
+			<Default>0</Default>
+			<Dock>3</Dock>
+			<DropId>0</DropId>
+			<Enabled>1</Enabled>
+			<FloatMenu>0</FloatMenu>
+			<FontName>MS Sans Serif</FontName>
+			<Height>30</Height>
+			<HelpId>0</HelpId>
+			<HelpTopic/>
+			<Icon>0</Icon>
+			<Italic>0</Italic>
+			<Left>30</Left>
+			<LoadObject>1</LoadObject>
+			<ObjectId>0</ObjectId>
+			<Picture>0</Picture>
+			<Shield>0</Shield>
+			<Size>100</Size>
+			<TabId>10</TabId>
+			<Theme/>
+			<Title>For Focus Testing</Title>
+			<ToolTip/>
+			<Top>450</Top>
+			<UserData/>
+			<Visible>1</Visible>
+			<WebClass/>
+			<WebHeight/>
+			<WebLeft/>
+			<WebPosition>0</WebPosition>
+			<WebTop/>
+			<WebWidth/>
+			<Width>150</Width>
+			<Window>Form2</Window>
+			<ZOrder>20</ZOrder>
+		</Properties>
+		<Events>
+			<Click>Click_ButtonFocus</Click>
+		</Events>
+	</Object>
+	<Object type="Button">
+		<Properties>
+			<Name>PrtBtn</Name>
+			<Anchor>1</Anchor>
+			<Appearance>1</Appearance>
+			<Bold>0</Bold>
+			<ButtonType>0</ButtonType>
+			<Cancel>0</Cancel>
+			<CauseValid>1</CauseValid>
+			<CmdNote/>
+			<Default>0</Default>
+			<Dock>3</Dock>
+			<DropId>0</DropId>
+			<Enabled>1</Enabled>
+			<FloatMenu>0</FloatMenu>
+			<FontName>MS Sans Serif</FontName>
+			<Height>30</Height>
+			<HelpId>0</HelpId>
+			<HelpTopic/>
+			<Icon>0</Icon>
+			<Italic>0</Italic>
+			<Left>360</Left>
+			<LoadObject>1</LoadObject>
+			<ObjectId>0</ObjectId>
+			<Picture>0</Picture>
+			<Shield>0</Shield>
+			<Size>100</Size>
+			<TabId>30</TabId>
+			<Theme/>
+			<Title>Print To Pdf</Title>
+			<ToolTip/>
+			<Top>450</Top>
+			<UserData/>
+			<Visible>0</Visible>
+			<WebClass/>
+			<WebHeight/>
+			<WebLeft/>
+			<WebPosition>0</WebPosition>
+			<WebTop/>
+			<WebWidth/>
+			<Width>150</Width>
+			<Window>Form2</Window>
+			<ZOrder>30</ZOrder>
+		</Properties>
+		<Events>
+			<Click>Click_PrtBtn</Click>
+		</Events>
+	</Object>
+	<Object type="Button">
+		<Properties>
+			<Name>HideWin</Name>
+			<Anchor>1</Anchor>
+			<Appearance>1</Appearance>
+			<Bold>0</Bold>
+			<ButtonType>0</ButtonType>
+			<Cancel>0</Cancel>
+			<CauseValid>1</CauseValid>
+			<CmdNote/>
+			<Default>0</Default>
+			<Dock>3</Dock>
+			<DropId>0</DropId>
+			<Enabled>1</Enabled>
+			<FloatMenu>0</FloatMenu>
+			<FontName>MS Sans Serif</FontName>
+			<Height>30</Height>
+			<HelpId>0</HelpId>
+			<HelpTopic/>
+			<Icon>0</Icon>
+			<Italic>0</Italic>
+			<Left>195</Left>
+			<LoadObject>1</LoadObject>
+			<ObjectId>0</ObjectId>
+			<Picture>0</Picture>
+			<Shield>0</Shield>
+			<Size>100</Size>
+			<TabId>20</TabId>
+			<Theme/>
+			<Title>Hide Test</Title>
+			<ToolTip/>
+			<Top>450</Top>
+			<UserData/>
+			<Visible>1</Visible>
+			<WebClass/>
+			<WebHeight/>
+			<WebLeft/>
+			<WebPosition>0</WebPosition>
+			<WebTop/>
+			<WebWidth/>
+			<Width>150</Width>
+			<Window>Form2</Window>
+			<ZOrder>40</ZOrder>
+		</Properties>
+		<Events>
+			<Click>Click_HideWin</Click>
+		</Events>
+	</Object>
+	<Object type="Code">
+		<Code><![CDATA[.$$PLBDesigner
+.
+. Start of Designer Generated Code
+.
+#Designer_Load
+.
+.13,Panel1,1
+.
+@	RETURN
+.
+. End of Designer Generated Code
+.
+.$$$PLBDesigner
+
+.===============================================================================
+Close_Form2
+	SETPROP	HtmlCtl, InnerHtml=""
+	Call HideTestWin
+@	RETURN
+.===============================================================================
+Click_ButtonFocus
+	Call	FocusTesting
+@	RETURN
+.===============================================================================
+Click_PrtBtn
+	Call	PrintIt
+@	RETURN
+.===============================================================================
+Click_HideWin
+	Call HideTestWin
+@	RETURN
+]]></Code>
+	</Object>
+	<Resource>
+		<Type>1</Type>
+		<SubType>0</SubType>
+		<Id>101</Id>
+		<Name>form.ico</Name>
+		<Size>2550</Size>
+		<Data>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AAAAAAAA/f34//39+P/9/fj//f34//39+P/9/fj//f34/wAAAACsdVT/AAAAAM+acv8AAAAAAAAAAAAAAAAAAAAA/f34//39+P/9/fj//f34//v59//7+ff/+/n3//v59/8AAAAArnlX/wAAAADUnnX/AAAAAAAAAAD9/fj//f34//39+P/9/fj//f34//v59//7+ff/+/n3//v59//7+ff/AAAAALJ8Wv8AAAAA1J51/wAAAAD9/fj//f34//39+P/9/fj/+/n3//v59//7+ff/+/n3//v59//59fD/+PLs/wAAAAC3gV7/AAAAANiief8AAAAA/f34//39+P/9/fj//f34//39+P/79vH/+/bx//v28f/48uz/+PLs//bs6P8AAAAAt4Fe/wAAAADYonn/AAAAAP39+P/9/fj//f34//v28f/79vH/+/bx//jy7P/48uz/9uzo//Pq5P/y597/AAAAALuFYf8AAAAA3KZ6/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC7hWH/AAAAANymev/cpnr/3KZ6/9ymev/cpnr/3KZ6/9ymev/cpnr/3KZ6/9ymev/cpnr/3KZ6/9ymev/cpnr/wItm/wAAAADdrYb/6LmS/+i5kv/ouZL/6LmS/+i5kv/ouZL/6LmS/+i5kv/ouZL/6LmS/+i5kv/ouZL/6LmS/8GRcP8AAAAA28O2/960kv/cpnr/3KZ6/9ymev/Yonn/1J51/9Sedf/UnnX/z5py/8+acv/PmnL/ypRu/8eegP/bw7b/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAAABAAB//QAAf8UAAHwFAAB4BQAAYAUAAEAFAABABQAAQAUAAH/9AAAAAQAAAAEAAAABAAD//wAA</Data>
+	</Resource>
+</PLFORM>

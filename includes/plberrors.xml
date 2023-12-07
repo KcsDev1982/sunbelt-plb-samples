@@ -1454,8 +1454,8 @@
 	<Error Number="M04" SubCode= "" Type="Mail" Description="An error occurred with the *ERROR option. " />
 	<Error Number="M05" SubCode= "" Type="Mail" Description="An error occurred with the *PASSWORD option." />
 	<Error Number="M05" SubCode= "31" Type="Mail" Description="*PASSWORD option: Unable to allocate memory." />
-	<Error Number="M05" SubCode= "42" Type="Mail" Description="*PASSWORD option: Password reponse not received from email server." />
-	<Error Number="M05" SubCode= "43" Type="Mail" Description="*PASSWORD option: Mail logon authentication failure." />
+	<Error Number="M05" SubCode= "42" Type="Mail" Description="*PASSWORD option: Password response not received from email server." />
+	<Error Number="M05" SubCode= "43" Type="Mail" Description="*PASSWORD option: Mail log-on authentication failure." />
 	<Error Number="M05" SubCode= "70" Type="Mail" Description="*PASSWORD option: Error sending message to outgoing socket." />
 	<Error Number="M05" SubCode= "80" Type="Mail" Description="*PASSWORD option: Error waiting to receive message from outgoing socket." />
 	<Error Number="M05" SubCode= "81" Type="Mail" Description="*PASSWORD option: Timeout waiting to receive message from outgoing socket." />

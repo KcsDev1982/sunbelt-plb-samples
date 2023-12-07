@@ -1,0 +1,18 @@
+.
+. Command line list
+.
+
+copy answer.plc C:\Sunbelt\plbwebsrv.104\demo\programs
+http://127.0.0.1:8081/.plc?runopt=-dw
+
+-----------------------------------------------
+
+plbwin -dg \sunbelt\videosamples\htmldesigner
+
+plbwin sundebug
+
+-----------------------------------------------
+
+plbwin sundebug -ip=127.0.0.1:5103
+
+plbwin -dw127.0.0.1:5103 sunide

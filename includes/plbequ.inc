@@ -623,6 +623,8 @@ $FLAT	      EQU	2
 $LISTLBL      EQU       3      //PLB Web Server LABELTEXT ONLY		  9.7C
 $H1           EQU       4      //PLB Web Server LABELTEXT ONLY            9.7C
 $PROG         EQU       5      //PLB Web Server LABELTEXT ONLY            9.7C
+$BS5ALERT     EQU       6      //PLB Web Server LABELTEXT ONLY           10.6
+$BS5ALERTX    EQU       7      //PLB Web Server LABELTEXT ONLY           10.6
 .
 *------------------------------------------------------------------------------
 .   ARRANGE=dnumnvar				CREATE	SETPROP	GETPROP
