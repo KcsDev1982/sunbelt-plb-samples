@@ -6,7 +6,7 @@
   <Profiles>
     <Name>release</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\videoSamples\</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\videoSamples\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,L,WS#1,WE#0,P ""</CompilerOptions>
@@ -77,8 +77,8 @@
       <GitEnabled>0</GitEnabled>
       <GitFolder/>
       <GitBranch/>
-      <GitUserName>MyUser</GitUserName>
-      <GitEmail>myuser@gmail.com</GitEmail>
+      <GitUserName/>
+      <GitEmail/>
       <GitRemote/>
     </Properties>
   </Profiles>
