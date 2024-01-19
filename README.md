@@ -12,6 +12,7 @@ Sample code and projects for the Programming Language for Business (PL/B).
 * htmlcontrol_designer - Designers for the HTMLCONTROL object
 * http_root    - Additional files for the plbwebsrv http_root
 * includes     - Latest Sunbelt include files
+* ini_templates - Latest template configuration files
 * jquerymobile - Jquery Mobile sample for plbwebsrv
 * legacy_demo  - Legacy sample programs originally released with PLBWIN
 * plbwebcli    - Samples for use with PlbWebCli application
