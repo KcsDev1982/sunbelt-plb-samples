@@ -1,0 +1,2331 @@
+
+
+
+
+
+
+
+
+                                                                     AGENDA
+
+                                                               USER'S GUIDE
+
+                                                  Version               3.0
+
+                                                  Last Revised  August 1991
+
+
+
+                                         CONTENTS
+
+
+               Chapter 1.  INITIAL OPERATIONS
+
+                   Introduction.........................................1
+                   Common Keyboard Functions............................2
+                   System Menu..........................................2
+                       Logon Function...................................3
+                       Exit Function....................................3
+
+               Chapter 2.  DESK CALENDAR
+
+                   Viewing Another Date.................................4
+                   Adding Appointments or Reminders.....................5
+                   Modifying an Appointment.............................8
+                   Deleting an Appointment..............................8
+                   Adding a Note to an Appointment......................9
+                   Printing Your Appointments...........................9
+                   Inquiring into Another User's Calendar..............10
+                   Cleaning up Your Old Appointments...................11
+                   Searching for Specific Appointments.................12
+                   Exiting the Desk Calendar...........................12
+
+               Chapter 3.  TELEPHONE MESSAGES
+
+                   Reviewing Messages..................................13
+                   Writing a Phone Message.............................15
+                   Sending Messages to a Group.........................16
+                   Inquiring About Another User's Messages.............17
+                   Exiting Telephone Message...........................17
+
+               Chapter 4.  USER STATUS
+
+                   Searching for a Name................................18
+                   Changing A User's Status............................19
+                   Displaying the Next Page............................19
+                   Adding New Users....................................19
+                   Modifying User Status Information...................20
+                   Deleting a User Status Entry........................20
+                   Shutting Down AGENDA................................21
+
+               Chapter 5.  TELEPHONE DIRECTORY
+
+                   Writing a Directory Entry...........................22
+                   Modifying a Directory Entry.........................22
+                   Deleting a Directory Entry..........................23
+                   Searching for Directory Entries.....................24
+                   Printing the Telephone Directory....................24
+                   Exiting the Telephone Directory.....................25
+
+               Chapter 6.  NOTES
+
+                   Viewing Additional Notes............................26
+                   Writing a Note......................................26
+                   Modifying a Note....................................26
+                   Deleting a Note.....................................27
+                   Searching for a Note................................27
+                   Printing Your Notes.................................27
+                   Exiting the Notes Function..........................28
+
+               Chapter 7.  ALARM
+
+                   Viewing Additional Alarms...........................29
+                   Writing an Alarm....................................29
+                   Modifying an Alarm..................................30
+                   Deleting an Alarm...................................30
+                   Exiting the Alarm Function..........................30
+
+               Chapter 8.  MEETING PLANNER
+
+                   Scheduling a Meeting................................31
+                   Confirming a Meeting................................33
+                   Canceling a Meeting.................................33
+                   Viewing Additional Meetings.........................34
+                   Exiting the Meeting Planner Function................34
+
+                              Chapter 1.  INITIAL OPERATIONS
+
+               INTRODUCTION
+
+               AGENDA is a desktop management system that  provides
+               a personal calendar, a telephone message  system,  telephone
+               directory, alarm function, notepad area, and meeting planner
+               for individuals and groups of office workers.   The  program
+               itself is written for use with Standard PL/B.
+
+               This document  contains  the  information  and  instructions
+               necessary for you to use AGENDA.
+
+               The document is structured as follows:
+
+               Chapter 1.  OPERATION -- This chapter describes how  to  use
+               the keyboard to select commands from the  ring  menus,  move
+               the cursor within the program, enter typed information,  and
+               bring up AGENDA.
+
+               Chapter 2.  DESK CALENDAR -- This chapter  explains  how  to
+               use the Desk Calendar function of AGENDA.
+
+               Chapter 3.  TELEPHONE MESSAGES -- This chapter explains  how
+               to use the Telephone Messages function of AGENDA.
+
+               Chapter 4.  USER STATUS --  This  chapter  explains  how  to
+               manage AGENDA and view the status of all users.
+
+               Chapter 5.  TELEPHONE DIRECTORY -- This chapter explains how
+               to use the Telephone Directory function of AGENDA.
+
+               Chapter 6.  NOTES -- This chapter explains how  to  use  the
+               Notes function of AGENDA.
+
+               Chapter 7.  ALARM -- This chapter explains how  to  use  the
+               Alarm function of AGENDA.
+
+               Chapter 8.  MEETING PLANNER -- This chapter explains how  to
+               use the Meeting Planner function of AGENDA.
+
+
+
+               AGENDA  is  presented   as   various   displays   of
+               information on the central area of the screen  with  a  ring
+               menu of commands at the bottom of the screen.   To  use  the
+               program, you must scroll through lists,  enter  information,
+               and select commands from the ring  menu.    When  you  enter
+               information, you type the data, then press the  Return  key.
+               To select a function offered by a prompt  or  command  ring,
+               press the Return key.
+
+
+
+                   AGENDA User's Guide                    Page 1
+
+
+
+
+
+
+
+
+
+
+               COMMON KEYBOARD FUNCTIONS
+
+               The following descriptions indicate how to use the  keyboard
+               to  perform  common   functions   while   in   AGENDA.
+               Operations within a  command  vary.    Refer  to  the  other
+               chapters for further information.
+
+               To exit anywhere from within AGENDA, press the F3 key.
+               When the F3 key is pressed, the same thing happens as if the
+               Exit command had been run from the top level screen.    Note
+               that the Remove key, on those keyboards such as the Expanded
+               Function Keyboard and the 7391  Keyboard  will  perform  the
+               same function.
+
+               To return to the previous screen when the cursor is  in  the
+               command ring, press the Quit key or the Escape key.
+
+               To back up to the previous field when you are entering  data
+               in a screen and the cursor is in a field, press the F5 key.
+
+               To display help for a command when the cursor is  positioned
+               on that command in the command ring, press the F5 key.
+
+               To enable or disable keyboard clicking,  press  the  F1  key
+               while the cursor is in the top level screen.
+
+               To move the cursor through fields and lines  of  a  display,
+               press the Up Arrow, Down Arrow, Right Arrow, or  Left  Arrow
+               keys.  These keys are  used  during  the  various  selection
+               processes.  The Space Bar can  also  be  used  to  move  the
+               cursor to the right in a command ring.
+
+               An alternate method of selecting a  command  from  the  ring
+               menu is to enter the single letter which is  capitalized  in
+               each function name.  Then press the Return key.
+
+               Occasionally, prompts will appear on the line below the ring
+               menu.  These prompts are to inform  you  that  you  have  an
+               alarm set and the time has been reached or you have received
+               a new message or you have had a meeting planned for you.  To
+               act on these conditions go to the proper choice on the  ring
+               menu and hit enter.
+
+
+               SYSTEM MENU
+
+               The AGENDA system menu is the first display  or  the
+               top level screen.  The  program  prompts  you  to  enter  an
+               identification code unless the systems administrator has set
+               up the user for automatic startup.  If  you  are  a  trusted
+               agent in an automatic startup, all names that you handle are
+               displayed and you can select the user you wish to use to log
+               on. This is done using the Up Arrow,  Down  Arrow  or  Space
+               Bar. If you are not logged on automatically, you must  enter
+
+                   AGENDA User's Guide                    Page 2
+
+
+
+
+
+
+
+
+
+
+               the  identification  code   established   by   the   systems
+               administrator during the installation of AGENDA.
+
+               After you are logged on to AGENDA, the system menu  is
+               displayed and you can begin  any  function  by  selecting  a
+               command from the command ring at the bottom of  the  screen.
+               Most of the commands in this command ring are  discussed  in
+               separate chapters, however, the Logon and Exit functions are
+               not, but are described below.
+
+               Logon Function
+
+               The Logon function allows you to bring up AGENDA  as
+               a different user.    Once  this  command  is  selected,  the
+               current user is logged off and the user is given the  choice
+               of whether or not his status is to be changed.  The  program
+               then, takes one of two actions based upon whether or not you
+               have multiple identification numbers in your user profile.
+
+               1. If there is  no  identification  file,  or  if  the  file
+               contains only one identification code, the program  requests
+               the identification of the new user,  which  you  must  enter
+               from the keyboard.
+
+               2.  If  you  have  multiple  identification  numbers  in  an
+               identification file, the different user names are  displayed
+               and you are prompted to select the correct user.    Pressing
+               the F5 key at this point causes the system to prompt you for
+               an identification number to be entered from the keyboard.
+
+               Exit Function
+
+               The Exit function allows you  to  leave  AGENDA.    When
+               this  command  is  run,  the  user  is  presented  with  the
+               following prompt:
+
+                  Press (Return key symbol) to  Exit.    To  change  status
+                  enter (I)n, (O)ut or (N)ot available:
+
+               If the user simply presses the Return key, he is logged  off
+               the system  (There will no longer be an * in  front  of  his
+               name in the user status screen).  If the user enters an I, O
+               or N, he will be logged off the system and his  status  will
+               be updated with the response.  If the Command or F5  key  is
+               pressed, the exit will be aborted and the top  level  screen
+               will be displayed.
+
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 3
+
+
+
+
+
+
+
+
+
+
+
+                                Chapter 2.  DESK CALENDAR
+
+
+               When you select the desk Calendar function from the  command
+               ring, the program displays your desk calendar on the screen.
+               The screen is divided into the following sections:
+
+               o The top line contains your name, the current date, and the
+                 current time.
+
+               o The third line contains the year and abbreviations of  the
+                 months.  The current year and month are highlighted.
+
+               o The upper left contains  the  calendar  for  the  selected
+                 month and year.  The selected date is highlighted.
+
+               o The upper right contains a graph of the schedule  for  the
+                 selected week.  The graph  is  divided  horizontally  into
+                 15-minute units and vertically by the days  of  the  week.
+                 The selected day of the week is highlighted.  If you  have
+                 an appointment, a shaded bar is shown on the graph.
+
+               o The bottom portion shows the appointments for the selected
+                 date.  The beginning and ending times are shown along with
+                 a description of the appointment.  The screen displays the
+                 first seven appointments for the specified day.  If a date
+                 has more than six  appointments  a  MORE  prompt  will  be
+                 displayed to remind you of appointments not on the screen,
+                 use the Up Arrow and Down Arrow  keys  to  see  the  other
+                 appointments.
+
+               o The bottom line shows the command ring, a  prompt,  or  an
+                 error message.
+
+               The graph can  show  the  appointments  from  one  of  three
+               starting positions: 12:00 am, 7:00 am, or  12:00  pm.    The
+               most common shows the graph starting at 7:00 am.    You  can
+               reset the starting position for the entire  graph  when  the
+               cursor is in the  command  ring.    Press  the  Express  key
+               followed by the Left Arrow key to change the  starting  time
+               to an earlier starting time.  Press the Express key followed
+               by the Right Arrow key to change  the  starting  time  to  a
+               later starting time.
+
+               If the  HILITE  parameter  was  not  included  in  the  user
+               profile, pressing the F1 key in this screen will  cause  the
+               days of the month that have appointments made for them to be
+               displayed in boldface numbers if your workstation allows it.
+
+
+               VIEWING ANOTHER DATE
+
+               To view the appointments for another date, either
+
+                   AGENDA User's Guide                    Page 4
+
+
+
+
+
+
+
+
+
+
+
+               o  Use the special cursor movement keys
+
+               o  Select the daTe command on the command ring
+
+               If the cursor is in the command ring, you can  use  some  of
+               the cursor movement keys to quickly move  to  another  date,
+               week, or month.  The following charts show  how  these  keys
+               can be used.
+
+                   Press the:                To Select:
+
+                   Lower Left Corner key     The previous date
+                   Lower Right Corner key    The next date
+                   Upper Left Corner key     The previous week
+                   Upper Right Corner key    The next week
+
+                   Press Express Key
+                   Followed by the:          To Select:
+
+                   Upper Left Corner key     The previous month
+                   Upper Right Corner key    The next month
+
+               If you select the daTe command  on  the  command  ring,  the
+               cursor moves to the current date on the calendar display and
+               use the cursor keys to select any month or day.
+
+               If you attempt to move the cursor beyond the last day of the
+               month, the calendar for the next month is displayed.  If you
+               attempt to move the cursor  before  the  first  day  of  the
+               month, the calendar for the previous month is displayed.
+
+               To select another month, first press the F5 key to move  the
+               cursor to the list of months on the third line.    Then  use
+               the Right Arrow and Left Arrow keys to move  the  cursor  to
+               the correct month.  To view the  calendar  for  that  month,
+               press the Return key.  If you attempt to move the cursor  to
+               the right of Dec, the program moves the cursor  to  Jan  and
+               shows the next year on the third line.  If  you  attempt  to
+               move the cursor to the left of Jan, the  program  moves  the
+               cursor to Dec and  shows  the  previous  year.    To  select
+               another year, press the F5 key again and enter the new year.
+
+               When the correct date,  month,  and  year  are  highlighted,
+               press the Return key to select that date.  The program  then
+               displays the appointments for  the  selected  date  and,  if
+               necessary, redraws the weekly graph.
+
+
+               ADDING APPOINTMENTS OR REMINDERS
+
+               To add appointments or daily reminders to the  schedule  for
+               the selected date, select the Write command on  the  command
+               ring.
+
+                   AGENDA User's Guide                    Page 5
+
+
+
+
+
+
+
+
+
+
+
+               You can have as many as 100 appointments  for  the  selected
+               date, although a maximum of seven are shown on the screen at
+               one time.  The cursor is positioned at the  first  available
+               line, where you may enter the  appointment.    If  you  have
+               seven or  more  appointments  already  for  that  date,  the
+               current appointments are removed from  the  screen  to  make
+               room for you to enter additional appointments.
+
+               First,  you  must  enter  the  starting  time  for  the  new
+               appointment.  Use the same format  as  that  shown  for  the
+               current time (on line 1) to type the time.
+
+               NOTE: If the  12-hour  format  was  selected  during  system
+               generation,  noon is entered as 12:00  pm  and  midnight  as
+               12:00 AM.  If the 24-hour format was selected, noon is 12:00
+               and midnight is 00:00.
+
+               If you only want to add a daily reminder or note, press  the
+               Return  key  without  entering  a  starting  time  (A  daily
+               reminder or note  is  treated  like  any  other  appointment
+               except it has no starting or ending  time  and  no  graphing
+               associated with it).  This  feature  may  also  be  used  to
+               continue appointment information onto multiple  lines.    If
+               you decide you do not want to enter  a  new  appointment  or
+               note, press the F5 key to return to the command ring.
+
+               AGENDA can determine if  schedule  conflicts  occur.
+               To do this, it checks the calendar by 15  minute  intervals.
+               It is possible to schedule two items which end/begin on,  or
+               within, a 15 minute boundary.  If  the  program  finds  that
+               there is an appointment already scheduled at  the  time,  it
+               displays the following message and prompt:
+
+                   Schedule Conflict - Continue ? N
+
+               If  you  answer  Y,  the  program  continues  to   add   the
+               appointment.  If you enter N, the program asks you to  enter
+               the starting time again.
+
+               After you enter the starting time for the  appointment,  you
+               must enter the ending time.  Type the  time  and  press  the
+               Return key.  If the ending time that you enter is before the
+               starting time, the  program  displays  the  following  error
+               message:
+
+                   Ending Time is Before Starting Time !
+
+               You must either press the Return key to enter a  new  ending
+               time or press the F5 key to enter a new starting time.   The
+               ending time must be on the same day as  the  starting  time.
+               If an appointment spans more than one day, you must make  an
+               entry for each day.
+
+
+                   AGENDA User's Guide                    Page 6
+
+
+
+
+
+
+
+
+
+
+               NOTE:  For graphing purposes, the times are rounded  to  the
+               nearest quarter hour.
+               After  you  enter  the  times  correctly,  you  must   enter
+               information about the appointment, such as the  person  with
+               whom you will meet, flight  times,  or  hotel  reservations.
+               Type the information (up to 55  characters)  and  press  the
+               Return key.
+
+               After you enter the information, the program prompts you  as
+               follows:
+
+                   Is This a (T)entative or (F)irm Appointment ? F
+
+               If the appointment is firm, enter F.  The program graphs the
+               time  of  the  appointment  with  a  solid  bar.    If   the
+               appointment is tentative, enter T.  The program  graphs  the
+               time of the appointment with lower case t's instead.
+
+               The program then prompts you as follows:
+
+                   Allow Others to View This Appointment Information ? N
+
+               If the appointment information is confidential  and  you  do
+               not  want  others  to  read   the   information   for   that
+               appointment,  enter  N.    If   the   information   is   not
+               confidential, enter  Y.    For  any  appointments  that  you
+               designate as confidential, the program displays an  asterisk
+               before the appointment information.    Others  viewing  your
+               appointments will be able to see  that  the  time  space  is
+               occupied but will  not  be  able  to  read  the  appointment
+               information.
+
+               The program then prompts you as follows:
+
+                   Does this Appointment Reoccur ?
+
+               If the appointment will occur again at the same time but  on
+               different dates, enter Y to have the program  duplicate  the
+               appointment.  Otherwise, enter N.  If the  appointment  does
+               not occur again (you answered no), the  program  returns  to
+               the command ring.
+
+               If you directed the program  to  duplicate  the  appointment
+               (you answered yes), the program asks you if the  appointment
+               occurs daily, weekly, or monthly. The monthly  option  gives
+               you the choice of a day of the week or  date  of  the  month
+               reoccurrence. The day option duplicates the meeting  on  the
+               same calendar position  every  month.  This  gives  you  the
+               option of scheduling appointments on "the second  Monday  of
+               every month". The date option repeats the appointment on the
+               exact date of the month, for every month. After  you  select
+               the frequency of the appointment, the program asks  you  for
+               the number of occurrences.  If the addition  of  any  future
+               appointment falls on a Saturday or Sunday, the program  asks
+
+                   AGENDA User's Guide                    Page 7
+
+
+
+
+
+
+
+
+
+
+               you if you want to exclude weekends when these  appointments
+               are added.  The program then checks to see if there are  any
+               schedule conflicts.  If a conflict  is  found,  the  program
+               displays the following message:
+
+                   Schedule conflict - Continue ?
+
+               If you answer N, no further dates will be  checked  and  the
+               the appointment is not added.  If you answer Y, the  program
+               continues to check the dates.   When  all  dates  have  been
+               checked, the program displays the total number of  conflicts
+               found and asks if you want to add the appointments anyway.
+
+               If you answer Y, the program adds the appointments.  If  you
+               answer N, the program does not add any of  the  appointments
+               and you must re-enter the appointment.
+
+
+               MODIFYING AN APPOINTMENT
+
+               Select the Modify command on the command ring if you want to
+               change the following for an appointment on the selected date
+
+               o Starting time or ending time
+
+               o Information associated with the appointment
+
+               o Whether the appointment is tentative or firm
+
+               o Whether or not the appointment is confidential
+
+               When you select the Modify command, the program  displays  a
+               pointer next to the first appointment for that  date.    You
+               can use the Down Arrow, Up Arrow and Space Bar keys to  move
+               the pointer to another appointment.  When the pointer is  at
+               the appointment that you want to change,  press  the  Return
+               key.  If you decide that  you  do  not  want  to  change  an
+               appointment, press the Escape key; the cursor then  returns
+               to the command ring.
+
+               Attempting to position the cursor above or below the  detail
+               area allows you to view records not currently displayed.   A
+               beep indicates that there  are  no  more    records  in  the
+               direction specified.
+
+               Once you have selected the appointment to be changed,  press
+               the Return key.  You can then type new information over  the
+               appointment line in the same manner as you did for adding  a
+               new appointment.  To bypass an area, press the Return key.
+
+
+               DELETING AN APPOINTMENT
+
+               To delete an appointment or daily reminder for the  selected
+
+                   AGENDA User's Guide                    Page 8
+
+
+
+
+
+
+
+
+
+
+               date, select the Delete command on the command  ring.    The
+               program  then  displays  a  pointer  next   to   the   first
+               appointment for that date.  You can use the Down  Arrow,  Up
+               Arrow and Space Bar keys to  move  the  pointer  to  another
+               appointment.  When the pointer is  at  the  appointment  you
+               want to delete, press the Return key.  If  you  decide  that
+               you do not want to delete an appointment, press the  Command
+               key; the cursor then returns to the command ring.
+
+               Once you have selected the appointment to  be  deleted,  the
+               program verifies that you want to delete  this  appointment.
+               If you answer no, the  cursor  returns  to  the  appointment
+               line.  If you indicate that the  appointment  occurs  again,
+               the program asks  you  for  the  frequency,  the  number  of
+               occurrences,  and  whether  to  exclude  weekends   in   the
+               deletion.  If you indicate that  the  appointment  does  not
+               occur again, only the appointment that you have selected  is
+               deleted  and  removed  from   the   graph.      If,   during
+               reoccurring appointment deletion, an appointment  record  is
+               not found, the message
+
+                   Record Not Found for <date>.
+
+               is displayed.   Pressing  the  Return  key  will  allow  the
+               deletion process to continue, while pressing F5 will  return
+               the  user  to  appointment  selection.    If  there  are  no
+               remaining appointment records, the  cursor  returns  to  the
+               calendar menu.
+
+
+               ADDING A NOTE TO AN APPOINTMENT
+
+               To insert additional information  about  an  appointment  or
+               daily reminder  for  the  selected  date,  select  the  Note
+               command on the command ring.  The program  then  displays  a
+               pointer next to the first appointment for that  date.    You
+               can use the Down Arrow, Up Arrow and Space Bar keys to  move
+               the pointer to another appointment.  When the pointer is  at
+               the appointment for which  you  want  to  insert  additional
+               information, press the Return key.
+
+               Once you have selected an appointment, the program inserts a
+               blank line in the  agenda  area  below  the  line  with  the
+               appointment.  Enter the information on the line, one line at
+               a time.  The program then asks you if  this  information  is
+               confidential.  Once you enter the information, that line  is
+               handled the same as if it were a reminder message  or  note.
+               If you enter a note as the first line  on  the  screen,  the
+               program will insert it before all appointments for the day.
+
+
+               PRINTING YOUR APPOINTMENTS
+
+               To print a list of your appointments and daily reminders for
+
+                   AGENDA User's Guide                    Page 9
+
+
+
+
+
+
+
+
+
+
+               a specific week or range of weeks, select the Print  command
+               on  the  command  ring.    The  program  then  displays  the
+               following prompt with the selected date:
+
+                   Enter the Starting Date of the First Week: <date>
+
+               The date displayed is the Sunday of the current week.    You
+               can enter another starting date or press the Return  key  to
+               retain the current starting date.
+
+               The program then displays the following prompt with the same
+               date as the starting date:
+
+                   Enter the Ending Date of the Last Week: <date>.
+
+               The date displayed is the ending  Saturday  of  the  current
+               week.  You can enter another ending date or press the Return
+               key to print only the appointments for the one day.
+
+               The program then attempts  to  gain  access  to  the  system
+               printer.  If the  program  finds  the  system  printer,  the
+               program asks you if you want to use it.  If you want to  use
+               another printer or write the data on a disk file, answer  N.
+               If you answer Y, the program sends the data  to  the  system
+               printer.
+
+               If the system printer is not available, the program notifies
+               you and asks if you want to  use  an  alternate  printer  or
+               write the data to a disk file.  If you answer N, the  cursor
+               returns to the command ring.
+
+               If you want to use another printer or write the  data  on  a
+               disk file, the program displays the following prompt with  a
+               possible filename:
+
+                   Printer or Spool File Name: <filename>
+
+               The filename will be either AGENDA.PRT or the last printer
+               or disk file name you entered.  You can press the Return key
+               to use the filename that is shown, or,  you  can  enter  the
+               environment, or extension and environment,  or  a  full  new
+               file specification.
+
+               The program rounds the starting date to the first day of the
+               starting week and ending date to the last day of the  ending
+               week and then sends the data to the printer.  When  printing
+               is complete, the cursor returns to the command ring.  If you
+               printed on an alternate printer or disk, the program reminds
+               you of this when you exit the program.
+
+
+               INQUIRING INTO ANOTHER USER'S CALENDAR
+
+               To view another user's schedule and  list  of  appointments,
+
+                   AGENDA User's Guide                    Page 10
+
+
+
+
+
+
+
+
+
+
+               select the Inquire command on the command ring.  The program
+               then prompts you to enter a three-character key on the  name
+               line for finding the  user.    The  display  indicates  each
+               occurrence of the three consecutive characters  and  prompts
+               you to select the name.
+
+               Your screen then clears and shows that  user's  appointments
+               for the selected date.  The user's name is highlighted.  You
+               can select the daTe command on the command ring to view that
+               user's schedule for another date, the print command to print
+               the appointments, or the search  command  to  search  for  a
+               specific appointment.   You  cannot  use  the  add,  change,
+               delete, insert, or cleanup  commands  on  the  other  user's
+               appointments.  You can select the Exit  inquire  command  to
+               return to your appointment screen.
+
+               To finish inquiring about other user's appointments,  select
+               Exit inquire and enter Y to the following prompt:
+
+                   Are You Finished Inquiring ? Y
+
+               If  you  answer  N,  the  program  returns  to  the  current
+               calendar.
+
+
+               CLEANING UP YOUR OLD APPOINTMENTS
+
+               To rapidly delete your old appointments, select the Clean up
+               command  on  the  command  ring.    You   can   delete   old
+               appointments in two manners.  The first prompt asks:
+
+                   Clean up All Appointments Within a Specific Period
+                   Without Prompting ?
+
+               Answering Y or N presents the next prompt:
+
+                   Clean up All Appointments Starting: mm/dd/yy
+
+               You can enter another starting date or press the Return  key
+               to retain the current date as the starting date.
+
+               If you chose automatic deletion, the following  prompt  asks
+               you to verify deletion:
+
+                   Clean Up all Appointments Starting With First mm/dd/yy
+                   Through Last mm/dd/yy   Sure?
+
+               Answering Y starts  the  deletion  function  which  proceeds
+               without further prompting.
+
+               If you  chose  the  prompting  function,  the  program  then
+               displays each appointment for  that  date  and  prompts  you
+               verify deletion of the appointment.
+
+
+                   AGENDA User's Guide                    Page 11
+
+
+
+
+
+
+
+
+
+
+
+               SEARCHING FOR SPECIFIC APPOINTMENTS
+
+               To rapidly search for a  specific  appointment,  select  the
+               Search command on the command ring.  A key of three or  more
+               characters can be used to search for the appointment.    The
+               key  may  be  located  anywhere   within   the   appointment
+               information.
+
+               When you select the search command, the program prompts  you
+               to enter the key.  Pressing the Return key  or  the  Command
+               key returns the calendar menu. The key must contain at least
+               three consecutive characters.  If you enter an invalid  key,
+               the program displays an error message  and  prompts  you  to
+               enter the key again.
+
+               After you enter  a  valid  key,  the  program  displays  all
+               appointments it finds that contain that key.    The  key  is
+               highlighted in each appointment.
+
+               An  additional  prompt  asks  if  you  want  to  print   the
+               information.  If you answer N, the program  returns  to  the
+               calendar menu.  If you answer Y, the program  then  attempts
+               to gain access to the system printer.  If the program  finds
+               the system printer, the program asks you if you want to  use
+               it.  If you want to use another printer or write the data on
+               a disk file, answer N.  If you answer Y, the  program  sends
+               the data to the system printer.
+
+               If the system printer is not available, the program notifies
+               you and asks if you want to  use  an  alternate  printer  or
+               write the data to a disk file.  If you answer N, the  cursor
+               returns to the command ring.
+
+               If you want to use another printer or write the  data  on  a
+               disk file, the program displays the following prompt with  a
+               possible filename.
+
+                   Printer or Spool File Name: <filename>
+
+               The filename will be either AGENDA.PRT or the last printer
+               or disk file name you entered.  You can press the Return key
+               to use the filename that is shown, or,  you  can  enter  the
+               environment, or extension and environment,  or  a  full  new
+               file specification.
+
+
+               EXITING THE DESK CALENDAR
+
+               To exit the desk calendar, press the Quit key or the Command
+               key.
+
+
+
+
+                   AGENDA User's Guide                    Page 12
+
+
+
+
+
+
+
+
+
+
+
+                              Chapter 3.  TELEPHONE MESSAGES
+
+
+               When you select the telephone Messages function, the program
+               displays a blank message  form  on  the  screen.    You  can
+               review, add, broadcast, and inquire about messages.
+
+               Messages are kept as three distinct types:
+
+               o New messages (those  that  have  not  yet  been  saved  or
+                 deleted).
+
+               o Saved messages  (those  reviewed  that  are  retained  for
+                 future reference).
+
+               o Deleted messages (those deleted).
+
+               Saved and  deleted  messages  are  differentiated  from  new
+               messages by the display of the time, date, day of the  week,
+               and name of the person who saved  or  deleted  the  message.
+               Messages may be saved by the recipient or  by  another  user
+               during the Inquire command.
+
+
+               REVIEWING MESSAGES
+
+               To review, forward, save, or delete  your  messages,  select
+               the Review command on the command ring.   The  program  then
+               asks you what type of message you want to  review.    Select
+               New, Saved, or Deleted from  the  new  command  ring.    The
+               program then displays the oldest message of that type on the
+               screen and  displays  a  command  ring  with  the  following
+               entries:
+
+               o Next
+               o Back
+               o Save
+               o Delete
+               o Print
+               o Forward
+               o Remark
+               o fiLe
+
+               To see the next message: To see  the  next  message  of  the
+               selected type on your screen, select the Next command on the
+               command ring.  The next newer message is  displayed.    When
+               all messages of that type have been displayed,  the  program
+               displays the following message.
+
+                   No More Messages.
+
+               To see the previous message: To see the previous message  of
+               the selected type on your screen, select the Back command on
+
+                   AGENDA User's Guide                    Page 13
+
+
+
+
+
+
+
+
+
+
+               the command ring.  The  next  older  message  is  displayed.
+               When all messages of that  type  have  been  displayed,  the
+               screen remains positioned  to  the  first  message  and  the
+               program displays the following message:
+
+                   No Previous Messages.
+
+               You would then select another command.
+
+               To save a message: To save a new or deleted message,  select
+               the Save command on the command ring.  The  program  changes
+               the message type to "saved" and allows  the  message  to  be
+               retained.  This can also serve to acknowledge receipt of the
+               message.  If you accidentally  deleted  a  message  and  the
+               system files have not been reformatted since  the  deletion,
+               you can restore the message with the save command.
+
+               To delete a message: To  delete  a  new  or  saved  message,
+               select the Delete command on the command ring.  The  program
+               removes the message from your  screen.    The  program  then
+               automatically displays the next message.
+
+               To print a message: To print the  message  that  appears  on
+               your screen, select the Print command on the  command  ring.
+               The program prompts for you  to  choose  to  print  selected
+               messages or all messages.  The program then attempts to gain
+               access to the system printer.   If  the  program  finds  the
+               system printer, the program asks you if you want to use  it.
+               If you want to use another printer or write the  data  on  a
+               disk file, answer N.  If you answer Y, the program sends the
+               data to the system printer.
+
+               If the system printer is not available, the program notifies
+               you and asks if you want to  use  an  alternate  printer  or
+               write the data to a disk file.  If you answer N, the  cursor
+               returns to the command ring.
+
+               If you want to use another printer or write the  data  on  a
+               disk file, the program displays the following prompt with  a
+               possible filename:
+
+                   Printer or Spool File Name: <filename>
+
+               The filename will be either AGENDA.PRT or the last printer
+               or disk file name you entered.  You can press the Return key
+               to use the filename that is shown, or,  you  can  enter  the
+               environment, or extension and environment,  or  a  full  new
+               file specification.
+
+               To forward a message: To change the name of the recipient of
+               the message shown on the screen, select the Forward  command
+               on the command ring.  The program prompts you  for  the  new
+               recipient's name.  You may also add a remark  to the message
+               (see the following section).  The program then  updates  the
+
+                   AGENDA User's Guide                    Page 14
+
+
+
+
+
+
+
+
+
+
+               message time and date,  inserts  your  name  as  the  person
+               taking the message,  and  places  the  message  in  the  new
+               recipient's file.
+
+               Note that exceptionally long messages are continued  on  the
+               next message.  To forward this  message  you  will  have  to
+               forward each part of the message individually  as  they  are
+               treated as separate entities.
+
+               To add a remark to a message: To add a note (up to one  line
+               in length) to the message shown on the  screen,  select  the
+               Remark command on the command ring.  Enter the remark.   The
+               program adds the remark and saves  the  message  for  future
+               reference.
+
+               To move a new caller to the phone directory: Select the fiLe
+               command to move a new caller's name and number to your Phone
+               Directory section. This calls up the directory entry  screen
+               and  allows  you  to  change  or   enter   other   necessary
+               information. Note, this does not delete the current message.
+
+               WRITING A PHONE MESSAGE
+
+               To add a message to send to another user or yourself  (as  a
+               reminder), select the Write command on the command ring.
+
+               The program first prompts you for the name of the person  to
+               receive the message.  Enter at least three characters of the
+               person's name as a key for the search.  The  recipient  must
+               be a current system user.  The program searches through  the
+               list of system users, displays the first name  that  matches
+               the characters you typed, and asks you to verify  that  this
+               is the correct user.  If you answer Y, the program  displays
+               the user's name on the "TO:" line on the message form.    If
+               you answer N, the program  continues  to  scan  through  the
+               identified users, prompting you to verify a selection.    If
+               the program reaches the end of the  system  user  list,  the
+               program displays the following message and  prompts  you  to
+               enter the recipient's name again:
+
+                   No More Matching Users.
+
+               Once you have selected the recipient, the  program  displays
+               your name as the person taking the message and  the  current
+               time (time, date, and day of the week) on the message.   You
+               can overwrite the date and time by pressing the  F5  key  to
+               move the cursor to the left of the message area.  Press  the
+               Return key to bypass either the time or  date.    Otherwise,
+               enter the time and date.  If you enter a future  date,  when
+               you finish the message, it will disappear from your list  of
+               messages until the appropriate time and date;  this  feature
+               can be used for reminders.
+
+
+
+                   AGENDA User's Guide                    Page 15
+
+
+
+
+
+
+
+
+
+
+               The program then prompts you for the  name  of  the  caller.
+               Type the name and press the Return key.  If the  Return  key
+               is pressed  here  without  entering  a  caller's  name,  the
+               program fills in the user's name.  The program  prompts  you
+               for other information such as  company  name  or  an  office
+               designation and the phone number.
+
+               The cursor then advances to the short message area.  Mark  a
+               response in the box, using the Express key,  that  indicates
+               one of the short messages:
+
+
+               o  Telephoned
+
+               o  Please call
+
+               o  Came by to see you
+
+               o  Will call again
+
+               o  Wants to see you
+
+               o  Returned your call
+
+               o  URGENT
+
+               o  See the operator
+
+               The cursor then moves to the long message area where you can
+               enter any further information (up to three lines).  When you
+               are finished, the system clears the message so that you  can
+               write another message.
+
+               NOTE:  At the time of log on or during an idle state on  the
+               main system menu of more than 60 seconds, you  are  notified
+               when messages arrive with the following message,  and  beep,
+               which is displayed on line 23:
+
+                                       *MESSAGE*
+
+
+               SENDING MESSAGES TO A GROUP
+
+               To send a message to either a specific group of users or all
+               system users, select the Broadcast command  on  the  command
+               ring.  The program then places the cursor at the TO: line of
+               the message form and prompts you to enter a  group  code  or
+               select all system users:
+
+               Enter the group designation or press <ret>  for  all  System
+               Users.
+
+               To select a specific group,  enter  the  group  designation.
+               Then you fill out the message form as described  in  "Adding
+
+                   AGENDA User's Guide                    Page 16
+
+
+
+
+
+
+
+
+
+
+               Messages" in this chapter.
+
+               If you want to send the message to  all  system  users,  hit
+               return. Agenda then asks if  you  want  to  choose  specific
+               users. If you respond with N, each user in AGENDA is
+               added to the message list. If you respond with Y, the  "TO:"
+               line of the message area includes the first user's name  and
+               you  are  asked  whether  or  not  to  include  that   name.
+               Successive names are presented as you respond  to  each  one
+               displayed.
+
+               After  a  group  designation,  or  "ALL"  users  have   been
+               selected, a prompt, 'Specify More Users' will be given. This
+               prompt, when answered with  a  "Y",  will  allow  additional
+               groups of users to be specified.
+
+               After you choose the recipients of the  message,  you  enter
+               the remaining information as described in "Adding Messages."
+
+
+               INQUIRING ABOUT ANOTHER USER'S MESSAGES
+
+               To view another user's messages, select the Inquire  command
+               on the command ring.  The program then prompts you to  enter
+               a three-character key on the name line for finding the user.
+               The  display  indicates  each  occurrence   of   the   three
+               consecutive characters and prompts for  you  to  select  the
+               name.
+
+               When you make a  selection,  your  screen  then  shows  that
+               user's messages.  The user's name is highlighted.   You  can
+               select the Review command on the command ring to  view  that
+               user's messages.  You can  use  any  command  ring  function
+               except write and delete.
+
+               To finish inquiring about other user's appointments,  select
+               Exit inquire and enter Y to the following prompt:
+
+                   Are You Finished Inquiring ? Y
+
+               If  you  answer  N,  the  program  returns  to  the  current
+               calendar.
+
+
+               EXITING TELEPHONE MESSAGES
+
+               To exit telephone  messages,  press  the  Quit  key  or  the
+               Escape key.
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 17
+
+
+
+
+
+
+
+
+
+
+
+                                 Chapter 4.  USER STATUS
+
+
+               When you select the Users function, the program  displays  a
+               management/information screen concerning all  AGENDA
+               users in the current group.  You can perform  the  following
+               management activities  by  selecting  a  function  from  the
+               command ring.
+
+               o Searching for a name
+
+               o Changing a user's status
+
+               o Displaying the next user group
+
+               o Adding new users
+
+               o Modifying user information
+
+               o Deleting a user
+
+               o Shutting down AGENDA
+               The information display includes the following categories:
+
+               o User name
+
+               o Telephone extension
+
+               o Group code
+
+               o Messages
+
+               o Current status (in, out, or unavailable)
+
+               o Date
+
+               o Time
+
+               o Comments
+
+
+               SEARCHING FOR A NAME
+
+               To search for a specific user name in  AGENDA,  select
+               the Search command from  the  command  ring.    The  program
+               prompts you to enter a name (up to 20 characters).  You  can
+               press the Return key instead of entering a name  to  display
+               all user names in  a  specific  group.    The  program  then
+               prompts you to enter a group code (up to five characters).
+
+
+               If you do not specify a name or a  group  code,  information
+               about all users is displayed.  When the listing is complete,
+
+                   AGENDA User's Guide                    Page 18
+
+
+
+
+
+
+
+
+
+
+               the program returns to the users menu.
+
+               Note that by default only those users which belong  to  your
+               group will be displayed unless  you  are  using  the  Search
+               facility.
+
+
+               CHANGING A USER'S STATUS
+
+               To change the status (in, out, or not available) of a  user,
+               select the sTatus command from the command ring.    You  can
+               then use the Down Arrow or  Up  Arrow  key  to  advance  the
+               cursor to the user name whose status  you  wish  to  modify.
+               Press the Return key to indicate modification.  You are then
+               prompted to select the status: in, out,  or  not  available.
+               Press the Return key again to register the new status.   The
+               program then prompts you to enter a note.    To  bypass  the
+               note, press the Return key.  The status is then updated.
+
+               If you have chosen the wrong user name,  press  the  F5  key
+               anytime before the status  is  changed.    The  cursor  then
+               returns to the beginning of the current line and you can use
+               the Up Arrow or Down Arrow key to select a different name.
+
+
+               DISPLAYING THE NEXT PAGE
+
+               To view subsequent  screen  displays  of  user  status  when
+               multiple  screens  are  available,  request  the  Next  page
+               command on the command ring.  The display  advances  to  the
+               next screen of user status information.   If  AGENDA
+               displays all users on only one screen and  you  select  Next
+               page, the same screen is displayed.
+
+
+               ADDING NEW USERS
+
+               To add new names to AGENDA, select the  Write  command
+               on the command ring.  The program prompts you to  enter  the
+               security password.   Once  the  password  is  accepted,  the
+               cursor  is  positioned  on  the  first  blank  line  of  the
+               information display where you can enter the new  information
+               in the proper columns.  Press  the  Return  key  after  each
+               column entry to advance to the next column.  When the entire
+               line is complete, press the Return key to register  the  new
+               user in the AGENDA  system.    The  columns  require
+               information concerning:
+
+               o User name
+
+               o Telephone extension number
+
+               o Group
+
+
+                   AGENDA User's Guide                    Page 19
+
+
+
+
+
+
+
+
+
+
+               o Identification number (this number is  not  shown  in  the
+                 information display, but is registered in the data file)
+
+               Once this information has been entered, you will be asked if
+               you wish to add this user to another group.  If  you  answer
+               "Y" then you will be prompted for the group  name  to  which
+               the new user should be added and then you will  be  prompted
+               again if you wish to add this user to another group.    This
+               will continue until you enter "N".
+
+
+
+               MODIFYING USER STATUS INFORMATION
+
+               To modify any portion of the user  information,  select  the
+               Modify command on the command ring.  The program prompts you
+               to enter the  security  password.    Once  the  password  is
+               accepted, the cursor is positioned on the first user line of
+               the information display.  Use the Down Arrow or Up Arrow key
+               to advance the cursor to the line you wish to change.   Then
+               press the Return key.  You can then  modify  any  column  on
+               that line.  The column's categories  that  can  be  modified
+               include:
+
+               o User name
+
+               o Telephone extension number
+
+               o Group
+
+               o Identification number (this number is  not  shown  in  the
+                 information display, but is registered in the data file)
+
+               To bypass any column, press the Return key.
+
+
+
+               DELETING A USER STATUS ENTRY
+
+               To delete a user status entry from AGENDA, select  the
+               Delete command on the command ring.  The program prompts you
+               to enter the  security  password.    Once  the  password  is
+               accepted, the cursor is positioned on the first line of  the
+               information display.  Use the Down Arrow or Up Arrow key  to
+               select the name line you wish to delete.    Then  press  the
+               Return key.  The program prompts you to review the entry and
+               approve the deletion.  Press the  Return  key  again.    The
+               entire line of information is deleted from AGENDA.
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 20
+
+
+
+
+
+
+
+
+
+
+               SHUTTING DOWN AGENDA
+               To stop the AGENDA system in an orderly fashion  and
+               not allow access to its files, select the  sHutdown  command
+               on the command ring.  The program prompts you to  enter  the
+               security password.   Once  the  password  is  accepted,  the
+               program prompts you the enter a date  and  time  for  future
+               system restoration.  Then the program prompts you to enter a
+               note to inform others of the reason for the  shutdown.    An
+               additional  prompt  is  displayed  allowing  you  to  select
+               automatic system restoration at the time and date previously
+               specified.
+
+               When the shutdown occurs, the system shutdown monitor screen
+               is displayed on the  screen  of  any  active  AGENDA
+               user.  The shutdown monitor contains  a  command  ring  that
+               allows you to exit AGENDA and return to the Resource
+               Management  System  to  perform  other  applications   while
+               awaiting the restoration of  AGENDA  or  to  restore
+               AGENDA.  Consult  your  systems  administrator  before
+               selecting the restoration feature.  If  you  do  not  select
+               either option, the logon  screen  will  return  when  VISTA-
+               AGENDANI is restored.
+
+               The  system  shutdown   monitor   displays   the   following
+               information:
+
+               o The date and time AGENDA was stopped
+
+               o The user who requested shutdown
+
+               o The approximate date and time restoration is to occur
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 21
+
+
+
+
+
+
+
+
+
+
+
+                             Chapter 5.  TELEPHONE DIRECTORY
+
+
+               When  you  select  the  telephone  Directory  function,  the
+               program displays the directory form on the screen for you to
+               fill in.  The telephone directory contains the  user  names,
+               addresses,  and  telephone  numbers.    An  additional  area
+               provides room to enter notes concerning the user.
+
+               The command ring at the bottom of the screen allows  you  to
+               perform these functions:
+
+               o Write
+
+               o Modify
+
+               o Delete
+
+               o Search
+
+               o Print
+
+
+               WRITING A DIRECTORY ENTRY
+
+               To add an entry to the telephone directory, select the Write
+               command on the command ring.
+
+               NOTE: Before writing an entry, check to make sure  that  the
+               entry does not already exist; the program does not check for
+               duplication.
+
+               The program moves the  cursor  to  the  first  line  of  the
+               directory form.  Enter the information on the form  line  by
+               line, pressing the Return key after each entry.  The program
+               then prompts as follows:
+
+                   Allow Others to View this Information ?
+
+               If you want the directory entry to be private, enter N;  the
+               program displays an asterisk in front of the name.   If  the
+               directory entry is public, enter Y. When  you  are  finished
+               with adding new directory forms, press the  Command  key  to
+               return to the telephone directory menu.
+
+
+               MODIFYING A DIRECTORY ENTRY
+
+               To change an entry in the telephone  directory,  select  the
+               Modify command on the command ring.
+
+               The program prompts you to enter a key containing 3 or  more
+               characters of the name of the entry you want to change, then
+
+                   AGENDA User's Guide                    Page 22
+
+
+
+
+
+
+
+
+
+
+               for a key of three or more characters in the note  area  you
+               want to change.  The program then searches  for  a  matching
+               entry.  When a matching entry is found, it is  displayed  on
+               the screen with the following prompt:
+
+                   Correct Entry ?
+
+               If  this  is  the  entry  you  want  to  change,  enter   Y.
+               Otherwise, enter N, and the program searches  for  the  next
+               entry that matches the key.
+
+               The program moves the  cursor  to  the  first  line  of  the
+               directory form.  Enter the information on the existing  form
+               line by line, pressing the Return key after each entry.  The
+               program then prompts as follows:
+
+                   Allow Others to View this Information ?
+
+               If you want the directory entry to be private, enter N;  the
+               program displays an asterisk in front of the name.   If  the
+               directory entry is public, enter Y. When  you  are  finished
+               with adding new directory forms, press the  Command  key  to
+               return to the telephone directory menu.
+
+
+               DELETING A DIRECTORY ENTRY
+
+               To delete an entry in the telephone  directory,  select  the
+               Delete command on the command ring.
+
+               The program prompts you to enter a key containing  three  or
+               more characters of the name of the entry you want to delete,
+               then for a key of three or more characters in the note  area
+               you want to  delete.    The  program  then  searches  for  a
+               matching entry.  When a  matching  entry  is  found,  it  is
+               displayed on the screen with the following prompt:
+
+                   Correct Entry ?
+
+               If  this  is  the  entry  you  want  to  change,  enter   Y.
+               Otherwise, enter N, and the program searches  for  the  next
+               entry that matches the key.  When you select an  entry,  the
+               following prompt is displayed:
+
+                   Delete this Entry ?
+
+               If  this  is  the  entry  you  want  to  delete,  enter   Y.
+               Otherwise, enter N; the program then searches for  the  next
+               entry that matches.
+
+               Press the Escape key  to  return  the  telephone  directory
+               menu.
+
+
+
+                   AGENDA User's Guide                    Page 23
+
+
+
+
+
+
+
+
+
+
+               SEARCHING FOR DIRECTORY ENTRIES
+
+               To search for specific entries in the  telephone  directory,
+               select the Search command on the command ring.
+
+               The program prompts you to enter a key containing  three  or
+               more characters of the name of the entry you want to search,
+               then for a key of three or more characters in the note  area
+               you want to  search.    The  program  then  searches  for  a
+               matching entry.  When a  matching  entry  is  found,  it  is
+               displayed on the screen with the following prompt:
+
+                   Continue Searching ?
+
+               To continue the search, enter Y.  Otherwise,  enter  N,  and
+               the program prompts you to enter another key.  If there  are
+               no more entries matching the key(s),  the  program  displays
+               the following message and you can press the Command  key  to
+               return to the telephone directory menu for further action:
+
+                   No More Matching Entries
+
+
+               PRINTING THE TELEPHONE DIRECTORY
+
+               To print the telephone directory, select the  Print  command
+               on the command ring.  The program then prompts  you  whether
+               you want to print personal numbers only.  Answer Y or N.
+
+               The program then attempts  to  gain  access  to  the  system
+               printer.  If the  program  finds  the  system  printer,  the
+               program asks you if you want to use it.  If you want to  use
+               another printer or write the data on a disk file, answer  N.
+               If you answer Y, the program sends the data  to  the  system
+               printer.
+
+               If the system printer is not available, the program notifies
+               you and asks if you want to  use  an  alternate  printer  or
+               write the data to a disk file.  If you answer N, the  cursor
+               returns to the command ring.
+
+               If you want to use another printer or write the  data  on  a
+               disk file, the program displays the following prompt with  a
+               possible filename:
+
+                   Printer or Spool File Name: <filename>
+
+               The filename will be either AGENDA.PRT or the last printer
+               or disk file name you entered.  You can change any  part  of
+               the file specification or press the Return key  to  use  the
+               file that is shown.
+
+               The program then sends the sorted directory entries  to  the
+               printer.  When printing is complete, the program returns  to
+
+                   AGENDA User's Guide                    Page 24
+
+
+
+
+
+
+
+
+
+
+               the  telephone  directory  menu.    If  you  printed  on  an
+               alternate printer or disk, the program will  remind  you  of
+               this when you exit the program.
+
+
+               EXITING THE TELEPHONE DIRECTORY
+
+               To exit the telephone directory, press the Quit key  or  the
+               Escape key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 25
+
+
+
+
+
+
+
+
+
+
+
+                                    Chapter 6.  NOTES
+
+
+               When you select the  Notes  function  of  AGENDA,  the
+               program displays your existing notes on  the  screen  and  a
+               command ring allowing these functions:
+
+               o Next page
+
+               o Write
+
+               o Modify
+
+               o Delete
+
+               o Search
+
+               o Print
+
+               You can enter information of any type  as  a  note  on  your
+               notepad.  All notes are confidential.  If another user needs
+               access to your notes, refer to the  section  that  describes
+               the "trusted agent" feature in Chapter 2.
+
+
+               VIEWING ADDITIONAL NOTES
+
+               If you have more notes than can fit on one screen  or  page,
+               select the Next page command on the command ring.    If  you
+               were viewing the last page of notes,  the  program  displays
+               the first page of notes again.
+
+
+               WRITING A NOTE
+
+               To add a note to your notepad, select the Write  command  on
+               the command ring.
+
+               The program supplies the time  and  date  attached  to  your
+               note.  You can then type up to 99  lines  of  text  in  each
+               note.  If you press the F5 key on any blank line except  the
+               first line  of  the  note,  the  program  assumes  you  have
+               finished entering the note and allows you to  start  another
+               new note.  If you enter a blank space at the beginning of  a
+               line, the program assumes that you  have  finished  entering
+               the note and returns to the command ring.
+
+
+               MODIFYING A NOTE
+
+               To change any line of a  note  on  the  screen,  select  the
+               Modify command on the command ring.  You use the  Up  Arrow,
+               Down Arrow or Space Bar key to position to the note that you
+
+                   AGENDA User's Guide                    Page 26
+
+
+
+
+
+
+
+
+
+
+               want to change.  You then press the Return  key,  type  over
+               the line, and press the Return key  again.    You  can  then
+               select another line or press the Escape key  to  return  to
+               the command ring.
+
+
+               DELETING A NOTE
+
+               To delete a note shown on  the  screen,  select  the  Delete
+               command on the command ring.
+
+               The program then positions the pointer at the first note  on
+               the screen.  Using the up and down arrow  keys,  select  the
+               note you wish to delete.  Then depress the Enter key.  After
+               you release the key, the following prompt  is  displayed  on
+               the screen:
+
+                   Delete this Entry ?
+
+               If this is the entry you want to delete, enter Y; otherwise,
+               enter N.
+
+               Press the Escape key  to  return  the  telephone  directory
+               menu.
+
+
+               SEARCHING FOR A NOTE
+
+               To search  for  notes  containing  a  particular  string  of
+               characters, select the Search command on the command ring.
+
+               The program prompts you to enter a key containing  three  or
+               more characters of the  entry  you  want  to  search.    The
+               program then searches for a matching entry.  When a matching
+               entry is found, it is displayed on the screen. If there  are
+               more notes with the key than can fit on the screen, you  can
+               select the Next page command to display more of the matching
+               notes.
+
+
+               PRINTING YOUR NOTES
+
+               To print all or one of your notes, select the Print  command
+               on the command ring.
+
+               The program then attempts  to  gain  access  to  the  system
+               printer.  If the  program  finds  the  system  printer,  the
+               program asks you if you want to use it.  If you want to  use
+               another printer or write the data on a disk file, answer  N.
+               If you answer Y, the program sends the data  to  the  system
+               printer.
+
+               If the system printer is not available, the program notifies
+               you and asks if you want to  use  an  alternate  printer  or
+
+                   AGENDA User's Guide                    Page 27
+
+
+
+
+
+
+
+
+
+
+               write the data to a disk file.  If you answer N, the  cursor
+               returns to the command ring.
+
+               If you want to use another printer or write the  data  on  a
+               disk file, the program displays the following prompt with  a
+               possible filename:
+
+                   Printer or Spool File Name: <filename>
+
+               The filename will be either AGENDA.PRT or the last printer
+               or disk file name you entered.  You can change any  part  of
+               the file specification or press the Return key  to  use  the
+               file that is shown.
+
+               If you printed on an alternate printer or disk, the  program
+               reminds you of this when you exit the program.
+
+               The program then displays the following prompt:
+
+                   Print a (S)pecific Note or (A)ll Notes ?
+
+               If you want to print all of your notes, enter  A.    If  you
+               want to print a specific note  (that  is  currently  on  the
+               screen), enter S.  You then use the Up Arrow or  Down  Arrow
+               key to move the cursor to the note you  want  to  print  and
+               then press the Return key to select that note.
+
+               The program then prints your notes or saves the  information
+               in the specified file.
+
+
+               EXITING THE NOTES FUNCTION
+
+               To exit the notepad, press the Quit key or the Escape key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 28
+
+
+
+
+
+
+
+
+
+
+
+                                    Chapter 7.  ALARM
+
+
+               AGENDA allows you to set an Alarm to remind  you  of
+               important dates and times.  The program  checks  the  alarms
+               each time you log on, every time you return  to  the  system
+               menu, and every 60 seconds when you are at  any  other  menu
+               screen.
+
+               When  you  select  the  desk  alarm  function,  the  program
+               displays the first page of alarms on your screen and  offers
+               a command ring allowing you to perform these functions:
+
+               o Next Page
+
+               o Write
+
+               o Modify
+
+               o Delete
+
+
+               VIEWING ADDITIONAL ALARMS
+
+               If you have more alarms than can fit on one screen or  page,
+               select the Next page command on the command ring.    If  you
+               were viewing the last page of alarms, the  program  displays
+               the first page of notes again.
+
+
+               WRITING AN ALARM
+
+               To add an alarm, select the Write  command  on  the  command
+               ring.  The program first prompts you  for  the  alarm  date.
+               The date should be either the same or later than the current
+               date.  If it is not, the program will warn you  that  it  is
+               before the current date and  ask  if  you  wish  to  use  it
+               anyway.  The program then prompts you for  the  alarm  time.
+               If the alarm  date is the current date, the time  should  be
+               later than the current time.  If it is not, the program will
+               warn you that it is before the current time and ask  if  you
+               wish to use it anyway.  The cursor then moves to  the  Alarm
+               Message portion of the display where you can enter a note of
+               up to 40 characters.  You can then enter another alarm.   If
+               you do not want to enter another alarm,  press  the  Command
+               key to return to the command ring.
+
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 29
+
+
+
+
+
+
+
+
+
+
+               MODIFYING AN ALARM
+
+               To change the date, time,  or  message  associated  with  an
+               alarm, select the Modify command on the command ring.    You
+               use the Up Arrow or Down Arrow key to position to the  alarm
+               that you want to change and then press the Return key.
+
+               The cursor moves to the date.  If you  want  to  change  the
+               date, enter the new date.  Otherwise, just press the  Return
+               key.  The cursor moves to the time.  If you want  to  change
+               the time, enter the new time.   Otherwise,  just  press  the
+               Return key.  The cursor moves to the message area.   If  you
+               want  to  change  the  message,  enter  the   new   message.
+               Otherwise, just press the Return key.
+
+               After you have finished making changes to one alarm, you can
+               choose another alarm to change.  To return  to  the  command
+               ring, press the Escape key.
+
+               DELETING AN ALARM
+
+               To delete an alarm, select the Delete command on the command
+               ring.  Use the Up Arrow or Down Arrow key  to  position  the
+               cursor at the alarm you want to  delete.    Then  press  the
+               Return key.  The program prompts you to verify the  selected
+               deletion:
+
+                   Selected
+
+               Press the Return key to clear the alarm  from  your  screen.
+               Press the Escape key if you  do  not  want  to  delete  the
+               alarm.
+
+
+               EXITING THE ALARM FUNCTION
+
+               To exit the desk alarm screen, press the  Quit  key  or  the
+               Escape key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 30
+
+
+
+
+
+
+
+
+
+
+
+                               Chapter 8.  MEETING PLANNER
+
+
+               When you desire to Plan a meeting  and  select  the  meeting
+               planner function,  the  program  displays  a  list  of  your
+               meetings on the  screen  to  aid  in  planning,  scheduling,
+               confirming, and canceling meetings.   Upon  entry  into  the
+               function, a meeting work area is displayed.  You can  select
+               the following functions from a command ring at the bottom of
+               the screen:
+
+               o Schedule
+
+               o Confirm
+
+               o Cancel
+
+               o Next page
+
+
+               SCHEDULING A MEETING
+
+               To schedule a meeting, select the Schedule  command  on  the
+               command ring.
+
+               The program displays an information  screen  describing  two
+               scheduling modes and prompts you to  select  a  mode.    The
+               modes are:
+
+               1. Specify a date, start time, end time, and  attendees  and
+                  allow AGENDA to check  their  availability.    If
+                  someone cannot attend, their conflicting  appointment  is
+                  shown.
+
+               2. Specify starting date, times between  which  the  meeting
+                  should begin, meeting  duration,  and  attendees.    Then
+                  allow AGENDA to  determine  the  first  date/time
+                  that all attendees are available.
+
+               Saturdays  are  optionally  included.    Sundays  are  never
+               searched.
+
+
+               MODE 1:
+
+               If you select Mode 1, a work  area  is  displayed  with  the
+               cursor positioned at the top line, Meeting Date.  Enter each
+               line of requested information, pressing the Return key after
+               each entry. Here, you are given the option of Single  person
+               entry or Group entry. With Single  person  entry  you  enter
+               each person one at a time, Group entry can schedule meetings
+               for an entire user group. Once the  form  is  complete,  the
+               program searches for schedule  conflicts  and  displays  the
+
+                   AGENDA User's Guide                    Page 31
+
+
+
+
+
+
+
+
+
+
+               result.  You are  prompted  to  decide  whether  or  not  to
+               schedule anyway.  If you choose not  to  schedule  the  work
+               area  is  cleared.    If  you  choose  to  schedule  despite
+               conflicts, you are prompted to enter  the  meeting  location
+               and whether or not to send messages to the  attendees.    If
+               you choose to  send  messages,  you  are  next  prompted  to
+               complete a telephone message form as described in Chapter 3.
+               The message is delivered to each attendee.  The next  prompt
+               asks if you want the appointment added to your schedule.  If
+               not, the display returns to  the  planning  menu.    If  you
+               choose to  add  the  appointment  to  your  schedule  and  a
+               conflict  exists,  the  program  asks  for   permission   to
+               continue.  If you  continue,  the  program  prompts  you  as
+               follows:
+
+                   Is This a (T)entative or (F)irm Appointment ?
+
+               If the appointment is firm (cannot be changed), enter F.  If
+               the appointment is tentative, enter T.
+
+               The program then prompts you as follows:
+
+                   Allow Others to View This Appointment Information ? N
+
+               If the appointment information is confidential  and  you  do
+               not  want  others  to  read   the   information   for   that
+               appointment, type an N and press the Return  key.    If  the
+               information is not confidential, type  a  Y  and  press  the
+               Return key.
+
+
+               MODE 2:
+
+               Use the second method if you want the program to find a date
+               and time when all attendees are available.
+
+               Mode 2 is handled by the program in the same manner as  Mode
+               1, except for  the  planning  form.    You  must  enter  the
+               starting date and starting and ending  times.    The  VISTA-
+               AGENDANI system then searches for the first  available  date
+               that has  no  schedule  conflicts  with  all  attendees  and
+               displays the result.
+
+               You are next prompted to  enter  the  meeting  location  and
+               whether or not to send messages to the attendees.    If  you
+               choose to send messages, you are next prompted to complete a
+               telephone message form as  described  in  Chapter  3.    The
+               message is delivered to each attendee.  The next prompt asks
+               if you want the appointment added to your schedule.  If not,
+               the display returns to the planning menu.  If you choose  to
+               add the appointment to your schedule,  the  program  prompts
+               you as follows:
+
+                   Is This a (T)entative or (F)irm Appointment ? F
+
+                   AGENDA User's Guide                    Page 32
+
+
+
+
+
+
+
+
+
+
+               If the appointment is firm (cannot be changed), enter F.  If
+               the appointment is tentative, enter T.
+
+               The program then prompts you as follows:
+
+                   Allow Others to View This Appointment Information ?
+
+               If the appointment information is confidential  and  you  do
+               not  want  others  to  read   the   information   for   that
+               appointment,  enter  N.    If   the   information   is   not
+               confidential, enter Y.
+
+               Note that if you  wish  to  include  yourself,  the  meeting
+               scheduler, in the  list  of  attendees,  thus  allowing  for
+               scheduling conflict searches, you  must  explicitly  do  so.
+               This allows a person to schedule a meeting which that person
+               will not attend (such as a secretary might).
+
+
+               CONFIRMING A MEETING
+
+               To confirm that you plan to attend a  meeting  that  someone
+               else scheduled for you or review  the  confirmations  for  a
+               meeting that you scheduled, select the  cOnfirm  command  on
+               the command ring.  Use the Up Arrow or  Down  Arrow  key  to
+               move the cursor to the meeting.  Then press the  Return  key
+               to select that meeting.
+
+               If you are the user requesting the meeting,  a  synopsis  of
+               the meeting information is displayed with confirmation notes
+               as follows:
+
+               o Sch = scheduled
+
+               o No = not confirmed
+
+               o Yes = confirmed
+
+               Press the Return key to return to the planning menu.
+
+               If the meeting was scheduled by someone  else,  the  program
+               prompts whether you want to confirm this meeting.    If  you
+               answer Y, you confirm your attendance at the  meeting.    If
+               you answer N, you indicate to the original planner that  you
+               are not attending the meeting.
+
+
+               CANCELING A MEETING
+
+               To cancel a meeting that you  originally  scheduled,  select
+               the Cancel command on the command ring.  Use the Up Arrow or
+               Down Arrow key to position the cursor  to  the  meeting  you
+               want to cancel.  Then press the Return key  to  select  that
+               meeting.  The program displays the following prompt:
+
+                   AGENDA User's Guide                    Page 33
+
+
+
+
+
+
+
+
+
+
+
+                   Cancel This Meeting ?
+
+               If you answer yes, the program deletes that meeting for  all
+               attendees.    The  program  then  sends  a  message  to  the
+               attendees concerning the cancellation.  Once the message  is
+               completed, the program returns to the planning menu.
+
+
+               VIEWING ADDITIONAL MEETINGS
+
+               If you have more appointments than can fit  on  one  screen,
+               select the Next page command on the command ring to view the
+               subsequent screen.
+
+
+               EXITING THE MEETING PLANNER FUNCTION
+
+               To exit the meeting planner,  press  the  Quit  key  or  the
+               Escape key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   AGENDA User's Guide                    Page 34
+
+
+
+

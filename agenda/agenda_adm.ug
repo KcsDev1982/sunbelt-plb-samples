@@ -1,0 +1,317 @@
+
+
+
+
+
+
+
+                                                                     AGENDA
+
+                                                      ADMINISTRATOR'S GUIDE
+
+                                                 Version                3.0
+
+                                                 Last Revised   August 1991
+
+        
+
+                           Chapter 1.  INSTALLING AGENDA
+
+
+               INTRODUCTION
+
+               AGENDA is a desktop management system that  provides
+               a personal calendar, a telephone message  system,  telephone
+               directory, alarm function, notepad area, and meeting planner
+               for individuals and groups of office workers.
+
+               This document  contains  the  information  and  instructions
+               necessary  for  a   system's   administrator   to   install,
+               configure, and manage AGENDA.  There is  a  separate
+               document provided that guides the AGENDA user.
+
+         
+               INSTALLATION CONSIDERATIONS
+
+               System Profile
+
+               Decisions concerning the date,  time,  and  file  management
+               must   be   reflected   in   the   system   profile    named
+               agendasys.cfg.  This file is a standard text file which
+               you can view  and  edit  at  your  convenience.    It  is  a
+               self-documenting file with notes in the first few  lines  of
+               it that explain the different parameters.   
+               Take these  steps  to  ensure proper operation:
+
+               1. Decide the  format  for  the  time  displayed  by  
+                  AGENDA.  Time can be displayed in  either  standard  12
+                  hour format or 24 hour military units.   The  label  TIME
+                  FORMAT= in the agendasys.cfg file must be followed by  either
+                  "12 hour" or "24 hour".
+
+               2. Decide the format for the date and calendar displayed  by
+                  AGENDA.  The date  can  be  displayed  in  either
+                  American (mm/dd/yy), or European (dd MMM  yy)  units  and
+                  the calendar will start with  either  sunday  or  monday.
+                  The label DATE FORMAT= in  the  agendasys.cfg  file  must  be
+                  followed by either "American" or "European".
+
+               Generating AGENDA
+
+               The systems administrator should follow these steps to start
+               up the system and begin entering user  identities  into  the
+               program files.  
+
+               1. Run  the  installation  program,   agendagen.plc.  
+                  This establishes the  various  data  files
+                  that are operated on by the program.
+
+               2. Bring  up  AGENDA  using  the  agenda.plc program. 
+
+               3. You are prompted for an  identification  number.    Enter
+                  9999999999 (ten  9's,  the  initial  user  identification
+                  number).
+
+               4. Select the Users function from the top level  ring  menu.
+                  Then, select the Write command  and  add  your  name  and
+                  others along with the required information to the list of
+                  valid AGENDA users.    Refer  to  Chapter  2  for
+                  security password and instructions.
+
+               After you have added yourself and all  other  users  to  the
+               system, you can set them up  to  access  the  AGENDA
+               software and data files  and  they  can  begin  running  the
+               system.
+
+               User Profile
+
+               The system administrator should decide whether or  not  each
+               AGENDA user will  have  an  individual  user-profile
+               file to aid in bringing up the program.  The individual user
+               profile is an text file named  agendaid.txt which  you
+               can create and modify with any text file editor.
+
+               If AGENDA does not find a user profile file when  it
+               initializes, the system will prompt the user to enter a user
+               identification.
+
+               Creating a user profile enables the individual user to logon
+               in one of two alternative ways:
+
+               o  Logon directly to AGENDA without any interaction.
+                  This is accomplished by including in the user  profile  a
+                  line that has the user's number in it.
+
+               o  Logon as the "trusted agent"  for  up  to  ten  different
+                  AGENDA users.  As a trusted agent, the  user  has
+                  all the capabilities  of  the  individual  users.    This
+                  feature is implemented by  including  the  identification
+                  number of the five designated users in the  agendaid.txt
+                  file, each on a separate line.
+
+               In addition, if the word "HILITE" is included on a  line  by
+               itself starting in column  1  in  this  file,  the  Calendar
+               function of AGENDA will  display  in  boldface,  all
+               days in the current month that have  appointments  on  them.
+               If this line is missing from the profile or there is no user
+               profile present, the program defaults to showing all days in
+               the month in normal video.    In  this  case,  if  the  user
+               presses the F1 key while in the Calendar function, all  days
+               with  appointments  on  them  will  then  be  displayed   in
+               boldface.
+               
+                                 Chapter 2.  USER STATUS
+
+
+               When you select the Users function  from  the  command  ring
+               menu of the main AGENDA screen, the program displays
+               a  management/information  screen  concerning   all 
+               AGENDA users in the current group.   The  following  seven
+               activities may be selected from the command ring menu at the
+               bottom of the "Status of Users" screen:
+
+               o Searching for the name of a user
+
+               o Changing a user's in/out status
+
+               o Displaying additional user groups
+
+               o Adding new users
+
+               o Modifying information about the user
+
+               o Deleting a user
+
+               o Shutting down AGENDA
+
+               Information is displayed for the following categories:
+
+               o User name
+
+               o Telephone extension
+
+               o Group or department code
+
+               o Messages waiting
+
+               o Current status (in, out, or not available)
+
+               o Date of most recent status change
+
+               o Time of most recent status change
+
+               o Comments
+
+
+               A brief description  of  each  activity  on  the  ring  menu
+               follows.  The activity may be selected by  using  the  right
+               and left arrow keys or by selecting the  upper  case  letter
+               shown in  the  commands  in  (  )  below.    As  the  system
+               administrator you will be  particularly  interested  in  the
+               last four commands described in this section.
+
+               SEARCHING FOR A NAME (Search)
+
+               To search for a specific user name in AGENDA, select
+               the Search command from  the  command  ring.    The  program
+               prompts you to enter a name (up to 20 characters).  You  can
+               press the Return key instead of entering a name  to  display
+               all user names in  a  specific  group.    The  program  then
+               prompts you to enter a group code (up to five  characters).
+
+               If you do not specify a name or a  group  code,  information
+               about all users is displayed.  When the listing is complete,
+               the program returns to the users menu.
+
+
+               CHANGING A USER'S STATUS (sTatus)
+
+               To change the status of a user (In, Out, or Not  available),
+               select the sTatus command from the command ring.    You  can
+               then use the Down Arrow or  Up  Arrow  key  to  advance  the
+               cursor to the user name whose status  you  wish  to  modify.
+               Press the Return key to indicate modification.  You are then
+               prompted to select the status: In, Out,  or  Not  available.
+               Press the Return key again to register the new status.   The
+               program then prompts you to enter a comment.  To bypass  the
+               comment, press the Return key.  The status is then updated.
+
+               If you have chosen the wrong user name,  press  the  F5  key
+               anytime before the status  is  changed.    The  cursor  then
+               returns to the beginning of the current line and you can use
+               the Up Arrow or Down Arrow key to select a different name.
+
+
+               DISPLAYING THE NEXT PAGE (Next page)
+
+               To view subsequent  screen  displays  of  user  status  when
+               multiple  screens  are  available,  request  the  Next  page
+               command on the command ring.  The display  advances  to  the
+               next screen of user status information.   If  AGENDA
+               displays all users on only one screen and  you  select  Next
+               page, the same screen is displayed.
+
+
+               ADDING NEW USERS (Write)
+
+               To add new names to AGENDA, select the Write command
+               on the command ring.  The program prompts you to  enter  the
+               security password.   Once  the  password  is  accepted,  the
+               cursor  is  positioned  on  the  first  blank  line  of  the
+               information display where you can enter the new  information
+               in the proper columns.  Press  the  Return  key  after  each
+               column entry to advance to the next column.  When the entire
+               line is complete, press the Return key to register  the  new
+               user in the AGENDA  system.    The  columns  require
+               information concerning:
+
+               o User name
+
+               o Telephone extension number
+
+               o Group
+
+               o Identification number (this number is  not  shown  in  the
+                 information display, but is registered in the data file)
+
+
+
+               MODIFYING USER STATUS INFORMATION (Modify)
+
+               To modify any portion of the user  information,  select  the
+               Modify command on the command ring.  The program prompts you
+               to enter the  security  password.    Once  the  password  is
+               accepted, the cursor is positioned on the first user line of
+               the information display.  Use the Down Arrow or Up Arrow key
+               to advance the cursor to the line you wish to change.   Then
+               press the Return key.  You can then  modify  any  column  on
+               that line.  The columns  categories  that  can  be  modified
+               include:
+
+               o User name
+
+               o Telephone extension number
+
+               o Group
+
+               o Identification number (this number is  not  shown  in  the
+                 information display, but is registered in the data file)
+
+               To bypass any column, press the Return key.
+
+
+               DELETING A USER STATUS ENTRY (Delete)
+
+               To delete a user status entry  from  AGENDA,  select
+               the Delete command on the command ring.  The program prompts
+               you to enter the security password.  Once  the  password  is
+               accepted, the cursor is positioned on the first line of  the
+               information display.  Use the Down Arrow or Up Arrow key  to
+               select the name line you wish to delete.    Then  press  the
+               Return key.  The program prompts you to review the entry and
+               approve the deletion.  Press the  Return  key  again.    The
+               entire line of information is deleted from AGENDA.
+
+
+               SHUTTING DOWN AGENDA  (sHutdown)
+
+               To stop the AGENDA system in an orderly fashion  and
+               not allow access to its files, select the  sHutdown  command
+               on the command ring.  The program prompts you to  enter  the
+               security password.   Once  the  password  is  accepted,  the
+               program prompts you the enter a date  and  time  for  future
+               system restoration.  Then the program prompts you to enter a
+               note to inform others of the reason for the  shutdown.    An
+               additional  prompt  is  displayed  allowing  you  to  select
+               automatic system restoration at the time and date previously
+               specified.
+
+               When the shutdown occurs, the system shutdown monitor screen
+               is displayed on the  screen  of  any  active  AGENDA
+               user.  The shutdown monitor contains  a  command  ring  that
+               allows you to exit AGENDA and return to the Resource
+               Management System to perform other  RMS  applications  while
+               awaiting the restoration of  AGENDA  or  to  restore
+               AGENDA.    If you do not select either  option,  the
+               logon screen will return when AGENDA is restored.
+
+               The  system  shutdown   monitor   displays   the   following
+               information:
+
+               o The date and time AGENDA was stopped
+
+               o The user who requested shutdown
+
+               o The approximate date and time restoration is to occur
+
+
+               SECURITY PASSWORD
+
+               Certain functions that an administrator performs require the
+               entry of a password in order  to  proceed.    AGENDA
+               will prompt you for it when  you  try  to  modify  user-base
+               information or shut down the system.  The  password  is  the
+               same for all functions.  The password is "AGENDA".    As  an
+               administrator you will want to protect this information  and
+               insure that it is known only by  those  with  the  need  and
+               knowledge to perform system administration changes.

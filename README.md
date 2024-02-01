@@ -3,6 +3,7 @@
 Sample code and projects for the Programming Language for Business (PL/B).
 
 ### Sample Directory Layout
+* agenda       - Sample classic PL/B AGENDA programs
 * class_sample - Sample program using PLBOBJECT and CLASSMODULE
 * conf2016     - Sunbelt 2016 conference presentations and samples
 * conf2019     - Sunbelt 2019 conference presentations and samples

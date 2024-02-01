@@ -1,0 +1,1113 @@
++..............................................................................
+.                                   A G E N D A 
+.                           The Desk Management System
+.                                  Version 3.0
+.                             System Help Messages
+.                     
+.                            
+...............................................................................
+*00002002220279HELP
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    The AGENDA Desk Management System allows you to set
+                    up, maintain, and use a calendar, a telephone message
+                    system, and a meeting scheduler to help manage your
+                    office and time more efficiently.
+
+                    This is an interactive program that allows you to
+                    view and modify information by selecting commands from
+                    a command ring at the bottom of the screen.  Within
+                    some command functions, you are prompted to enter
+                    information directly onto the screen.
+
+                    In general, the following key movements apply:
+
+                    - The Up, Down, Right and Left Arrow (cursor) keys
+                      allow you to move the cursor.  Refer to the help
+                      display for the appropriate command for other cursor
+                      activities.
+
+
+
+                    - To view a help screen for a particular command,
+                      press the F5 key when the cursor is positioned on
+                      the command.
+
+                    - To exit the program at any time, press the F3 key.
+
+                    - Pressing the Quit key or the Escape key
+                      quits the current function and returns to the
+                      previous function.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01012001220180Calendar
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Calendar command.  To
+                    see a general help message for AGENDA, highlight the
+                    Help command in the command ring on your screen and
+                    press the Return key.  To highlight the Help command,
+                    press the Right Arrow key, the Space Bar, or the H
+                    key.
+ 
+Calendar command    Use the Calendar command to manage your personal
+                    agenda.  Appointments may be added, changed, or
+                    removed.  In addition, you can write daily notes, view
+                    other user's appointments, print your calendar, and
+                    search through your appointments for specified
+                    characters.  For more specific information on these
+                    functions, press the Return key to select the Calendar
+                    command, position to the function desired, and then
+                    press the Help (F5) key.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01022001220180Messages
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Messages command.  To
+                    see a general help message for AGENDA, highlight the
+                    Help command in the command ring on your screen and
+                    press the Return key.  To highlight the Help command,
+                    press the Right Arrow key, the Space Bar, or the H
+                    key.
+
+ Messages command   Use the Messages command to manage your telephone
+                    messages.  You can review, save, forward, remove, or
+                    print messages.  In addition, you can view other
+                    users' messages.  Three types of messages are
+                    maintained; New, Saved, and Deleted.  When a message
+                    is created, it is placed in the New drawer.  Once
+                    reviewed, you can place it in either the Saved drawer
+                    or the Deleted drawer.  Saved messages are kept
+                    permanently.  Deleted messages are purged periodically.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01032001220180Users
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Users command.  To see
+                    a general help message for AGENDA, highlight the Help
+                    command in the command ring on your screen and press
+                    the Return key.  To highlight the Help command, press
+                    the Right Arrow key, the Space Bar, or the H key.
+ 
+ 
+Users command       Use the Users command to view the current status of
+                    system users.  A receptionist might uses this
+                    screen.  The screen displays the user's status of In,
+                    Out, or Not Available, the time and date the status
+                    was set, and a note entered by the actual user.  You
+                    can view individual users or groups of users.  This
+                    command also allows you to add users to AGENDA, change
+                    user status, or delete users from AGENDA.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01042001220180Directory
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Directory command.  To
+                    see a general help message for AGENDA, highlight the
+                    Help command in the command ring on your screen and
+                    press the Return key.  To highlight the Help command,
+                    press the Right Arrow key, the Space Bar, or the H
+                    key.
+ 
+
+Directory command   Use the Directory command to maintain a name and
+                    address list.  Entries into the list may be either
+                    public or private.  You can create, modify, print, and
+                    search directory entries.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01052001220180Notes
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Notes command.  To see
+                    a general help message for AGENDA, highlight the Help
+                    command in the command ring on your screen and press
+                    the Return key.  To highlight the Help command, press
+                    the Right Arrow key, the Space Bar, or the H key.
+ 
+Notes command       Use the Notes command to maintain your own notes.  The
+                    notepad area is a screen display/entry area to be used
+                    any way you wish.  The notes are time and date stamped
+                    at the time of entry.  You can modify, remove, or
+                    print existing notes.  A search function allows you to
+                    find the location of notes containing a user-specified
+                    key.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01062001220180Alarm
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Alarms command.  To see
+                    a general help message for AGENDA, highlight the Help
+                    command in the command ring on your screen and press
+                    the Return key.  To highlight the Help command, press
+                    the Right Arrow key, the Space Bar, or the H key.
+ 
+Alarms command      Use the Alarms command to add, modify, or delete your
+                    own alarms. As you return to the master menu or are
+                    idle at a command line for sixty seconds, AGENDA
+                    checks to see if it is time for an alarm.  If not,
+                    AGENDA returns to the command menu.  Otherwise, a
+                    message is displayed and the workstation beeps every
+                    five seconds to indicate an alarm until you respond.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01072001220180Plan
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Plan command.  To see a
+                    general help message for AGENDA, highlight the Help
+                    command in the command ring on your screen and press
+                    the Return key.  To highlight the Help command, press
+                    the Right Arrow key, the Space Bar, or the H key.
+ 
+Plan command        Use the Plan command to schedule, cancel, or confirm
+                    meetings.  Two methods of scheduling are supported.
+                    The first method is designed for the user who has a
+                    specific date and time in mind and wishes to check
+                    attendee availability.  The second method directs
+                    AGENDA to locate the first date and time all users
+                    specified will be available.  In addition, you can for
+                    confirm and cancel meetings and check confirmations of
+                    attendance.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01082001220180Logon
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Logon command.  To see
+                    a general help message for AGENDA, highlight the Help
+                    command in the command ring on your screen and press
+                    the Return key.  To highlight the Help command, press
+                    the Right Arrow key, the Space Bar, or the H key.
+ 
+ 
+Logon command       Use to Logon command to change the currently logged on
+                    user.  After selecting the command, the initial sign-on
+                    is displayed and you are allowed to select a new
+                    identification.
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*01092001220180Exit
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    This help message explains the Logon command.  To see
+                    a general help message for AGENDA, highlight the Help
+                    command in the command ring on your screen and press
+                    the Return key.  To highlight the Help command, press
+                    the Right Arrow key, the Space Bar, or the H key.
+ 
+ 
+Exit command        Use to Exit command to leave VISTA-AGENDA.  After
+                    selecting the command you will be presented with a
+                    prompt which will allow you to change your status as
+                    you exit if you wish.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*02011803220279daTe
+
+daTe command        Use the daTe command to change the currently selected
+                    date.  Upon initial entry into the calendar module, the
+                    selected date is set to the current date.  To change
+                    the date, select this function by pressing the Return
+                    key, then use the cursor keys.  Positioning the cursor
+                    beyond the last day of the month causes the next month
+                    to be displayed.  Also, pressing the F5 key allows you
+                    to change months rapidly.  Pressing the F5 key again
+                    allows you to enter a new year.  Once positioned,
+                    pressing the Return key returns to the command ring.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+ 
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week                                                               8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*02021803220279Write
+
+Write command       Use the Write command to write appointments or notes
+                    into your calendar on the currently selected date.
+                    Upon entering this function, a starting time is
+                    requested.  Enter a time or signify a note by pressing
+                    the Return key.  Recurring and confidential
+                    appointments and notes are supported.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+                  
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*02031803220279Modify
+
+Modify command      Use the Modify command to change the time of day for
+                    an existing appointment.  Upon selecting this function,
+                    you are allowed to position to the correct appointment
+                    or note.  Once positioned, press the Return key and make
+                    the appropriate changes.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*02041803220279Delete
+
+Delete command      Use the Delete command to remove an appointment or
+                    note from the selected date.  Upon entering the
+                    function, you may position to the correct appointment
+                    by using the cursor keys.  Once positioned, pressing
+                    the Return key results in a verification prompt.  If
+                    you respond "Y", the note or appointment will be
+                    deleted.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+
+*02051803220279Note
+
+Note Command        Use the Note command to add a note or line after an
+                    existing appointment or note.  Upon entering the
+                    function, you can position the cursor to the correct
+                    record using the cursor keys.  Once positioned,
+                    pressing the Return key allows you to enter the new
+                    information.  Note that a starting or ending time is
+                    not be requested.  The Write function must be used to
+                    write appointments into the calendar.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*02061803220279Print
+
+Print command       Use the Print command to produce a hard copy of one or
+                    more weeks of your appointments.  After selecting the
+                    function, you are asked for a starting date of the
+                    first week in the range of weeks you wish to print.  A
+                    null entry begins the printing at the first day of the
+                    selected week.  Next, the date of the last day in the
+                    ending week of the range of weeks you are printing is
+                    requested.  A null entry terminates the printing at the
+                    last day of the week whose starting date was just
+                    entered.  The requested dates are then printed.
+                    Pressing the Command key stops the printing and returns
+                    the command line.  If a printer is not available, you
+                    can spool the data to a user-specified spool file.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*02071803220279Inquire
+
+Inquire command     Use the Inquire command to view the calendar of other
+                    system users.  After selecting the function, you can
+                    inquire about another user.  Once selected, the
+                    requested name is displayed highlighted to signify
+                    that inquiring is active.  You can then select a
+                    different date if desired.  Some functions are not
+                    available while inquiry is active: write, delete, and
+                    clean up.  To exit the inquiry mode, select the
+                    Inquiry function and respond "Y" to the "Finished
+                    Inquiring ?" prompt.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*02081803220279Clean up
+
+Clean up command    Use the Clean up command to quickly delete old
+                    appointments.  Upon selecting the function, a starting
+                    date is requested.  A null entry allows clean up to
+                    begin at the first record.  The appointments are then
+                    displayed sequentially, and any appointments can then
+                    be removed.  Pressing the Command key returns the
+                    command line.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+
+*02091803220279Search
+
+Search command      Use the Search command to locate appointments
+                    containing specified key words.  Upon selecting the
+                    function, you are requested for the search key.  Once
+                    the key is entered, all the current user's appointment
+                    records containing the search key are displayed.
+                    Pressing the Command key returns the command line.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+                                 F5 - Backup to the Previous Field
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+
+*03012001220180Review
+Review command      Use the Review command to read your messages.  Upon
+                    selecting the Review command, you can select the type
+                    of message you wish to read.  Three types of messages
+                    are kept by the system: New, Saved, and Deleted.  New
+                    messages are messages which require your attention.
+                    You either have not seen the message yet, or you
+                    haven't taken action on the message.  Saved messages
+                    are those you have received and decided to save.
+                    Deleted messages are those you have received and
+                    decided not to keep.  Deleted messages are flagged as
+                    deleted and removed during the periodic file
+                    reformatting and indexing process.  Upon displaying a
+                    message, several commands are available to the user:
+                    Save, Delete, Forward, add a Remark, Print, read the
+                    Next message, and read the previous message.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*03022001220180Write
+
+Write command       Use the Write command to enter a telephone message.
+                    Upon selecting the function, you are requested to
+                    specify the recipient's name.  Then you are prompted
+                    for information about the date and time, the caller,
+                    and any messages.  Once entered, the message becomes
+                    the property of the recipient.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*03032001220180Broadcast
+ 
+Broadcast command   Use the Broadcast command to send a single message to
+                    all system users or group system users.  After
+                    specifying the users, the Broadcast function continues
+                    just as the Write function, allowing messages flags to
+                    be set and text to be entered.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*03042001220180Inquire
+ 
+Inquire command     Use the Inquire command to temporarily change your
+                    user identification.  Once changed, you may review
+                    messages and perform a limited number of of functions
+                    as if you were actually the user.  To exit the inquiry
+                    function, reselect the inquiry function and respond
+                    "Y" when asked if finished.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*04012001220180New
+ 
+New messages        New Messages are ones which you have received but not
+                    taken action on.  AGENDA will remind you of these
+                    messages until you take action to Delete, Save, or
+                    Forward.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*04022001220180Saved
+ 
+Saved messages      Saved messages are those you received and decided to
+                    retain for future reference.  The messages are kept
+                    indefinitely, but you are not reminded of their
+                    existence.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*04032001220180Deleted
+ 
+Deleted messages    Deleted messages are those you received and decided
+                    not to retain.  The messages may be restored by Saving
+                    them, but during the reformatting and indexing process
+                    they are permanently removed.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*05012001220180Next
+ 
+Next command        Use the Next command to view the succeeding message.
+                    If there are no more messages of the same type, the
+                    program returns to the previous menu.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*05022001220180Back
+ 
+Back command        Use the Back command to view the preceding message.
+                    If there are no more messages of the same type, the
+                    program returns to the previous menu.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*05032001220180Save
+ 
+Save command        Use the Save command to retain your telephone messages
+                    indefinitely.  AGENDA will remind you of New messages,
+                    but not Saved messages.  You can also use the Save
+                    command to restore Deleted messages.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*05042001220180Delete
+ 
+Delete command      Use the Delete command to remove your telephone
+                    messages.  Deleted messages are retained until the
+                    system files are reformatted and indexed.  Deleted
+                    messages can therefore be Saved and Reviewed for a
+                    specific amount of time.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*05052001220180Print
+ 
+Print command       Use the Print command to print or spool the currently
+                    displayed message.  If a printer is available, it is
+                    used.  Otherwise, you are requested for a spool file
+                    name.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*05062001220180Forward
+ 
+Forward command     Use the Forward command to send the currently displayed
+                    message to one or multiple other users.  Once forwarded,
+                    the message is placed in each of the recepients' New
+                    message file.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*05072001220180Remark
+ 
+Remark command      Use the Remark command to add or change the remark
+                    line associated with a message.  The message text
+                    consists of three lines of up to fifty characters each.
+                    The fourth line is reserved as a remark line for the
+                    recepient.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*05082001220180fiLe
+
+fiLe command        Use the fiLe command to add a person who has sent you
+                    a message, to your Telephone Directory. This command
+                    will send you to the Directory/Write screen and will
+                    place the name and phone number in the appropriate
+                    fields. After completing and saving the entry, you
+                    will be returned to the Message screen. fiLe does
+                    not delete the message currently selected.
+*06011803210279Search
+ 
+Search command      Use the Search Users command to look up system users
+                    by name or by group designation.  Upon entering the
+                    name or group desired the first page of users is
+                    displayed.  The Next page command allows you to view
+                    subsequent pages.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*06021803210279Status
+ 
+Status command      Use the Status command to change the status of various
+                    users.  Upon selecting this function, select the user
+                    to be changed by using the Up Arrow or Down Arrow
+                    keys.  Once positioned, press the Return Key.  You may
+                    then change the user's status to In, Out, or Not
+                    available.  Next, you are allowed to enter a brief
+                    comment.  The user status is then changed, and you are
+                    allowed to select another user.  Pressing the Command
+                    key returns the system menu.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*06031803210279Next page
+ 
+Next page command   Use the Next page command to view users not currently
+                    on the screen.  If you request the Next page when the
+                    last page of users is displayed, the first page is
+                    redisplayed.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*06041803210279Write
+ 
+Write command       Use the Write command to add users to the AGENDA
+                    system.  This function is password protected (
+                    restricted to the appropriate personnel).  Upon
+                    selection of the function and entry of the appropriate
+                    password, the new user's name, telephone extension,
+                    group, and identification number are requested.  Once
+                    entered, the specified user becomes a system user.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*06051803210279Modify
+ 
+Modify command      Use the Modify command to alter a user's name,
+                    telephone extension, group, or identification number.
+                    Upon entering the function, position the pointer by
+                    using the cursor keys.  Once positioned, press Return
+                    to allow changes.  This function is password
+                    protected.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*06061803210279Delete
+ 
+Delete command      Use the Delete command to remove a user from the
+                    AGENDA system.  Upon entering the correct password,
+                    position the cursor to the correct user, press the
+                    Return key, and respond "Y" to the verification
+                    prompt.  All system information regarding the user is
+                    permanently removed.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*06071803210279sHutdown
+ 
+Shutdown command    Use the Shutdown command to halt AGENDA.  Upon entering
+                    the function, a password is requested.  Once the
+                    password is entered and you verify the function, the
+                    system forces all users off AGENDA within 60 seconds or
+                    at the completion of their current activity.  USERS
+                    MUST BE IN AN AGENDA RING MENU SOMEWHERE FOR THIS
+                    COMMAND TO WORK.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*07011803210279Write
+ 
+Write command       Use the Write command to add both private and public
+                    entries into the system directory.  Private entries
+                    are those available to only you.  Public entries are
+                    available to all system users.  Use the note section
+                    to specify information or key words which may later
+                    aid in the Search command.  Pressing the Command key
+                    returns the command line.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*07021803210279Modify
+ 
+Modify command      Use the Modify command to alter existing directory
+                    entries.  This function begins by allowing you to
+                    locate the correct entry by specifying a name key
+                    and/or a note key.  Once the correct entry is located,
+                    you can make the necessary changes.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*07031803210279Delete
+ 
+Delete command      Use the Delete command to remove existing directory
+                    entries.  This function begins by allowing you to
+                    locate the correct entry by specifying a name key
+                    and/or a note key.  Once the correct entry is located,
+                    you confirm the deletion and the entry is removed.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*07041803210279Search
+ 
+Search command      Use the Search command to locate directory entries.
+                    Upon selecting the command, you can enter a name field
+                    key.  This key is a succession of letters located
+                    anywhere within the name.  Next, you can enter the
+                    note key.  Again, the search is free-float and may be
+                    used in combination with the name key.  Directory
+                    entries are then displayed. To enter new keys, press
+                    the F5 key.  To return to the command menu, press the
+                    Command key.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*07051803210279Print
+ 
+Print command       Use the Print command to output a directory listing to
+                    the system printer or a print file.  Private only or
+                    private and public entries may be printed.  Pressing
+                    the Command key returns the command menu.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*08011803210279Next page
+ 
+Next page command   Use the Next page command to view the succeeding
+                    screen of notes.  If you are at the end of your notes,
+                    the first screen of notes is displayed.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*08021803210279Write
+ 
+Write command       Use the Write command to make notes.  As each note is
+                    entered, it is time and date stamped.  A note can
+                    contain as up to 99 lines.  Pressing the F5 key allows
+                    you to enter another note.  Pressing the Command key
+                    returns the command line.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Enter another note.
+*08031803210279Modify
+ 
+Modify command      The Modify command allows you to change individual
+                    lines of a note on the screen.  Begin by locating the
+                    screen containing the note by using the Next page
+                    command.  Once the correct screen is located, use the
+                    Modify command to position to the correct line.  Use
+                    the Up Arrow and Down Arrow keys to move the pointer,
+                    then press the Return Key.  You can then type over the
+                    line.  Press the Command key to return to the previous
+                    menu.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*08041803210279Delete
+ 
+Delete command      Use the Delete command to remove notes.  Begin by
+                    locating the screen containing the note by using the
+                    Next page command.  Once the correct screen is
+                    located, use the Delete command to position to the
+                    correct note.  Use the Up Arrow and Down Arrow keys to
+                    move the pointer, then press the Return key.  You can
+                    then remove the note by responding "Y" to the prompt.
+                    Pressing the Command key returns the previous menu.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*08051803210279Search
+ 
+Search command      Use the Search command to locate notes based on a
+                    user-specified key.  The key can exist anywhere within
+                    the entire note.  Once the key is specified, all notes
+                    containing the key are displayed with the key
+                    highlighted.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*08061803210279Print
+ 
+Print command       Use the Print command to get a hard copy of your
+                    notes.  Upon entry into the function, you can print
+                    specific notes or all notes.  To print specific notes,
+                    the first line of a note to be printed must be on the
+                    current screen.  You can then position to the note and
+                    press the Return key.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*09012001220180Write
+ 
+Write command       Use the Write command to add your personal alarms.
+                    Upon entry in the function, the date and time are
+                    requested.  The time entered must be later than the
+                    current time.  Once entered, you can enter a short
+                    note in reference to the alarm.  The alarm is then
+                    set.  The alarm is checked on each return to the
+                    system menu and every 60 seconds the user is idle at
+                    any menu.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*09022001220180Modify
+ 
+Modify command      Use the Modify command to alter the date, time, or
+                    information of an alarm.  Upon selecting the function,
+                    the you can position to the correct alarm by using the
+                    Up or Down Arrow keys.  To select an alarm for change,
+                    press the Return key.  You can then enter the correct
+                    information.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*09032001220180Delete
+ 
+Delete command      Use the Delete command to clear alarms.  Upon
+                    selecting this function, you can position the cursor
+                    to the correct alarm and press the Return key.  After
+                    you confirm the deletion, the alarm is cleared.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*09042001220180Next page
+ 
+Next page command   Use the Next page command to view succeeding pages of
+                    alarms.  Once the last page of alarms has been shown,
+                    the file is rewound and the first page is shown again.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*10011803220279Schedule
+ 
+Schedule command    Use the Schedule command to plan your meetings.  Two
+                    methods of scheduling are supported.
+
+                    1. The first method is designed for the user who has
+                       a specific date and time in mind and wishes to
+                       check attendee availability.
+
+                    2. The second method directs AGENDA to locate the first
+                       date and time all users specified will be available.
+
+                    In addition, you can for confirm and cancel meetings
+                    and check confirmations of attendance.  Once a date and
+                    time are located, you can schedule the meeting and/or
+                    send a message to all attendees.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*10021803220279cOnfirm
+ 
+cOnfirm             This command acts differently depending on whether
+                    you are the scheduler or not.
+
+                    o  If you are NOT the meeting scheduler, then you can
+                       use the cOnfirm command to acknowledge your planned
+                       attendance at a meeting.  Select the meeting you
+                       wish to confirm by using the cursor keys.
+ 
+                    o  If you ARE the meeting scheduler, then you can use
+                       the cOnfirm command to display a list of meeting
+                       attendees along with their current confirmation
+                       status.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*10031803220279Cancel
+ 
+Cancel command      Use the Cancel command to cancel your meetings.  Upon
+                    selection of this function, you can position the
+                    cursor to the meeting to be canceled by using the Up
+                    or Down Arrow keys.  You must be the original
+                    scheduler to cancel a meeting.  After verification,
+                    the meeting is canceled and a message is sent to all
+                    attendees.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*10041803220279Next page
+ 
+Next page command   Use the Next page command to view succeeding pages of
+                    meetings.  After displaying the final page of
+                    meetings, the file is rewound and the first page is
+                    redisplayed.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*11011803220279Next
+ 
+Next command        Use the Next command to display the next succeeding
+                    appointment.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*11021803220279Back
+ 
+Back command        Use the Back command to display the preceding
+                    appointment.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*11031803220279Delete
+ 
+Delete command      Use the Delete command to remove the appointment shown
+                    on the bottom line.  Once deleted, the next succeeding
+                    appointment is displayed.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*12011803220279daTe
+
+daTe command        Use the daTe command to change the currently selected
+                    date.  Upon initial entry into the calendar module, the
+                    selected date is set to the current date.  To change
+                    the date, select this function by pressing the Return
+                    key, then use the cursor keys.  Positioning the cursor
+                    beyond the last day of the month causes the next month
+                    to be displayed.  Also, pressing the F5 key allows you
+                    to change months rapidly.  Pressing the F5 key again
+                    allows you to enter a new year.  Once positioned,
+                    pressing the Return key returns to the command ring.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+ 
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*12021803220279Print
+
+Print command       Use the Print command to produce a hard copy of one or
+                    more weeks of your appointments.  After selecting the
+                    function, you are asked for a starting date of the
+                    first week in the range of weeks you wish to print.  A
+                    null entry begins the printing at the first day of the
+                    selected week.  Next, the date of the last day in the
+                    ending week of the range of weeks you are printing is
+                    requested.  A null entry terminates the printing at the
+                    last day of the week whose starting date was just
+                    entered.  The requested dates are then printed.
+                    Pressing the Command key stops the printing and returns
+                    the command line.  If a printer is not available, you
+                    can spool the data to a user-specified spool file.
+ 
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*12031803220279Search
+
+Search command      Use the Search command to locate appointments
+                    containing specified key words.  Upon selecting the
+                    function, you are requested for the search key.  Once
+                    the key is entered, all the current user's appointment
+                    records containing the search key are displayed.
+                    Pressing the Command key returns the command line.
+ 
+Function Key Definitions:        F1 - Reconstuct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*12041803220279Exit inquire
+
+Exit inquire command    Use the Exit inquire command to return to your
+                        calendar after you are finished inquiring on
+                        another user's calendar. Upon selection you are
+                        prompted for a confirmation and then are returned
+                        to your original calendar.
+
+Function Key Definitions:        F1 - Reconstruct Current Day's Graph.  Also
+                                      highlight days of month with
+                                      appointments if HILITE is not in
+                                      AGENDAID file.
+                                 F3 - Exit Program
+
+Cursor Key Definitions:         1 - Position to the Previous Day
+                                2 - Scroll Appointments Up
+                                3 - Position to the Next Day
+                                4 - Position to the Previous Menu Item
+                                5 - Express Functions (See Below)
+                                6 - Position to the Next Menu Item
+                                7 - Position to the Previous Week
+                                8 - Scroll Appointments Down
+                                9 - Position to the Following Week
+ 
+Express Cursor Key Definitions: 4 - Position Graph Left One Stop
+                                6 - Position Graph Right One Stop
+                                7 - Position to the Previous Month
+                                9 - Position to the Next Month
+*13012001220180Review
+Review command      Use the Review command to read the users messages.
+                    Upon selecting the Review command, you can select the
+                    type of message you wish to read.  Three types of
+                    messages are kept by the system: New, Saved, and Deleted.
+                    New messages are messages which require the users
+                    attention. They either have not seen the message yet, or
+                    they haven't taken action on the message.  Saved
+                    messages are those they have received and decided to
+                    save. Deleted messages are those they have received and
+                    decided not to keep.  Deleted messages are flagged as
+                    deleted and removed during the periodic file
+                    reformatting and indexing process.  Upon displaying a
+                    message, several commands are available to the user:
+                    Save, Delete, Forward, add a Remark, Print, read the
+                    Next message, and read the previous message.
+ 
+Function Key Definitions:    F3 - Exit Program
+                             F5 - Backup to the Previous Field
+*13022001220180Exit inquire
+Exit inquire Command      Use the Exit inquire Command to return to your
+                          message base after you have finished inquiring
+                          on another user's message base. Upon selection
+                          you are prompted for confirmation and then returned
+                          to your message base.
+
+Function Key Definitions:     F3   - Exit Program
+                            <Quit> - Abort Exit inquire

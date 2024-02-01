@@ -1,0 +1,64 @@
+
+
+                     AGENDA 3.0 QUICK REFERENCE GUIDE
+   ****************************************************************************
+
+   GENERAL
+
+   F3            Exits  AGENDA.  Change  status  to  in,  out,  or  not
+                 available before exit.
+
+   F5            Help from ring menus. Field backup when entering data  into  a
+                 screen.
+
+   Quit Key  or  When you are in a ring menu, takes you  back  to  the previous
+   Escape Key    screen.
+
+   CALENDAR SCREEN
+
+   F1            Redraws the week-at-a-glance graph.
+
+                 If the parameter for "highlighting  days  of  the  month  with
+                 appointments" is turned off in your AGENDAID file,  F1  causes
+                 highlighting to take place if your workstation allows it.
+
+   Cursor Movement Keys
+
+   Bottom Left Corner            Display appointments for the previous day.
+
+   Bottom Right Corner           Display appointments for the next day.
+
+   Top Left Corner               Display appointments for the previous week.
+
+   Top Right Corner              Display appointments for the next week.
+
+   Express/Top Left Corner       Display appointments for the previous month.
+
+   Express/Top Right Corner      Display appointments for the next month.
+
+   Express/Right or Left Arrow   Change week-at-a-glance starting time.
+
+   CURSOR KEY SCHEMATIC FOR THE CALENDAR SCREEN
+
+                         +---------+---------+---------+
+                         | Prev wk |    ^    | Next wk |
+                         | Exp: mo |    |    | Exp: mo |
+                         +---------+---------+---------+
+                         |  <--    | Express |   -->   |
+                         +---------+---------+---------+
+                         |         |    |    |         |
+                         | Prev da |    v    | Next da |
+                         +---------+---------+---------+
+
+   daTe Command
+
+   F5            Moves the cursor to the display of the months. Pressing F5
+                 again takes you to the year display.
+
+   MESSAGES SCREEN - Add / Broadcast Commands
+
+   Express       In the Telephone Message Pad, highlights and de-highlights the
+                 standard message boxes.
+
+
+
