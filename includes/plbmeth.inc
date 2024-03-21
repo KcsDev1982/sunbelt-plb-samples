@@ -7,7 +7,7 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 *==============================================================================
 . PLB METHOD support definitions
 .
-. Last Revision Date:  02 Oct 2023
+. Last Revision Date:  04 Mar 2024
 .
 . Revision History:
 .
@@ -143,6 +143,7 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .:: 		method Options.						 :10.5B
 .:: 02 Oct 23 - Added the MODULE object.                                 :10.6
 .::             Updated methods for the 10.6 release.
+.:: 04 Mar 24 - Updated for the 10.6A release.				 :10.6A
 .::
          %ENDIF                                                          :8.3A
 *------------------------------------------------------------------------------
@@ -2039,6 +2040,7 @@ $FTP_DEBUG_FILE_CLOSE    EQU 4
 . 
 $FTP_LIST_ALL_INFO       EQU 0
 $FTP_LIST_NAMES_ONLY     EQU 1
+$FTP_LIST_MLSD           EQU 2                                           10.6A
 .
 *------------------------------------------------------------------------------
 .   GROUPBOX                                                                
@@ -3779,6 +3781,10 @@ $ACTIONPASTE       Integer 4,"5"
 .                                       *Options={dnumnvar}   Optional   
 .   GetChildId      GIVING {svar} USING *Options={dnumnvar}   Optional	  9.8
 .   GetDir          GIVING {svar} USING *Type={dnumnvar}
+.   GetFileTimes    GIVING {runtime} USING *FileName={svarslit}:          10.6A
+.                                       *CreateTime={datetime}: Optional
+.                                       *AccessTime={datetime}: Optional
+.                                       *WriteTime={datetime}   Optional
 .   GetKnownPath    GIVING {svar} USING *Type={dnumnvar}                  10.5
 .   HttpResponse    GIVING {nvar} USING *HttpCode={dnumnvar}:             9.9A
 .                                       *MimeType={svarslit}: Optional
@@ -3804,6 +3810,10 @@ $ACTIONPASTE       Integer 4,"5"
 .                                       *Position={dnumnvar}:    Optional
 .                                       *Transition={svarslit}:  Optional
 .                                       *Options={dnumnvar}      Optional
+.   SetFileTimes    GIVING {nvar} USING *FileName={svarslit}:             10.6A
+.                                       *CreateTime={datetime}:  Optional
+.                                       *AccessTime={datetime}:  Optional
+.                                       *WriteTime={datetime}    Optional
 .   SetWebTheme     GIVING {nvar} USING *Theme={dnumnvar}:       Optional 10.6
 .                                       *Context={dnumnvar}:     Optional
 .                                       *Options={dnumnvar}      Optional
