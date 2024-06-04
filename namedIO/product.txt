@@ -1,0 +1,61 @@
+  1Chai                              18.0000Soft drinks, coffees, teas, beer, and ale                  5.65
+  2Chang                             19.0000Soft drinks, coffees, teas, beer, and ale                  6.15
+  4Chef Anton s Cajun Seasoning      22.0000Sweet and savory sauces, relishes, spreads, and seasonings12.80
+  7Uncle Bob s Organic Dried Pears   30.0000Dried fruit and bean curd                                  3.85
+  8Northwoods Cranberry Sauce        40.0000Sweet and savory sauces, relishes, spreads, and seasonings 2.15
+ 10Ikura                             31.0000Seaweed and fish                                          18.90
+ 11Queso Cabrales                    21.0000Cheeses                                                    4.80
+ 12Queso Manchego La Pastora         38.0000Cheeses                                                    5.20
+ 13Konbu                              6.0000Seaweed and fish                                           8.40
+ 14Tofu                              23.2500Dried fruit and bean curd                                  6.85
+ 15Genen Shouyu                      15.5000Sweet and savory sauces, relishes, spreads, and seasonings13.05
+ 16Pavlova                           17.4500Desserts, candies, sweetbreads                             3.70
+ 18Carnarvon Tigers                  62.5000Seaweed and fish                                           6.00
+ 19Teatime Chocolate Biscuits         9.2000Desserts, candies, sweetbreads                             8.35
+ 20Sir Rodney s Marmalade            81.0000Desserts, candies, sweetbreads                             2.65
+ 21Sir Rodney s Scones               10.0000Desserts, candies, sweetbreads                             7.25
+ 22Gustaf s KnSckebr÷d               21.0000Breads, crackers, pasta, and cereal                       15.50
+ 23Tunnbr÷d                           9.0000Breads, crackers, pasta, and cereal                       18.90
+ 25NuNuCa Nu¯-Nougat-Creme           14.0000Desserts, candies, sweetbreads                             3.75
+ 26GumbSr GummibSrchen               31.2300Desserts, candies, sweetbreads                             6.90
+ 27Schoggi Schokolade                43.9000Desserts, candies, sweetbreads                            12.65
+ 30Nord-Ost Matjeshering             25.8900Seaweed and fish                                           4.80
+ 31Gorgonzola Telino                 12.5000Cheeses                                                   10.80
+ 32Mascarpone Fabioli                32.0000Cheeses                                                    9.95
+ 33Geitost                            2.5000Cheeses                                                    1.90
+ 34Sasquatch Ale                     14.0000Soft drinks, coffees, teas, beer, and ale                 21.60
+ 35Steeleye Stout                    18.0000Soft drinks, coffees, teas, beer, and ale                 17.65
+ 36Inlagd Sill                       19.0000Seaweed and fish                                           6.80
+ 39Chartreuse verte                  18.0000Soft drinks, coffees, teas, beer, and ale                 11.45
+ 40Boston Crab Meat                  18.4000Seaweed and fish                                           6.70
+ 41Jack s New England Clam Chowder    9.6500Seaweed and fish                                           7.10
+ 43Ipoh Coffee                       46.0000Soft drinks, coffees, teas, beer, and ale                 14.65
+ 44Gula Malacca                      19.4500Sweet and savory sauces, relishes, spreads, and seasonings 9.65
+ 45R°gede sild                        9.5000Seaweed and fish                                          14.60
+ 46Spegesild                         12.0000Seaweed and fish                                          20.10
+ 47Zaanse koeken                      9.5000Desserts, candies, sweetbreads                             4.50
+ 48Chocolade                         12.7500Desserts, candies, sweetbreads                             6.75
+ 49Maxilaku                          20.0000Desserts, candies, sweetbreads                             2.85
+ 51Manjimup Dried Apples             53.0000Dried fruit and bean curd                                 26.30
+ 52Filo Mix                           7.0000Breads, crackers, pasta, and cereal                        5.35
+ 54TourtiFre                          7.4500Prepared meats                                             7.55
+ 55PGtT chinois                      24.0000Prepared meats                                            12.35
+ 56Gnocchi di nonna Alice            38.0000Breads, crackers, pasta, and cereal                        5.85
+ 57Ravioli Angelo                    19.5000Breads, crackers, pasta, and cereal                       16.85
+ 59Raclette Courdavault              55.0000Cheeses                                                   12.35
+ 60Camembert Pierrot                 34.0000Cheeses                                                   11.50
+ 61Sirop d Trable                    28.5000Sweet and savory sauces, relishes, spreads, and seasonings 8.70
+ 62Tarte au sucre                    49.3000Desserts, candies, sweetbreads                            10.10
+ 63Vegie-spread                      43.9000Sweet and savory sauces, relishes, spreads, and seasonings14.05
+ 64Wimmers gute Semmelkn÷del         33.2500Breads, crackers, pasta, and cereal                       16.00
+ 65Louisiana Fiery Hot Pepper Sauc   21.0500Sweet and savory sauces, relishes, spreads, and seasonings 8.95
+ 67Laughing Lumberjack Lager         14.0000Soft drinks, coffees, teas, beer, and ale                  4.95
+ 68Scottish Longbreads               12.5000Desserts, candies, sweetbreads                             3.55
+ 69Gudbrandsdalsost                  36.0000Cheeses                                                    3.80
+ 70Outback Lager                     15.0000Soft drinks, coffees, teas, beer, and ale                  5.50
+ 71Fl°temysost                       21.5000Cheeses                                                    2.60
+ 72Mozzarella di Giovanni            34.8000Cheeses                                                    8.75
+ 73R÷d Kaviar                        15.0000Seaweed and fish                                           7.30
+ 75Rh÷nbrSu Klosterbier               7.7500Soft drinks, coffees, teas, beer, and ale                  2.80
+ 76Lakkalik÷÷ri                      18.0000Soft drinks, coffees, teas, beer, and ale                  2.45
+ 77Original Frankfurter grnne So¯e   13.0000Sweet and savory sauces, relishes, spreads, and seasonings 6.90

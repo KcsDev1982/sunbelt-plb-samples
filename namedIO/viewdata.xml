@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema>
+	<View>
+		<name>Customer</name>
+		<description>Customer</description>
+		<Column>
+			<name>CUSTID</name>
+			<description>
+</description>
+			<offset>1</offset>
+			<length>5</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>0</nullable>
+			<zero_fill>1</zero_fill>
+			<empty_null>1</empty_null>
+			<selectivity>100</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>COMPANY</name>
+			<description>
+</description>
+			<offset>6</offset>
+			<length>31</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>1</empty_null>
+			<selectivity>100</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>Unknown</default_value>
+		</Column>
+		<Column>
+			<name>ADDRESS</name>
+			<description>
+</description>
+			<offset>37</offset>
+			<length>21</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>Unknown</default_value>
+		</Column>
+		<Column>
+			<name>CITY</name>
+			<description>
+</description>
+			<offset>58</offset>
+			<length>13</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>REGION</name>
+			<description>
+</description>
+			<offset>71</offset>
+			<length>10</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>POSTALCODE</name>
+			<description>
+</description>
+			<offset>81</offset>
+			<length>7</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>COUNTRY</name>
+			<description>
+</description>
+			<offset>88</offset>
+			<length>6</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>PHONE</name>
+			<description>
+</description>
+			<offset>94</offset>
+			<length>14</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+	</View>
+	<View>
+		<name>CustomerArr</name>
+		<description>CustomerArr</description>
+		<Column>
+			<name>CUSTID</name>
+			<description>
+</description>
+			<offset>1</offset>
+			<length>5</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>0</nullable>
+			<zero_fill>1</zero_fill>
+			<empty_null>1</empty_null>
+			<selectivity>100</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>COMPANY</name>
+			<description>
+</description>
+			<offset>6</offset>
+			<length>31</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>1</empty_null>
+			<selectivity>100</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>Unknown</default_value>
+		</Column>
+		<Column>
+			<name>ADDR</name>
+			<description>
+</description>
+			<offset>37</offset>
+			<length>5</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>4</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>Unknown</default_value>
+		</Column>
+		<Column>
+			<name>D1X</name>
+			<description>
+</description>
+			<offset>57</offset>
+			<length>1</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>Unknown</default_value>
+		</Column>
+		<Column>
+			<name>CITY</name>
+			<description>
+</description>
+			<offset>58</offset>
+			<length>13</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>REGION</name>
+			<description>
+</description>
+			<offset>71</offset>
+			<length>10</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>POSTALCODE</name>
+			<description>
+</description>
+			<offset>81</offset>
+			<length>7</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>COUNTRY</name>
+			<description>
+</description>
+			<offset>88</offset>
+			<length>6</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>PHONE</name>
+			<description>
+</description>
+			<offset>94</offset>
+			<length>14</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+	</View>
+	<View>
+		<name>Orders</name>
+		<description>Orders</description>
+		<Column>
+			<name>ORDERID</name>
+			<description>
+</description>
+			<offset>1</offset>
+			<length>4</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>CUSTID</name>
+			<description>
+</description>
+			<offset>5</offset>
+			<length>5</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>PRODID</name>
+			<description>
+</description>
+			<offset>10</offset>
+			<length>3</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>ORDERDATE</name>
+			<description>
+</description>
+			<offset>13</offset>
+			<length>8</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>ORDERTIME</name>
+			<description>
+</description>
+			<offset>21</offset>
+			<length>8</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>QUANTITY</name>
+			<description>
+</description>
+			<offset>29</offset>
+			<length>5</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+	</View>
+	<View>
+		<name>Product</name>
+		<description>Product</description>
+		<Column>
+			<name>PRODID</name>
+			<description>
+</description>
+			<offset>1</offset>
+			<length>3</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>PRODNAME</name>
+			<description>
+</description>
+			<offset>4</offset>
+			<length>31</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>UNITPRICE</name>
+			<description>
+</description>
+			<offset>35</offset>
+			<length>10</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>DESCRIPT</name>
+			<description>
+</description>
+			<offset>45</offset>
+			<length>58</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+		<Column>
+			<name>SHIPWT</name>
+			<description>
+</description>
+			<offset>103</offset>
+			<length>5</length>
+			<type>0</type>
+			<scale>0</scale>
+			<element_count>1</element_count>
+			<sql_type>0</sql_type>
+			<key_value>0</key_value>
+			<nullable>1</nullable>
+			<zero_fill>0</zero_fill>
+			<empty_null>0</empty_null>
+			<selectivity>0</selectivity>
+			<format_mask>
+</format_mask>
+			<default_value>
+</default_value>
+		</Column>
+	</View>
+</Schema>
