@@ -29,6 +29,10 @@ Host            DIM             100
 . Code start
 .
                 CALL            Main
+.
+. Pause to allow the web server to send the response
+.
+                PAUSE           "1"
                 STOP
 
 *................................................................
