@@ -43,7 +43,7 @@ Host            DIM             100
 .
 RestDelete      LFUNCTION
                 ENTRY
-                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented" *ExtraHdrs="", *Options=0
+                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented", *ExtraHdrs="", *Options=0
                 FUNCTIONEND
 
 *................................................................
@@ -54,7 +54,7 @@ RestDelete      LFUNCTION
 .
 RestGet         LFUNCTION
                 ENTRY
-                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented" *ExtraHdrs="", *Options=0
+                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented", *ExtraHdrs="", *Options=0
                 FUNCTIONEND
 
 *................................................................
@@ -67,7 +67,7 @@ RestOptions     LFUNCTION
                 ENTRY
 OptionHdr       INIT            "Allow: GET,POST,PUT,DELETE,OPTIONS",0xD,0xA
 
-                Runtime.HttpResponse Using *HttpCode=200,*MimeType="text/html", *Body="",*ExtraHdrs=OptionHdr, *Options=0
+                Runtime.HttpResponse Using *HttpCode=200,*MimeType="text/html", *Body="", *ExtraHdrs=OptionHdr, *Options=0
                 FUNCTIONEND
 
 *................................................................
@@ -78,7 +78,7 @@ OptionHdr       INIT            "Allow: GET,POST,PUT,DELETE,OPTIONS",0xD,0xA
 .
 RestPatch       LFUNCTION
                 ENTRY
-                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented" *ExtraHdrs="", *Options=0
+                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented", *ExtraHdrs="", *Options=0
                 FUNCTIONEND
 
 *................................................................
@@ -89,7 +89,7 @@ RestPatch       LFUNCTION
 .
 RestPost        LFUNCTION
                 ENTRY
-                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented" *ExtraHdrs="", *Options=0
+                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented", *ExtraHdrs="", *Options=0
                 FUNCTIONEND
 
 *................................................................
@@ -100,7 +100,7 @@ RestPost        LFUNCTION
 .
 RestPut         LFUNCTION
                 ENTRY
-                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented" *ExtraHdrs="", *Options=0
+                Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented", *ExtraHdrs="", *Options=0
                 FUNCTIONEND
 
 *................................................................
