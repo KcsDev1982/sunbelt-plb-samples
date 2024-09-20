@@ -1,0 +1,104 @@
+<html>
+   <head>    
+   </head>
+   <body>
+    <!-- Button for microphone and data to hold results -->
+    <button id='chatMic' type='button' style="display: none"><i class='bi bi-mic-mute'></i></button>
+    <div id='chatQues' style="display: none" data-plbevent='click'></div>
+    <div id='chatResp' style="display: none" data-plbevent='click'></div>
+    
+    <!-- Code for speech and chat access -->
+    <script type="text/javascript"> 
+    
+       // Speech code
+       const speechSupport = window.SpeechRecognition || window.webkitSpeechRecognition;
+      
+       if (speechSupport) {
+           let objSpeech;
+	   let chatMicOn = false;
+	   const chatMicBtn = document.getElementById("chatMic");
+	   const chatMicIcon = chatMicBtn.firstElementChild;
+	   
+           chatMicBtn.style.display = "block";
+	   
+	   objSpeech = new speechSupport();
+           objSpeech.addEventListener("start", startSpeechRecognition);	
+           objSpeech.addEventListener("end", endSpeechRecognition);
+           objSpeech.addEventListener("result", resultOfSpeechRecognition);	   
+  
+          chatMicBtn.addEventListener("click", micBtnClick);
+	  
+	  function micBtnClick() {
+             if (chatMicOn) {
+               objSpeech.stop();
+             } else {
+	        $('#chatQues').text("<<empty>>");
+               objSpeech.start();
+             }
+          }
+
+         function startSpeechRecognition() {
+	   chatMicOn = true;
+	   chatMicIcon.classList.remove("bi-mic-mute");
+           chatMicIcon.classList.add("bi-mic");
+         }
+
+        function endSpeechRecognition() {
+          chatMicOn = false;
+          chatMicIcon.classList.remove("bi-mic");
+          chatMicIcon.classList.add("bi-mic-mute");
+        }
+
+       function resultOfSpeechRecognition(event) {
+         const current = event.resultIndex;
+         const transcript = event.results[current][0].transcript;
+	 let clickEvent = new Event('click');
+	 
+	 $('#chatQues').text(transcript); 
+	 objSpeech.stop();
+	 document.getElementById("chatQues").dispatchEvent(clickEvent);
+        }
+
+     }
+
+      // Chat access code
+      async function askGpt( userQuest, apikey ) {
+        try {
+            const response = await fetch("https://api.openai.com/v1/chat/completions", {
+	       method: "POST",
+	       headers: {
+		   "Content-Type": "application/json",
+		   Authorization: "Bearer " + apikey
+		  },
+	       body: JSON.stringify({
+		    model: "gpt-4o-mini",
+		   messages: [ {role: "system", content: "You are a helpful assistant."}, { role: "user", content: userQuest }] })
+             });
+	     
+           if (!response.ok) {
+                throw new Error("GPT access error");
+           }
+	   
+           const data = await response.json();
+	   
+           if ( !data.choices || !data.choices.length || !data.choices[0].message || !data.choices[0].message.content ) {
+               throw new Error("GPT reponse error");
+            }
+	    
+           const chatGPTResp = data.choices[0].message.content.trim();
+            $('#chatResp').text(chatGPTResp); 
+	    
+	    let clickEvent = new Event('click');
+	    document.getElementById("chatResp").dispatchEvent(clickEvent);
+           } 
+	   
+	   catch (error) {
+		$('#chatResp').text("Unable to access chatGPT");
+		let clickEvent = new Event('click');
+	        document.getElementById("chatResp").dispatchEvent(clickEvent);
+           }
+      }
+      </script>
+   </body>
+</html>
+

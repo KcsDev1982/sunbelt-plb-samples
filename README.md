@@ -4,12 +4,14 @@ Sample code and projects for the Programming Language for Business (PL/B).
 
 ### Sample Directory Layout
 * agenda       - Sample classic PL/B AGENDA programs
+* ai           - Sample AI chat and speech recognition
 * class_sample - Sample program using PLBOBJECT and CLASSMODULE
 * conf2016     - Sunbelt 2016 conference presentations and samples
 * conf2019     - Sunbelt 2019 conference presentations and samples
 * conftalks    - Selected conference presentations
 * courses      - Course materials and samples for training 
 * datatable    - DATATABLE object samples
+* demo         - Modern answer/master programs for 10.7
 * htmlcontrol_designer - Designers for the HTMLCONTROL object
 * http_root    - Additional files for the plbwebsrv http_root
 * includes     - Latest Sunbelt include files

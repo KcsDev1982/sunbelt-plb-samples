@@ -7,7 +7,7 @@ $PLBEQU_LOADED EQU  1			;Flag that PLBEQU is loaded
 *==============================================================================
 . GUI designer support equates
 .
-. Last Revision	Date:  02 Oct 2023
+. Last Revision	Date:  01 Oct 2024
 .
 . Revision History:
 .
@@ -239,6 +239,9 @@ $PLBEQU_LOADED EQU  1			;Flag that PLBEQU is loaded
 .::		Added DATACOLUMN, DATAROW, and DATATABLE properties.	 :10.5
 .:: 18 May 23 - Added color constants for Bootstrap 5 Contexts           :10.6
 .:: 02 Oct 23 - Reviewed for the 10.6 release.				 :10.6
+.:: 29 Aug 24 - Modified for MPI ( Multi Page Interface ) support.	 :10.7 
+.:: 01 Oct 24 - Added $HTTP_FLAG_USE_IPV6 flags value for HTTP.		 :10.7
+.::		Added $MAIL_FLAG_USEIPV6 options value for MAILSEND.	 :10.7
 .::
 	 %ENDIF								 :8.3A
 .
@@ -3976,6 +3979,80 @@ $MERGERIGHT   EQU  3
 . dnumnvar values:
 .
 .	The <dnumnvar> value is	provided in pixels.
+.
+*------------------------------------------------------------------------------
+.   MPIBORDER=dnumnvar				CREATE	SETPROP	GETPROP	  10.7
+.
+. Description:
+.	This property defines when a MPI client	window in a window object
+.	is to have a border.
+.
+. Objects:
+.	WINDOW
+.
+. dnumnvar values:
+.
+.$OFF	      EQU	0	       // Default
+.$ON	      EQU	1
+.
+*------------------------------------------------------------------------------
+.   MPIHEIGHT=dnumnvar				CREATE	SETPROP	GETPROP	  10.7
+.
+. Description:
+.	This property specifies	the height in pixels for the MPI client
+.	window.	If this	property is zero, the bottom of	the MPI	client
+.	is pinned to the bottom	of the WINDOW object.
+.
+. Objects:
+.	WINDOW
+.
+*------------------------------------------------------------------------------
+.   MPILEFT=dnumnvar				CREATE	SETPROP	GETPROP	  10.7
+.
+. Description:
+.	This property specifies	the left position in pixels for	the MPI	client
+.	window.
+.
+. Objects:
+.	WINDOW
+.
+*------------------------------------------------------------------------------
+.   MPISCROLL=dnumnvar				CREATE		GETPROP	  10.7
+.
+. Description:
+.	This property specifies	what type of scrollbars	are to be provided
+.	for the	MPI client window in a window object. 
+.
+. Objects:
+.	WINDOW
+.
+. dnumnvar values:
+.
+.$NONE		EQU	0	       // Default
+.$SCRBOTH	EQU	1
+.$SCRHORZ	EQU	2
+.$SCRNONE	EQU	3
+.$SCRVERT	EQU	4
+*------------------------------------------------------------------------------
+.   MPITOP=dnumnvar				CREATE	SETPROP	GETPROP	  10.7
+.
+. Description:
+.	This property specifies	the top	position in pixels for the MPI client
+.	window.
+.
+. Objects:
+.	WINDOW
+.
+*------------------------------------------------------------------------------
+.   MPIWIDTH=dnumnvar				CREATE	SETPROP	GETPROP	  10.7
+.
+. Description:
+.	This property specifies	the width in pixels for	the MPI	client
+.	window.	If this	property is zero, the right of the MPI client
+.	is pinned to the right of the WINDOW object.
+.
+. Objects:
+.	WINDOW
 .
 *------------------------------------------------------------------------------
 .   MODIFYFLAG=dnumnvar					SETPROP	GETPROP	  8.7C
@@ -7740,7 +7817,7 @@ $MAXIMIZEWIDTH EQU	6						  10.0A
 .		      the same as PRIMARYFIXED.
 .
 .     MDICLIENT	   -  This type	creates	a window that contains a MDI client
-.		      window to	support	MIDCHILD type windows. The
+.		      window to	support	MDICHILD type windows. The
 .		      properties: MDIBORDER, MDISCROLL,	MDITOP,	MDILEFT,
 .		      MDIHEIGHT	and MDIWIDTH can be used to manipulate
 .		      the MDI client window. Also the MDILayout	and MDIShow
@@ -7748,6 +7825,20 @@ $MAXIMIZEWIDTH EQU	6						  10.0A
 .
 .     MDICHILD	   -  This type	creates	a MDI child window for use with	a
 .		      host MDICLIENT style window.
+.
+.     MPICLIENT	   -  This type	creates	a window that contains a MPI client
+.		      window to	support	MPICHILD type windows. The
+.		      properties: MPIBORDER, MPISCROLL,	MPITOP,	MPILEFT,
+.		      MPIHEIGHT	and MPIWIDTH can be used to manipulate
+.		      the MPI client window. Also the MPILayout	and MPIShow
+.		      methods also affect the MPI client window. This
+.		      window type only exists when a Plbwebsrv or Plbwin
+.                     ( WebView2 ) runtime is being used.
+.
+.     MPICHILD	   -  This type	creates	a MPI child window for use with	a
+.		      host MPICLIENT style window. This window type only
+.		      exists when a Plbwebsrv or Plbwin ( WebView2 ) runtime
+.		      is being used.
 .
 . Objects:
 .	WINDOW
@@ -7766,6 +7857,8 @@ $CEMODALNOMENU	   EQU	8	       // CE values with MENU		  9.1A
 $CEMODELESSNOMENU  EQU	9						  9.1A
 $CEFIXEDNOMENU	   EQU 10						  9.1A
 $CESIZEABLENOMENU  EQU 11						  9.1A
+$MPICLIENT	   EQU 12	//Plbwebsrv or Plbwin (WebView2) Only	  10.7
+$MPICHILD	   EQU 13	//Plbwebsrv or Plbwin (WebView2) Only	  10.7
 .
 *------------------------------------------------------------------------------
 .   WINWIDTH=dnumnvar					SETPROP	GETPROP	  8.6D
@@ -8643,6 +8736,7 @@ $HTTP_FLAG_TLSV1            INTEGER 4,"0x0400"				 10.3B
 $HTTP_FLAG_TLSV11	    INTEGER 4,"0x0800"				 10.3B
 $HTTP_FLAG_TLSV12	    INTEGER 4,"0x1000"				 10.3B
 $HTTP_FLAG_USESSLDEFS	    INTEGER 4,"0x2000"				 10.3B
+$HTTP_FLAG_USE_IPV6	    INTEGER 4,"0x4000"				 10.7
 .
 *---End	HTTP *FLAGS values-----------------------------------------------------
 .
@@ -8662,6 +8756,7 @@ $MAIL_FLAG_USESUNSSL	    INTEGER 4,"0x0200"	//Use Sunbelt OpenSSL DLLs
 						//  when available. Only
 						//  used by Windows PL/B
 						//  runtimes.
+$MAIL_FLAG_USEIPV6	    INTEGER 4,"0x400"   //Use IPV6 outgoing URL/Address
 .
 *---End	MAILSEND *OPTIONS values-----------------------------------------------
 .

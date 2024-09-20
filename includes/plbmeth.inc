@@ -7,7 +7,7 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 *==============================================================================
 . PLB METHOD support definitions
 .
-. Last Revision Date:  04 Mar 2024
+. Last Revision Date:  06 Sep 2024
 .
 . Revision History:
 .
@@ -144,6 +144,8 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .:: 02 Oct 23 - Added the MODULE object.                                 :10.6
 .::             Updated methods for the 10.6 release.
 .:: 04 Mar 24 - Updated for the 10.6A release.				 :10.6A
+.:: 29 Aug 24 - Updated for MPI methods and properties.                  :10.7
+.:: 06 Sep 24 - Added $BS5_OPTION_NO_WINBORDER.                          :10.7
 .::
          %ENDIF                                                          :8.3A
 *------------------------------------------------------------------------------
@@ -634,6 +636,14 @@ $INFO_PRODUCT			EQU	4096
 $INFO_USER_AGENT		EQU	8192
 $INFO_PEER_IP			EQU	16384
 $INFO_HTTP_HOST			EQU	32768
+.
+. GetState StateMask Constants:
+.
+$CLI_STATE_SSL			EQU	1
+$CLI_STATE_CORDOVA		EQU	2
+$CLI_STATE_JQMOBILE		EQU	4
+$CLI_STATE_BOOTSTRAP4		EQU	8
+$CLI_STATE_BOOTSTRAP5		EQU	16
 .
 . JqGet/JqSet Options Constants:
 .
@@ -3926,8 +3936,9 @@ $VERIFYUTF_PHYSICAL_LEN EQU 2 ;Return evaluated physical length of string. 10.1B
 .
 . SetWebTheme Method *Options Values
 .
-$BS5_OPTION_GRADIENT    EQU 1 ;Use JQueryUI '.bg-gradient' class.          10.6
-$BS5_OPTION_PROGRESS    EQU 2 ;Spply Bootstrap 5 style to PROGRESS bar.    10.6
+$BS5_OPTION_GRADIENT      EQU 1 ;Use JQueryUI '.bg-gradient' class.              10.6
+$BS5_OPTION_PROGRESS      EQU 2 ;Apply Bootstrap 5 style to PROGRESS bar.        10.6
+$BS5_OPTION_NO_WINBORDER  EQU 4 ;Convert WINBORDER $FIXEDSINBLE/3D to $NOBORDER. 10.7
 .
 *------------------------------------------------------------------------------
 .
@@ -4939,6 +4950,12 @@ $TV_XMLWR_NOLABEL_KEEP Integer 4,"0x040"				 10.5B
 .   MINSCROLLH=dnumnvar                      CREATE  SETPROP  GETPROP     8.6C
 .   MINSCROLLV=dnumnvar                      CREATE  SETPROP  GETPROP     8.6C
 .   MINWIDTH=dnumnvar                        CREATE  SETPROP  GETPROP
+.   MPIBORDER=dnumnvar                       CREATE  SETPROP  GETPROP     10.7
+.   MPIHEIGHT=dnumnvar                       CREATE  SETPROP  GETPROP     10.7
+.   MPILEFT=dnumnvar                         CREATE  SETPROP  GETPROP     10.7
+.   MPISCROLL=dnumnvar                       CREATE           GETPROP     10.7
+.   MPITOP=dnumnvar                          CREATE  SETPROP  GETPROP     10.7
+.   MPIWIDTH=dnumnvar                        CREATE  SETPROP  GETPROP     10.7
 .   NEGBORDERS=dnumnvar                      CREATE  SETPROP  GETPROP
 .   NEGMENUS=dnumnvar                        CREATE  SETPROP  GETPROP
 .   NOMENURESIZE=dnumnvar                    CREATE  SETPROP  GETPROP
@@ -4995,9 +5012,11 @@ $TV_XMLWR_NOLABEL_KEEP Integer 4,"0x040"				 10.5B
 .   Erase                GIVING {nvar}
 .   FormToPict           GIVING {pict}
 .   GetActiveMdiChild    GIVING {nvar}
+.   GetActiveMpiChild    GIVING {nvar}                                    10.7
 .   GetLocaleInfo        GIVING {svar} USING *Type={dnumnvar}:            9.5A
 .                                            *Flags={dnumnvar}            9.5A
 .   GetMdiChildCount     GIVING {nvar}   
+.   GetMpiChildCount     GIVING {nvar}                                    10.7
 .   GetObjectAsPointer   GIVING {objectptr} USING *Key={dnumnvar|svarslit}:
 .                                                 *Flags={dnumnvar}     Optional    
 .   IoCancelMode         GIVING {nvar} USING *Value={dnumnvar}
@@ -5006,6 +5025,10 @@ $TV_XMLWR_NOLABEL_KEEP Integer 4,"0x040"				 10.5B
 .   MdiChildPrev         GIVING {nvar}                                    9.5A                      
 .   MDILayout            GIVING {nvar} USING *Layout={dnumnvar}
 .   MDIShow              GIVING {nvar} USING *Show={dnumnvar}
+.   MpiChildNext         GIVING {nvar}                                    10.7
+.   MpiChildPrev         GIVING {nvar}                                    10.7
+.   MPILayout            GIVING {nvar} USING *Layout={dnumnvar}           10.7
+.   MPIShow              GIVING {nvar} USING *Show={dnumnvar}             10.7
 .   MonitorInfo          GIVING {svar} USING *Flags={dnumnvar}:           9.3A
 .                                            *Hwnd={dnumnvar}             9.3A
 .   MouseWheelMode       GIVING {nvar} USING *Value={dnumnvar}
@@ -5054,7 +5077,7 @@ $TV_XMLWR_NOLABEL_KEEP Integer 4,"0x040"				 10.5B
 .
 . WINDOW Method Constants:
 .
-$ArrangeIcons           EQU     1           ;MDILayout Method
+$ArrangeIcons           EQU     1           ;MDILayout or MPILayout Method
 $Cascade                EQU     2
 $TileHorizontal         EQU     3
 $TileVertical           EQU     4
