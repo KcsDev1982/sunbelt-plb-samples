@@ -12,10 +12,10 @@
                 INCLUDE         plbmeth.inc
                 INCLUDE         plbstdlib.inc
 
-		CIFNDEF		$CLI_STATE_CORDOVA
-$CLI_STATE_CORDOVA		EQU	2
-$CLI_STATE_BOOTSTRAP5		EQU	16
-		CENDIF
+                CIFNDEF         $CLI_STATE_CORDOVA
+$CLI_STATE_CORDOVA EQU          2
+$CLI_STATE_BOOTSTRAP5 EQU       16
+                CENDIF
 
 // Runtime status variables
 isGui           BOOLEAN
@@ -34,7 +34,7 @@ emptyAns        INIT            "<<empty>>"
 
 
                 %ENCRYPTON
-eapiKey         INIT            "add your OPENAI API key here"
+eapiKey         INIT            "Add your OpenAI API key here"
                 %ENCRYPTOFF
 
 *---------------------------------------------------------------
@@ -153,7 +153,7 @@ subItem         FORM            5
                 EVENTINFO       0,result=eventResult
                 CALC            item = ( eventResult / 100 )
                 CALC            subItem = ( eventResult - ( item * 100 ) )
-		chatDtMessages.DeleteRow USING item
+                chatDtMessages.DeleteRow USING item
                 FUNCTIONEND
 *................................................................
 .
@@ -165,13 +165,16 @@ info            DIM             ^
                 ENTRY
 footer          DIM             30
 dateTime        DATETIME
+cleanInfo       DIM             10240
 
                 dateTime.SetToNow Using  $TRUE
                 dateTime.GetAsString Giving footer Using "Time: %h:%M:%S %a"
 
+                PACK            cleanInfo,"<pre style='text-wrap: pretty'>",info,"</pre>"
+
                 chatDtMessages.AddRow USING "ChatBot":
                                 *subitem1=type:
-                                *subitem2=info:
+                                *subitem2=cleanInfo:
                                 *subitem3="Remove":
                                 *subitem4=footer
                 FUNCTIONEND
@@ -193,7 +196,7 @@ SetupCards      LFUNCTION
                 chatDtMessages.AddColumn Using 5
 
                 SETPROP         chatDtMessages.columns(2), *ALIGNMENT=$CENTER
-		EVENTREG        chatDtMessages,$UPDATED,CardBtn
+                EVENTREG        chatDtMessages,$UPDATED,CardBtn
  
                 FUNCTIONEND
 
@@ -308,5 +311,3 @@ result          FORM            4
                 Client.SetUTF8Convert Using 0
  
                 FUNCTIONEND
-
-
