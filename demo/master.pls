@@ -504,7 +504,7 @@ programName     DIM             76
 . display a box for the user to enter the name of the program
 .
                 KEYIN           *SETSWALL=(cy-1):(cy+1):2:(charScrWidth-1),*BORDER,*P=2:2:
-                                *UC,*RPTCHAR="_":(charScrWidth-4),*P=2:2,programName
+                                *IT,*RPTCHAR="_":(charScrWidth-4),*P=2:2,programName
 .
 . CHAIN back to answer if "X"
 .
@@ -514,6 +514,7 @@ programName     DIM             76
 . correctly so set the trap
 .
                 EXCEPTSET       CProgNotFound if CFAIL
+                DISPLAY		*RESETSW;   //Fix chain-to program displays!
                 CHAIN           ProgramName
 
 CProgNotFound
