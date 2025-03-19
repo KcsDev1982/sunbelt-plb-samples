@@ -2,7 +2,6 @@
 ##
 
 # Generated files
-*.plc
 *.sdb
 *.lst
 *.plbm

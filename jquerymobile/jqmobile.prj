@@ -2,11 +2,11 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>jqmobile</ActiveProfile>
   <ProjectTitle>jqmobile</ProjectTitle>
-  <SelectedProgram/>
+  <SelectedProgram>jqmsamp.pls</SelectedProgram>
   <Profiles>
     <Name>jqmobile</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\jquerymobile</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\jquerymobile\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,ZI=0,WS1</CompilerOptions>
@@ -14,7 +14,6 @@
       <BookmarkErrors>0</BookmarkErrors>
       <ShowCompilerCmd>1</ShowCompilerCmd>
       <MaxErrors>99</MaxErrors>
-      <OptionsPage>1</OptionsPage>
       <SymbolFile>1</SymbolFile>
       <OpenEnded>1</OpenEnded>
       <CrossReference>0</CrossReference>
@@ -74,6 +73,13 @@
       <EnableBackups>1</EnableBackups>
       <MaxBackups>10</MaxBackups>
       <BackupDir>.\Backups\</BackupDir>
+      <WorkingDirectory/>
+      <GitEnabled>0</GitEnabled>
+      <GitFolder/>
+      <GitBranch/>
+      <GitUserName/>
+      <GitEmail/>
+      <GitRemote/>
     </Properties>
   </Profiles>
   <Source Name="jqmsamp.pls"/>
