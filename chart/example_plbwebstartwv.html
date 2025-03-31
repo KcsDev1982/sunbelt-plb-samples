@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--
+	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: "/>
+	-->
+	
+	<!-- Date: 220524  Ver: 10.5 Also update below -->
+	
+	<title>PL/B Web Start Window</title>
+	
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/globalize.js"></script>
+	
+	<link href="css/jquery-ui.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/plbwvbasic.css" />
+	<link rel="stylesheet" type="text/css" href="css/plbwebipad.css" media="only screen and (max-device-width: 1024px)" />
+	<link rel="stylesheet" type="text/css" href="css/plbwebphone.css" media="only screen and (max-device-width: 480px)" />
+    <!--
+    <link rel="apple-touch-icon" href="myCustomIcon.png" />
+    <link rel="apple-touch-startup-image" href="myCustomStartup.png" />
+    -->
+	<script type="text/javascript" src="js/plbwebctls.js"></script>
+	<script type="text/javascript" src="js/plbwebbasic.js"></script>
+	<script type="text/javascript" src="js/plbwebuser.js"></script>
+    
+	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <!--
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    -->
+
+</head>
+<body>
+	<div id="alertc" style="display:none">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span id="mb1"></span></p>
+	</div>
+    <div id="alertc2" style="display:none">
+		<p><span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 20px 0;"></span><span id="mb2"></span></p>
+	</div>
+    <div id="alertc3" style="display:none">
+		<p><span class="ui-icon ui-icon-help" style="float:left; margin:0 7px 20px 0;"></span><span id="mb3"></span></p>
+	</div>
+    <div id="alertc4" style="display:none">
+		<p><span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 20px 0;"></span><span id="mb4"></span></p>
+	</div>
+	<div id="commErr" style="display:none">
+		<p>The program has encountered a communication error.</p>
+	</div>
+	<div id="progErr" style="display:none">
+		<p id="ped">The program has encountered a communication error.</p>
+	</div>
+	<div id="errDet" style="display:none">
+			<p>Number..: <span  id="erd1"></span></p> 
+			<p>Address..: <span  id="erd2"></span></p>
+			<p>Sub-code: <span  id="erd3"></span></p>
+			<p>Extended: <span  id="erd4"></span> </p>
+			<p>Program..: <input type="text" style="width:80%" id="erd5" /></p>
+			<p>File name: <input type="text" style="width:80%" id="erd6" /></p>
+	</div>
+	<div id="mainscrn">
+	</div>
+ <script type="text/javascript">
+ 	$( document ).ready(function() {
+ 		try {
+ 			plbWebNamespace.initialize(0x00000000);
+ 		}
+catch (exception) {
+                        document.write("<p>" + exception.message + "</p>");
+                        document.write("<p>Unable to initialize PL/B Web Interface (220524).</p>");
+ 		}
+ 	});
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+This sample is a simple Google charting program named 'chart_samp.pls' that demonstrates 
+three basic HTML web page parts which are used to show a Google 
+chart in a PL/B HtmlControl object.
+
+See the following link for information on Google charts:
+
+	https://developers.google.com/chart/interactive/docs/quick_start
+
+The 'chart_samp.pls' program can be compiled and executed by PL/B runtimes as follows:
+
+	Plbwin and Plbclient:
+	
+	The 'Microsoft Edge WebView2' control is used to display the Web content 
+	in the HTMLCONTROL. For more information on 'WebView2', you can look in the 
+	'PL/B Language Reference' manual under the 'WebView2 Support' sections.
+	
+	Plb Web Server:
+	
+	There are two simple changes that are needed to run the 'chart_samp.pls' program:
+	
+	1) Edit the plbwebstartwv.html file. Comment out the 
+	
+	   <meta http-equiv="Content-Security-Policy" ... 
+	   
+	   line and add in the 
+	   
+	   <script type='text/javascript' src='https://www.google.com/jsapi'></script> 
+	   
+	   line. This will cause the charting libraries to be loaded upon program startup. 
+	   See the example_plbwebstartwv.html file.
+		
+	2) The 'chart_samp' program requires the 'Bootstrap 5' framework to be loaded and used 
+	   for enhanced appearances required for the Google charts. This can be done by 
+	   either  the chart_samp program using the .plcw extension or adding the 
+	   'PLBWEB_USE_WEBVIEW=ON' keyword to the plbwebsrv.ini file.
+
