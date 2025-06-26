@@ -1,0 +1,99 @@
+.
+Date: 11/16/2024
+.
+.  List of PDF Specification 1.7 commands reference.
+.
+.    PDF32000_2008.pdf
+.
+*******************************************************************************
+A1 Table	- Page 644	Stream operators
+
+q		- Page 644	Save graphics state
+Q		- Page 644	Restore graphics state
+
+n		- Page 644	Set color rendering intent
+
+re		- Page 133	Stream rectangle
+
+tm		- Page 250	Set text matrix and text line matrix.
+
+BT		- Page 248	Begin a text object.
+ET				End a text object.
+
+W		- Page 645	Set clipping path using nonzero winding number
+				rule.
+
+*******************************************************************************
+.
+/AA		- Page 74	Actions defined for Tigger Events
+				affecting the document as a whole.
+				See 12.6.3 "Trigger Events"
+
+/BS		- Page 386	12.5.4 Border Styles
+
+/BBox		- Page 175	Array of 4 numbers in pattern coordinate
+				system. Coordinates of left, bottom, right,
+				and top edges. Clip pattern cell.
+
+/Contents	- Page 78	Content stream ( See 7.8.2 "Content Streams )
+	
+/DA ( font )	- Page 434	The default appearance.
+				    /DA ( /Helv 12 Tf 0 g)
+
+/F		- Page 384	Set flags for characteristics. See 
+				Table 165
+
+/Ff		- Page 433	Set flags for characteristics
+				  of a field. See Table 221 and 228
+
+/Fn sss tf	- Page 433	Set font size
+
+/FT value	- Page 432	Type of field dictionary
+
+					Btn	Button    See 12.7.42
+					Tx	Text	  See 12.7.43
+					Ch	Choice	  See 12.7.4.4
+					Sig	Signature See 12.7.4.5
+
+/Q n		- Page 434	Text justification.
+					0 - Left-justified  ( Default )
+					1 - Centered
+					2 - Right-justified
+
+/JS name	- Page 430	A text string or text stream containing the
+				JavaScript to be executed. See page 81 table
+				31. See Page 418 table 198.
+
+/MK		- Page 408	Appearance characteristics
+		  Page 409
+
+/MaxLen nn	- Page 444	The maximum length of the field's text, in
+				characters. Optional
+
+/P		- Page 376	Page object on page which bead appears
+		- Page 569	An array of dictionaries, each of which
+				represents a user property ( See Table 329 )
+
+/Parent		- Page 76	Page tree node.
+		- Page 432	Immediate parent of current field.
+
+/Rect		- Page 383	Annotation rectangle location on page in
+				default user space units.
+
+/S /x		- Page 387	Border style where 'x' equals:
+				   S	- Solid
+				   D	- Dashed
+				   B	- Beveled
+				   I	- Inset
+				   U	- Underline
+
+/T (Fieldname)	- Page 426	Field Name. See 12.7.3.2
+
+/Tu		- Page 433	Text string
+
+
+
+
+
+
+

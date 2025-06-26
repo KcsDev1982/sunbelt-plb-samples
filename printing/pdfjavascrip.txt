@@ -1,0 +1,55 @@
+.
+. See:
+.	
+.
+. Acquiring Field Objects
+.
+.	To get a Specific Form Field Object
+.
+.		var fld = this.getField("FldName");
+.
+.	To get the number of unique Field named for the
+.	entire PDF
+.
+.		var numOfFields = this.numFields;
+.
+.	To get the name of a Field
+.
+.		var fldName = this.getNthFieldName(i);
+.
+. 	Getting/Setting Field Values
+.
+.		var fldObj = this getField("MyField");
+.
+.	Get the value of a Field.
+.
+.		var val = fldObj.value;
+.
+.	Set the value of a Field.
+.
+.		fldObj.value = "Hello";
+.
+.	Example:
+.		var fldObj = this.getField("MyText");
+.
+.	Make a field read only
+.
+.		fldObj.readonly = true;
+.
+.	Change Background Color of a field
+.
+.		fldObj.fillColor = color.red;
+.
+.	Hide/Show a field
+.
+.		fldObj.display = display.hidden; // New Mehod
+.		fldObj.hidden = true;	/Old method
+.
+.	Change fillColor of field
+.
+.		this getField("MyCheck").fillColor = color.green
+.			value: RGB,1,0,0	Red
+.			value: RGB,0,1,0	Green 
+.
+
+.
