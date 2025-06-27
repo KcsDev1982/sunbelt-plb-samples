@@ -118,6 +118,7 @@ JS_SSN          INIT            "if(!event.willCommit)",0xd,0xa:
 LoadPdfFile     LFUNCTION
 fileName        DIM             ^
                 ENTRY
+winTitle        DIM             200                                             //Erb
 pdfFile         FILE
 seq             FORM            "-1"
 fileSize        INTEGER         4
@@ -125,9 +126,12 @@ fileSize        INTEGER         4
 *
 .Cleanup any previous load
 .
+                dlExtracted.ResetContent
+
                 IF              (pdfIsLoaded)
                 DFREE           pdfData
                 CLEAR           pdfIsLoaded
+		SETPROP		btnExtract,ENABLED=pdfIsLoaded
                 ENDIF
 *
 .Get the file size
@@ -160,10 +164,17 @@ fileSize        INTEGER         4
                 READ            pdfFile,seq;*Abson,pdfData
                 CLOSE           pdfFile
                 SET             pdfIsLoaded
+.
+                PACK            winTitle, "PDF Edit Demo  Loaded PDF: '",fileName,"'"
+                SETPROP         frmDemo, TITLE=winTitle
+		SETPROP		btnExtract,ENABLED=pdfIsLoaded
+                RETURN
 *
 . Just return on an I/O error
 .
 noFile
+                PACK            winTitle, "PDF Edit Demo  Unable to load PDF: '",fileName,"'"
+                SETPROP         frmDemo, TITLE=winTitle                                                                                                                 //Erb
                 FUNCTIONEND
 
 *................................................................
@@ -414,6 +425,10 @@ posR            FORM            5
 .
 CreatePdfFile   LFUNCTION
                 ENTRY
+.
+winTitle        DIM             200
+.
+                dlExtracted.ResetContent
                 PRTOPEN         pFile,"pdf:","Test PDF Edit Demo":
                                 PDFNAME=pdfFileName:
                                 FLAGS=1
@@ -452,6 +467,9 @@ CreatePdfFile   LFUNCTION
                 CALL            AddPdfBdrStyle Using "/W 2 /S /I"
                 CALL            PrintPdfEdit using pFile,"320:350:175:225"
 
+                PACK            winTitle, "PDF Edit Demo  Created PDF: '",pdfFileName,"'"
+                SETPROP         frmDemo, TITLE=winTitle
+
                 FUNCTIONEND
 
 *................................................................
@@ -483,6 +501,8 @@ PDFExtract      LFUNCTION
 dataLine        DIM             80
 
                 dlExtracted.ResetContent
+
+		RETURN          IF (!pdfIsLoaded)
 
                 CALL            FetchPdfValue using pdfData, "First_Name", firstName
 
