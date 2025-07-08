@@ -436,14 +436,16 @@ winTitle        DIM             200
 
                 PRTPAGE         pFile; *UNITS=*LOENGLISH;
 
-                PRTPAGE         PFILE;*FGColor=clrBlue,*Units=*Pixels,*PenSize=32,*Units=*LoEnglish:
+                PRTPAGE         pFile;*FGColor=clrBlue,*Units=*Pixels,*PenSize=32,*Units=*LoEnglish:
                                 *P=0:100,*Line=825:100
 
-                PRTPAGE         PFILE; *FONT=hdrFont,*ALIGN=*CENTER,*P=412:19,"Editable Fields Sample"
+                PRTPAGE         pFile; *Font=hdrFont,*Align=*Center,*P=412:19,"Editable Fields Sample"
 
-                PRTPAGE         pFile; *ALIGN=*LEFT,*FONT=regFont, *FGColor=0,*P75:125,"First Name:";
-                CALL            CreatePdfEdit using EFTypeAll,EFFlagPrint, "First_Name", EFBdrBasic, "40"
-                CALL            PrintPdfEdit using pFile,"120:150:175:275"
+                PRTPAGE         pFile; *ALIGN=*LEFT,*Font=regFont, *FGColor=0,*P75:125,"First Name:";
+		PRTPAGE         pFile; *EDIT=120:150:175:275:"T=0,F=4,N=First_Name,B=1,L=40";
+
+.                CALL            CreatePdfEdit using EFTypeAll,EFFlagPrint, "First_Name", EFBdrBasic, "40"
+.                CALL            PrintPdfEdit using pFile,"120:150:175:275"
 .
                 PRTPAGE         pFile; *P300:125,"Last Name:";
                 CALL            CreatePdfEdit using EFTypeAll,EFFlagPrint, "Last_Name", EFBdrUnder, "40"
