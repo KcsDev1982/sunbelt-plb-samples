@@ -1,9 +1,10 @@
 *---------------------------------------------------------------
 .
-. Program Name: chart_samp.pls
-. Description:  PL/B and Google Charts
+. Program Name: chart_png_samp.pls
+. Description:  PL/B and Google Charts and PNG Generation
 .   See link:
 .      "https://developers.google.com/chart/interactive/docs/quick_start"
+.      "https://developers.google.com/chart/interactive/docs/printing"
 .
 .  For web server change plbwebstartwv.html to look like
 .       example_plbwebstartwv.html
@@ -11,17 +12,12 @@
 .
 . Revision History:
 .
-. Date: 03/25/2025
+. Date: 07/15/2025
 . Original code
 .
                 INCLUDE         plbequ.inc
                 INCLUDE         plbmeth.inc
                 INCLUDE         plbstdlib.inc
-
-                CIFNDEF         $CLI_STATE_CORDOVA
-$CLI_STATE_CORDOVA EQU          2
-$CLI_STATE_BOOTSTRAP5 EQU       16
-                CENDIF
 
 // Runtime status variables
 isGui           BOOLEAN
@@ -32,7 +28,7 @@ isWebCliApp     BOOLEAN
 isSmallScreen   BOOLEAN
 
 // Global data
-mainForm        PLFORM          chart_samp.plf
+mainForm        PLFORM          chart_png_samp.plf
 Client          CLIENT
 htmlBuffer      DIM             4096
 htmlPart1       INIT            "<head>":
@@ -41,7 +37,7 @@ htmlPart1       INIT            "<head>":
                                 "// Load the Visualization API and the piechart package.",0xD,0xA:
                                 "google.load('visualization', '1.0', {'packages':['corechart']});",0xD,0xA:
                                 "// Set a callback to run when the Google Visualization API is loaded.",0xD,0xA:
-                                "google.setOnLoadCallback(drawChart);",0xD,0xA:
+                                "google.setOnLoadCallback('ready');",0xD,0xA:
                                 "// Callback that creates and populates a data table,",0xD,0xA:
                                 "// instantiates the pie chart, passes in the data and",0xD,0xA:
                                 "// draws it.",0xD,0xA:
@@ -49,12 +45,17 @@ htmlPart1       INIT            "<head>":
                                 "// Create the data table.",0xD,0xA:
                                 "var data = new google.visualization.DataTable();",0xD,0xA
 
-htmlPart2       INIT            "chart.draw(data, options);",0xD,0xA:
+htmlPart2       INIT            "// Wait for the chart to finish drawing before calling the getImageURI() method.",0xD,0xA:
+                                "google.visualization.events.addListener(chart, 'ready', function () {",0xD,0xA:
+                                "document.getElementById('chart_png').innerHTML = '<a href=#"' + chart.getImageURI() + '#">Printable version</a>';",0xD,0xA:
+                                "});",0xD,0xA:
+                                "chart.draw(data, options);",0xD,0xA:
                                 "}",0xD,0xA:
                                 "</script>",0xD,0xA:
                                 "</head>",0xD,0xA:
                                 "<body>",0xD,0xA:
                                 "<!--Div that will hold the pie chart-->",0xD,0xA:
+                                "<div id='chart_png' style='display: none'></div>",0xD,0xA:
                                 "<div id='chart_div'></div>",0xD,0xA:
                                 "<script type='text/javascript'>",0xD,0xA:
                                 "drawChart();",0xD,0xA:
@@ -95,7 +96,10 @@ htmlChart2      INIT            "data.addColumn('string', 'Task');",0xD,0xA:
                                 "var chart = new google.visualization.PieChart(document.getElementById('chart_div'));",0xD,0xA
 
 
-
+pngData         DIM             ^65000
+pngBinary       DIM             ^65000
+seq             FORM            "-1"
+pngFile         FILE            BUFFER=65000
 *---------------------------------------------------------------
 // <program wide variables>
 *................................................................
@@ -172,6 +176,7 @@ Chart1          LFUNCTION
                 ENTRY
                 PACK            htmlBuffer,htmlPart1,htmlChart1,htmlPart2
                 htmlChart.InnerHtml Using htmlBuffer
+                SETPROP         btnOutPng,*enabled=$TRUE
                 FUNCTIONEND
 
 *................................................................
@@ -182,23 +187,36 @@ Chart2          LFUNCTION
                 ENTRY
                 PACK            htmlBuffer,htmlPart1,htmlChart2,htmlPart2
                 htmlChart.InnerHtml Using htmlBuffer
-
+                SETPROP         btnOutPng,*enabled=$TRUE
                 FUNCTIONEND
 
 *................................................................
 .
-. Chart 3 - Turn chart2 into a Bar chart
+. Output a PNG file
 .
-Chart3          LFUNCTION
+OutputPng       LFUNCTION
                 ENTRY
-                PACK            htmlBuffer,htmlPart1,htmlChart2,htmlPart2
-                SCAN            "PieChart",htmlBuffer
-                SPLICE          "Bar",htmlBuffer,3
-                RESET           htmlBuffer
-                htmlChart.InnerHtml Using htmlBuffer
+scanFP          INTEGER         2
+result          FORM            4
 
+                htmlChart.GetAttr giving pngData using "chart_png","html"
+                SCAN            "data:image/png;base64,", pngData
+                IF              EQUAL
+                MOVEFPTR        pngData,scanFP
+                SCAN            "#>", pngData
+                IF              EQUAL
+                LENSET          pngData
+                RESET           pngData,(scanFP+22)
+                DECODE64        pngData,pngBinary
+                PREP            pngFile, "chart.png"
+                WRITE           pngFile,SEQ;*LL,pngBinary;
+                CLOSE           pngFile
+
+                ALERT           NOTE,"The file chart.png has been generated.",result
+                ENDIF
+                ENDIF
                 FUNCTIONEND
-
+ 
 *................................................................
 .
 . Main - Main program entry point
@@ -233,6 +251,7 @@ result          FORM            4
                 htmlChart.InnerHtml Using htmlBuffer
                 ENDIF
 
+                SETPROP         btnOutPng,*enabled=$FALSE
                 SETFOCUS        btnChart1
 
                 FUNCTIONEND

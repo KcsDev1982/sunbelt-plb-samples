@@ -85,4 +85,5 @@
   <Source Name="chart_samp.pls"/>
   <Source Name="example_plbwebstartwv.html"/>
   <Source Name="notes.txt"/>
+  <Source Name="chart_png_samp.pls"/>
 </SunIDE_Project_File>
