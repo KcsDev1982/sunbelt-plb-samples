@@ -14,6 +14,7 @@ Sample code and projects for the Programming Language for Business (PL/B).
 * courses      - Course materials and samples for training 
 * datatable    - DATATABLE object samples
 * demo         - Modern answer/master programs for 10.7
+* files        - Sample programs that manipulate file data
 * htmlcontrol_designer - Designers for the HTMLCONTROL object
 * http_root    - Additional files for the plbwebsrv http_root
 * includes     - Latest Sunbelt include files
