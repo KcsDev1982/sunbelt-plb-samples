@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+ <!--
+  Make sure to update the location of the gcal_logon.html page
+ -->
+<iframe id='calFrame' src="gcal_logon.html" width="200" height="200" frameborder="0" scrolling="no"></iframe> 
+
+   <script type="text/javascript"> 
+   function calSendMsg( msgType, msgArg1, msgArg2 ) {
+	var rMsg = { 'plbmsg' : 0 };
+	var iframe = document.getElementById("calFrame");
+
+	rMsg.plbmsg = msgType;
+	rMsg.arg1 = msgArg1;
+        rMsg.arg2 = msgArg2;
+
+	iframe.contentWindow.postMessage(JSON.stringify(rMsg), '*');
+	}
+	</script>
+  </body>
+</html>

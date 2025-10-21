@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SunIDE_Project_File Version="10.0">
-  <ActiveProfile>Chart_Sample</ActiveProfile>
-  <ProjectTitle>Chart_Sample</ProjectTitle>
-  <SelectedProgram>chart_png_samp.pls</SelectedProgram>
+  <ActiveProfile>gcalendar</ActiveProfile>
+  <ProjectTitle>gcalendar</ProjectTitle>
+  <SelectedProgram>gcalendar_sup.html</SelectedProgram>
   <Profiles>
-    <Name>Chart_Sample</Name>
+    <Name>gcalendar</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\chart\</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples\calendar\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,ZI=0,WS1</CompilerOptions>
@@ -82,8 +82,13 @@
       <GitRemote/>
     </Properties>
   </Profiles>
-  <Source Name="chart_samp.pls"/>
-  <Source Name="example_plbwebstartwv.html"/>
-  <Source Name="notes.txt"/>
-  <Source Name="chart_png_samp.pls"/>
+  <Source Name="gcalendar_csv.pls"/>
+  <Source Name="gcalendar_ics.pls"/>
+  <Source Name="gcalendar_api.pls"/>
+  <Source Name="gcalendar.pls"/>
+  <Folder Name="html" Handle="42707544">
+    <File Name="gcal_logon.html"/>
+    <File Name="gcalendar_adm.html"/>
+    <File Name="gcalendar_sup.html"/>
+  </Folder>
 </SunIDE_Project_File>

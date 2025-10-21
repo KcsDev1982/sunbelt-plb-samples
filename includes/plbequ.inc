@@ -7,7 +7,7 @@ $PLBEQU_LOADED EQU  1			;Flag that PLBEQU is loaded
 *==============================================================================
 . GUI designer support equates
 .
-. Last Revision	Date:  01 Oct 2024
+. Last Revision	Date:  07 Aug 2025
 .
 . Revision History:
 .
@@ -242,6 +242,8 @@ $PLBEQU_LOADED EQU  1			;Flag that PLBEQU is loaded
 .:: 29 Aug 24 - Modified for MPI ( Multi Page Interface ) support.	 :10.7 
 .:: 01 Oct 24 - Added $HTTP_FLAG_USE_IPV6 flags value for HTTP.		 :10.7
 .::		Added $MAIL_FLAG_USEIPV6 options value for MAILSEND.	 :10.7
+.:: 07 Aug 25 - Added DATASET properties: COUNT, DATAFILTER, DATATYPE,	 :10.8
+.:: 		MAXITEMS and NULLSIZE.					 :10.8 
 .::
 	 %ENDIF								 :8.3A
 .
@@ -1827,6 +1829,18 @@ $OC_SUCCESS    	EQU		7
 $OC_WARNING    	EQU		8
 .
 *------------------------------------------------------------------------------
+.   COUNT=dnumnvar				CREATE	SETPROP	GETPROP   10.8
+.
+. Description:
+.       The COUNT property is used to get the current number of active
+.       data items in a DATASET object.
+.
+. Objects:
+.       DATASET
+.
+. dnumnvar values:
+.
+*------------------------------------------------------------------------------
 .   CUETEXT=svarslit                            CREATE SETPROP  GETPROP   9.6
 .
 . Description: (Comctl32 Version 6 Required)
@@ -1899,6 +1913,24 @@ $OC_WARNING    	EQU		8
 .	The <svarslit> variable	is a format string.
 .
 *------------------------------------------------------------------------------
+.   DATAFILTER=svarslit				CREATE	SETPROP	GETPROP   10.8
+.
+. Description:
+.       The DATAFILTER property allows a filter string to be set for a
+.       DATASET object. If the filter string, it is used when DATASET
+.       items are being accessed in the GetItem and FindItem methods.
+.       By default, this property is not set. The DATASET filtering is
+.       only used for data items that contain valid JSON data.
+.
+. Objects:
+.       DATASET
+.
+. svarslit value:
+.
+.	String that contains a valid filter expression.
+.	See FILTER instruction.
+.
+*------------------------------------------------------------------------------
 .   DATA=svarslit				CREATE	SETPROP	GETPROP
 .
 . Description:
@@ -1917,13 +1949,19 @@ $OC_WARNING    	EQU		8
 .   DATATYPE=dnumnvar				CREATE	SETPROP	GETPROP   10.5
 .
 . Description:
+. 
+.      DATACOLUMN
 .       The DATATYPE property specifies the type of data contained in  
-.       a column. 
+.       a column.
+.
+.      DATASET 
+.       The DATATYPE property is a type assigned to the DATASET items.
 .
 . Objects:
 .       DATACOLUMN
+.       DATASET								  10.8
 .
-. dnumnvar values:
+. dnumnvar values: ( DATACOLUMN )
 .
 $CDT_NONE    	EQU		0
 $CDT_BOOL    	EQU		1		// Boolean	- <input type="checkbox"> 
@@ -1942,6 +1980,15 @@ $CDT_TELEPHONE  EQU		13		// Telephone	- <input type="tel">
 $CDT_TIME    	EQU		14		// Time		- <input type="time"> 
 $CDT_URL    	EQU		15		// URL		- <input type="url"> 
 $CDT_WEEK    	EQU		16		// Week		- <input type="week"> 
+.
+.
+. dnumnvar values: ( DATASET )						  10.8
+.
+$DST_DEFAULT   	EQU		0		// Mixed data types: text,
+.						   JSON, binary, ...
+$DST_MIXED	EQU		0		// Mixed same as default
+$DST_JSON    	EQU		1		// JSON only verified
+.
 *------------------------------------------------------------------------------
 .   DECIMALDIGITS=dnumnvar			CREATE	SETPROP	GETPROP	  8.7C
 .
@@ -3687,6 +3734,20 @@ $ET_INPUTWEEK      EQU  13           //week
 .	The <svarslit> variable	is a date string.
 .
 *------------------------------------------------------------------------------
+.   MAXITEMS=dnumnvar				CREATE	SETPROP	GETPROP   10.8
+.
+. Description:
+.       The MAXITEMS property sets the maximum item count for the
+.       number of active items that can be added to the DATASET.
+.
+. Objects:
+.       DATASET
+.
+. dnumnvar values:
+. 
+.       The numeric value is the maximum item count.
+. 
+*------------------------------------------------------------------------------
 .   MAXSIZE=dnumnvar				        SETPROP	GETPROP   10.5
 .
 . Description:
@@ -4343,6 +4404,20 @@ $EXTENDED     EQU	2	       // DATALIST only
 . dnumnvar values:
 .
 .	None
+*------------------------------------------------------------------------------
+.   NULLSIZE=dnumnvar				CREATE	SETPROP	GETPROP   10.8
+.
+. Description:
+.       The MAXITEMS property is sets the text size to be used when a
+.       DATASET item is added with NULL input. The default NULLSIZE is
+.       100 bytes.
+.
+. Objects:
+.       DATASET
+.
+. dnumnvar values:
+.
+.       Value is the maximum allowed NULL size for a DATASET item.
 .
 *------------------------------------------------------------------------------
 .   NUMERIC[=dnumnvar]				CREATE

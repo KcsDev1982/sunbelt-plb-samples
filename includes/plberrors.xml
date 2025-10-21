@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Runtime_Errors>
-  <Version>10.5A</Version>
+  <Version>10.8</Version>
   <Error Number="A01" SubCode= "" Type="Interrupts Prevented" Description="FILEPI already in effect. Another FILEPI may not be initiated until current one expires or a FILEPI 0 or PI 0 is executed." />
   <Error Number="A02" SubCode= "" Type="Interrupts Prevented" Description="A FILEPI referenced one or more unopened files." />
   <Error Number="A03" SubCode= "" Type="Interrupts Prevented" Description="A FILEPI was executed against a file that has been opened with record locking." />
@@ -911,6 +911,7 @@
  	<Error Number="O164" SubCode= "" Type="Object" Description="Invalid event specified for a NETOBJECT or NETCONTROL." />
  	<Error Number="O165" SubCode= "" Type="Object" Description="Unable to convert a .NET data type for the operation." />
  	<Error Number="O166" SubCode= "" Type="Object" Description="The client version does not support the STREAM instruction." />
+ 	<Error Number="O167" SubCode= "" Type="Object" Description="OMODULE method error encountered." />
  	<Error Number="O199" SubCode= "" Type="Object" Description="A GPF error has occurred in a Windows OS function while executing a PL/B method." />
  	<Error Number="I01" SubCode= "" Type="I/O" Description="OS error occurred while locking the data file. This error should not occur unless the OS is failing." />
   <Error Number="I02" SubCode= "" Type="I/O" Description="Unable to re-open file." />
@@ -1070,6 +1071,7 @@
   <Error Number="I57" SubCode= "" Type="I/O" Description="The record data last READ for an AFILE/IFILE variable in the FILELIST has been changed before a FILELIST UPDATE/DELETE operation was performed. This failure indicates that multiple users are changing data records for a file without the use of FILEPI or record locking." />
   <Error Number="I57" SubCode= "21" Type="I/O" Description="The record to be read is past the end of file when attempting to sync the primary FILELIST file with a secondary file in the FILELIST that was last read." />
   <Error Number="I57" SubCode= "22" Type="I/O" Description="The text file data record has been changed after the last read operation and before the DELETE/UPDATE FILELIST operation has been executed." />
+  <Error Number="I58" SubCode= "" Type="I/O" Description="Isam Sector Verification error." />
   <Error Number="I59" SubCode= "" Type="I/O" Description="The key required for the FILELIST file io operation can not be found." />
   <Error Number="I60" SubCode= "" Type="I/O" Description="Unable to read ISAM sector." />
   <Error Number="I61" SubCode= "" Type="I/O" Description="Unable to write ISAM sector." />
@@ -1398,6 +1400,7 @@
 	<Error Number="I86" SubCode= "526" Type="I/O" Description="During a SQLIO operation, file opened that is not a database file." />
 	<Error Number="I86" SubCode= "527" Type="I/O" Description="During a SQLIO operation, notifications from sqlite3_log()." />
 	<Error Number="I86" SubCode= "528" Type="I/O" Description="During a SQLIO operation, warnings from sqlite3_log()." />
+	<Error Number="I90" SubCode= "" Type="I/O" Description="Linux error when using 'SETMODE *LINUXREADLOCK=1' to allow F_RDLCK record locking." />
 	<Error Number="I97" SubCode= "" Type="I/O" Description="COMFILE not open." />
 	<Error Number="I97" SubCode= "0" Type="I/O" Description="During COMFILE open, null parameters." />
 	<Error Number="I97" SubCode= "1" Type="I/O" Description="During COMFILE open, bad or missing first parameter or unable to initialize windows socket interface." />
@@ -1661,5 +1664,7 @@
   <Warning Number="413"  Description="NCHAR array element string truncated!" />
   <Warning Number="416"  Description="Unclear comment syntax. Possible missing USING!" />
   <Warning Number="424"  Description="Possible numeric expression operation ignored!" />
+  <Warning Number="437"  Description="CLASS '.plc' not used! Can not open/access/load!" />
+	
 </Runtime_Errors>
 

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+   <!--
+   This code is taken from the sample given at https://developers.google.com/workspace/calendar/api/quickstart/js
+    -->
+    <div id='linkStore' style="display: none"></div>
+    <script type="text/javascript">
+    
+      var CLIENT_ID;
+      var API_KEY;
+
+      // Discovery doc URL for APIs used by the quickstart
+      const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
+
+      // Authorization scopes required by the API; multiple scopes can be
+      // included, separated by spaces.
+      //const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
+      const SCOPES = 'https://www.googleapis.com/auth/calendar';
+
+      let tokenClient;
+      let gapiNowLoaded = false;
+      let gisNowLoaded = false;
+      let gapiInited = false;
+      let gisInited = false;
+
+      /**
+       * Callback after api.js is loaded.
+       */
+      function gapiLoaded() {
+       gapiNowLoaded = true;
+      }
+
+      /**
+       * Callback after the API client is loaded. Loads the
+       * discovery doc to initialize the API.
+       */
+      async function initializeGapiClient() {
+        await gapi.client.init({
+          apiKey: API_KEY,
+          discoveryDocs: [DISCOVERY_DOC],
+        });
+        gapiInited = true;
+	gapiNowLoaded = false;
+
+      }
+
+      /**
+       * Callback after Google Identity Services are loaded.
+       */
+      function gisLoaded() {
+   
+        gisNowLoaded = true;
+       
+      }
+
+     function gisLoadedFini() {
+        tokenClient = google.accounts.oauth2.initTokenClient({
+          client_id: CLIENT_ID,
+          scope: SCOPES,
+          callback: '', // defined later
+        });
+        gisInited = true;
+	gisNowLoaded = false;
+       
+      }
+
+      /**
+       *  Sign in the user 
+       */
+      function doAuth() {
+
+        tokenClient.callback = async (resp) => {
+          if (resp.error !== undefined) {
+            throw (resp);
+          }
+   
+        };
+
+        if (gapi.client.getToken() === null) {
+          // Prompt the user to select a Google Account and ask for consent to share their data
+          // when establishing a new session.
+          tokenClient.requestAccessToken({prompt: 'consent'});
+        } else {
+          // Skip display of account chooser and consent dialog for an existing session.
+          tokenClient.requestAccessToken({prompt: ''});
+        }
+      }
+
+      /**
+       *  Sign out the user
+       */
+      function doSignout() {
+        const token = gapi.client.getToken();
+        if (token !== null) {
+          google.accounts.oauth2.revoke(token.access_token);
+          gapi.client.setToken('');
+          document.getElementById('content').innerText = '';
+        }
+      }
+
+      /**
+       *  Add and event
+       */	  
+      function addEvent( newEvent, calId ) {
+        const request = gapi.client.calendar.events.insert({
+ 	     'calendarId': calId, 'resource': newEvent });
+
+        request.execute(function(event) {
+        /* document.getElementById('linkStore').innerText = event.htmlLink; */ });
+      }
+
+      /**
+       *  Handle message requests
+       */	  
+      window.addEventListener('message', (event) => {
+        var rMsg;
+	const msgData = event.data.slice(0,10);
+	if ( msgData == '{"plbmsg":' ) {	
+	  try {
+	    rMsg = JSON.parse(event.data);
+	  }
+	 catch (exception) {
+	   console.log(exception);
+	   return;
+	 }
+			
+	switch (rMsg.plbmsg) {
+	case 0:
+	  CLIENT_ID = rMsg.arg1; 
+          API_KEY = rMsg.arg2; 
+	  if ( gapiNowLoaded ) {
+		gapi.load('client', initializeGapiClient);
+	  }
+	  if ( gisNowLoaded ) {
+		gisLoadedFini();
+	 }
+	 break;
+
+	case 1:
+	 if (gapiInited && gisInited) {
+          doAuth();
+         } 
+	 break;
+	case 2: doSignout(); break;
+	case 3: addEvent( rMsg.arg1, rMsg.arg2 ); break;
+	}
+      } 
+    });
+	
+    </script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+  </body>
+</html>

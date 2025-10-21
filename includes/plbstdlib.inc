@@ -14,6 +14,9 @@ $PLBSTDL        EQU             1   ;Flag that PLBSTDL is used.
                 %IFDEF          $PLBSTDL_HISTORY
                                           
 .:: 10 Apr 20 - Create PLB standard library.                        :10.3
+.:: 18 Mar 25 - Changed s$cmdlin to be S$CMDLIN to correct	    :10.7B
+.:: 		compilation errors when doing a case sensitive
+.:: 		compile.
 
                 %ENDIF
 *------------------------------------------------------------------------------
@@ -38,9 +41,9 @@ nvar            FORM            2
 .
 . Find the specified JSON label node
 .
-                PACK            s$cmdlin, "label='",xLabel,"'"
+                PACK            S$CMDLIN, "label='",xLabel,"'"
                 pXData.FindNode GIVING nvar:
-                                USING *FILTER=S$cmdlin:  	//Locate specified JSON label!
+                                USING *FILTER=S$CMDLIN:  	//Locate specified JSON label!
                                 *POSITION=START_DOCUMENT_NODE 	//Start at the beginning of the document!
                 IF              ( nvar == 0 )
 ...
@@ -53,12 +56,12 @@ nvar            FORM            2
 . Fetch the data for the JSON  label.
 .
                 pXData.GetText  GIVING xString
-                PACK            s$cmdlin, xLabel,"= '",xString,"'"
+                PACK            S$CMDLIN, xLabel,"= '",xString,"'"
                 ELSE
-                MOVE            "Error Move Node:", s$cmdlin
+                MOVE            "Error Move Node:", S$CMDLIN
                 ENDIF
                 ELSE
-                PACK            s$cmdlin, "Error Find Node:",nvar
+                PACK            S$CMDLIN, "Error Find Node:",nvar
                 ENDIF
 
                 TYPE            xString 

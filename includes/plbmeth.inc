@@ -7,7 +7,7 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 *==============================================================================
 . PLB METHOD support definitions
 .
-. Last Revision Date:  06 Sep 2024
+. Last Revision Date:  08 Aug 2025
 .
 . Revision History:
 .
@@ -146,6 +146,8 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .:: 04 Mar 24 - Updated for the 10.6A release.				 :10.6A
 .:: 29 Aug 24 - Updated for MPI methods and properties.                  :10.7
 .:: 06 Sep 24 - Added $BS5_OPTION_NO_WINBORDER.                          :10.7
+.:: 21 Oct 24 - Added $MONITOR_FLAGPLBXLATRECT for MonitorInfo.		 :10.7A
+.:: 08 Aug 25 - Added DATASET and JSON objects with methods.		 :10.8
 .::
          %ENDIF                                                          :8.3A
 *------------------------------------------------------------------------------
@@ -1210,6 +1212,87 @@ DDL_EXCLUSIVE    Integer 4,"0x8000"
 . Methods:
 .
 .   none
+.
+*------------------------------------------------------------------------------
+.   DATASET                                                               10.8
+.
+. Events:
+.
+.   None                                           
+.
+. Properties:
+.
+.   COUNT=dnumnvar                           CREATE  SETPROP  GETPROP
+.   DATAFILTER=svarslit                      CREATE  SETPROP  GETPROP
+.   DATATYPE=dnumnvar                        CREATE  SETPROP  GETPROP
+.   MAXITEMS=dnumnvar                        CREATE  SETPROP  GETPROP   
+.   NULLSIZE=dnumnvar                        CREATE  SETPROP  GETPROP 
+.
+. Methods:
+.
+.   AddItem             GIVING {nvar}  USING *Text={svarslit}:
+.                                            *Key={svarslit}:         Optional
+.                                            *Flags={dnumnvar}        Optional
+.   DeleteAllItems      GIVING {nvar}  USING *Flags={dnumnvar}        Optional
+.   DeleteItem          GIVING {nvar}  USING *Key={svarslit}:         Optional
+.                                            *Index={dnumnvar}:       Optional
+.                                            *Flags={dnumnvar}        Optional
+.   FindItem            GIVING {svar}  USING *Key={svarslit}:         Optional
+.                                            *Index={dnumnvar}:       Optional
+.                                            *Flags={dnumnvar}        Optional
+.   FindItem            GIVING {svar}  USING *Key={svarslit}:         Optional
+.                                            *Index={dnumnvar}:       Optional
+.                                            *Delimiter={svarslit}:   Optional
+.                                            *Flags={dnumnvar}        Optional
+.   GetItem             GIVING {svar}  USING *Key={svarslit}:         Optional
+.                                            *Index={dnumnvar}:       Optional
+.                                            *Delimiter={svarslit}:   Optional
+.                                            *Flags={dnumnvar}        Optional
+.   Pop                 GIVING {svar}  USING *Flags={dnumnvar}        Optional
+.   Push                GIVING {svar}  USING *Text={svarslit}:
+.                                            *Key={dnumnvar}:         Optional
+.                                            *Flags={dnumnvar}        Optional
+.   UpdateItem          GIVING {svar}  USING *Text={svarslit}:
+.                                            *Key={svarslit}:         Optional
+.                                            *Index={dnumnvar}:       Optional
+.                                            *Flags={dnumnvar}        Optional
+.
+. Method Constants:
+.
+. AddItem Method Flag Values
+...............................
+$DSF_ADDITEM_KEYCASE_SENSITIVE          EQU  0x01
+$DSF_ADDITEM_GET_KEY_AND_DATA	        EQU  0x02
+$DSF_ADDITEM_RETURN_ITEM_INFO           EQU  0x04
+$DSF_ADDITEM_GET_KEY_AND_INDEX          EQU  0x08
+$DSF_ADDITEM_PUSH                       EQU  0x10
+$DSF_ADDITEM_ALLOW_NULL                 EQU  0x20
+$DSF_ADDITEM_READONLY                   EQU  0x40
+.
+. DeleteItem Method Flag Values
+...............................
+$DSF_DELITEM_KEYCASE_SENSITIVE          EQU  0x01
+.
+. FindItem Method Flag Values
+. GetItem Method Flag Values
+...............................
+$DSF_ITEM_KEYCASE_SENSITIVE             EQU  0x01
+$DSF_ITEM_GET_KEY_AND_DATA	        EQU  0x02
+$DSF_ITEM_GET_ITEM_INFO                 EQU  0x04
+$DSF_ITEM_GET_NEXT_ITEM                 EQU  0x08
+$DSF_ITEM_GET_PRIOR_ITEM                EQU  0x10
+$DSF_ITEM_GET_FILTER_SEARCH             EQU  0x20
+.
+. Pop Method Flag Values
+...............................
+$DSF_POP_FIFO                           EQU  0x01
+$DSF_POP_GET_KEY_AND_DATA	        EQU  0x02
+.
+. UPDATEItem Method Flag Values
+...............................
+$DSF_UPDITEM_KEYCASE_SENSITIVE          EQU  0x01
+$DSF_UPDITEM_GET_KEY_AND_DATA	        EQU  0x02
+$DSF_UPDITEM_ALLOW_NULL                 EQU  0x20
 .
 *------------------------------------------------------------------------------
 .   DATATABLE                                                              10.5
@@ -2363,6 +2446,103 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .   WriteBmpFile         GIVING {nvar} USING *FileName={svarslit}
 .
 *------------------------------------------------------------------------------
+.   JSON                                                                  10.8
+.
+. Events:
+.
+.   None
+.
+. Properties:
+.
+.   None
+.
+. Methods:
+.
+.   Parse               GIVING {nvar}  USING *Json={svarslit}:
+.                                            *Options={dnumnvar}      Optional
+.   Store               GIVING {svar}  USING *Options={dnumnvar}      Optional
+.   StoreSize           GIVING {nvar}  USING *Options={dnumnvar}      Optional
+.   GetNumber           GIVING {nvar}  USING *Name={svarslit}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   GetString           GIVING {svar}  USING *Name={svarslit}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   GetType             GIVING {nvar}  USING *Name={svarslit}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   SetArray            GIVING {nvar}  USING *Name={svarslit}:
+.                                            *VALUE={svarslit}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   SetBoolean          GIVING {nvar}  USING *Name={svarslit}:
+.                                            *VALUE={svarslit|dnumnvar}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   SetInteger          GIVING {nvar}  USING *Name={svarslit}:
+.                                            *VALUE={svarslit|dnumnvar}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   SetObject           GIVING {nvar}  USING *Name={svarslit}:
+.                                            *VALUE={svarslit|nchar}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   SetString           GIVING {nvar}  USING *Name={svarslit}:
+.                                            *VALUE={svarslit|nchar}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   Delete              GIVING {nvar}  USING *Name={svarslit}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   Null                GIVING {nvar}  USING *Name={svarslit}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   Reset               GIVING {nvar}
+.   GetNames            GIVING {svar}  USING *Name={svarslit}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
+.   SyntaxError        GIVING {svar}
+.
+. Method Constants:
+.
+. GetType Method Result Values
+...............................
+$JSF_TYPE_OBJECT                        EQU  1
+$JSF_TYPE_ARRAY                         EQU  2
+$JSF_TYPE_INTEGER                       EQU  3
+$JSF_TYPE_DOUBLE                        EQU  4
+$JSF_TYPE_STRING                        EQU  5
+$JSF_TYPE_BOOLEAN                       EQU  6
+$JSF_TYPE_NULL                          EQU  7
+.
+. Parse Method Flag Values
+...............................
+$JSF_PARSE_ALLOW_COMMENTS               EQU  0x01
+.
+. Store Method Flag Values
+...............................
+$JSF_STORE_OUTPUT_INDENTION	        EQU  0x02
+$JSF_STORE_OUTPUT_CRLF                  EQU  0x04
+$JSF_STORE_USE_TAB                      EQU  0x40
+.
+. StoreSize Method Flag Values
+...............................
+$JSF_STORESIZE_OUTPUT_INDENTION	        EQU  0x02
+$JSF_STORESIZE_OUTPUT_CRLF              EQU  0x04
+$JSF_STORESIZE_USE_TAB                  EQU  0x40
+.
+*------------------------------------------------------------------------------
 .   LABELTEXT                                                                
 .
 . Events:
@@ -2876,6 +3056,7 @@ $LV_CSVWR_NOZEROWIDTH   Integer 4,"0x010"                                 9.1A
 $LV_CSVWR_LOWERCASE	Integer 4,"0x020"				  9.3A
 $LV_CSVWR_UPPERCASE	Integer 4,"0x040"				  9.3A
 $LV_CSVWR_ORDERARRAY	Integer 4,"0x080"				  9.4D
+$LV_CSVWR_NOANSI2OEM    Integer 4,"0x100"
  
 $LV_GETITEM_QUOTED      Integer 4,"0x001"   ;GetItemTextAll Options       9.1A
 $LV_GETITEM_NOZEROWIDTH Integer 4,"0x010"                                 9.1A
@@ -5274,6 +5455,7 @@ $SB_BOTTOM	EQU	7	;Scroll to maximum bottom position.	  9.2
 $MONITOR_DEFAULTTONULL	  INTEGER 4,"0x00000000" ;Return NULL             9.3A
 $MONITOR_DEFAULTTOPRIMARY INTEGER 4,"0x00000001" ;Return primary monitor  9.3A
 $MONITOR_DEFAULTTONEAREST INTEGER 4,"0x00000002" ;Return nearest monitor  9.3A
+$MONITOR_FLAGPLBXLATRECT  INTEGER 4,"0x00000004" ;Return object units	  10.7A
 
 ...........
 . For GetLocaleInfo *Type={dnumnvar}
