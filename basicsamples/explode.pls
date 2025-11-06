@@ -1,0 +1,27 @@
+.
+.SAMPLE PROGRAM USING EXPLODE
+.
+
+* Data Definitions
+INPUTSTR   DIM     50
+FIELD1     DIM     10
+FIELD2     DIM     10
+FIELD3     DIM     10
+COUNT      FORM    3.0
+
+.
+* Initialize Source String
+ MOVE "APPLE,BANANA,CHERRY" TO INPUTSTR
+
+.
+* EXPLODE Source String by Comma Delimiter
+ EXPLODE INPUTSTR BY "," GIVING COUNT INTO FIELD1, FIELD2, FIELD3
+
+.
+* Display Results
+ DISPLAY *HD,"FIELD1 = ",FIELD1
+ DISPLAY *HD,"FIELD2 = ",FIELD2
+ DISPLAY *HD,"FIELD3 = ",FIELD3
+ DISPLAY *HD,"Number of Fields Processed = ",COUNT
+ PAUSE "2"
+ STOP

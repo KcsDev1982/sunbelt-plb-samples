@@ -5,7 +5,7 @@ Sample code and projects for the Programming Language for Business (PL/B).
 ### Sample Directory Layout
 * agenda       - Sample classic PL/B AGENDA programs
 * ai           - Sample AI chat and speech recognition
-* beta_107B    - Beta versions of PL/B IDE and Utilities
+* basicsamples - Sample programs showing basic concepts
 * calendar     - Google calendar integration
 * chart        - Google chart sample using HTML control
 * class_sample - Sample program using PLBOBJECT and CLASSMODULE
@@ -14,7 +14,7 @@ Sample code and projects for the Programming Language for Business (PL/B).
 * conftalks    - Selected conference presentations
 * courses      - Course materials and samples for training 
 * datatable    - DATATABLE object samples
-* demo         - Modern answer/master programs for 10.7
+* demo         - Modern answer/master programs for 10.7+
 * files        - Sample programs that manipulate file data
 * htmlcontrol_designer - Designers for the HTMLCONTROL object
 * http_root    - Additional files for the plbwebsrv http_root
