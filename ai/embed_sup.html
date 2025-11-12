@@ -1,0 +1,647 @@
+<!doctype html>
+<html data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <title>HTML -> Markdown -> Embeddings (Browser)</title>
+  <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+  <script src="https://unpkg.com/turndown-plugin-gfm/dist/turndown-plugin-gfm.js"></script>
+  <script src="https://unpkg.com/dompurify/dist/purify.min.js"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    :root {
+      --bs-primary: #1e3a8a;
+      --bs-primary-rgb: 30, 58, 138;
+      --bs-secondary: #1e40af;
+      --bs-secondary-rgb: 30, 64, 175;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      min-height: 100vh;
+    }
+    #C2 { 	
+      height: 100% !important
+    }
+    
+    .main-container {
+      background: rgba(30, 41, 59, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    }
+    
+    .form-control, .form-select {
+      background-color: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: #e2e8f0;
+    }
+    
+    .form-control::placeholder {
+      color: #94a3b8 !important;
+      opacity: 1;
+    }
+    
+    .form-control:focus, .form-select:focus {
+      background-color: rgba(30, 41, 59, 0.9);
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+      color: #f1f5f9;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      border: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-outline-primary {
+      color: #60a5fa;
+      border-color: #60a5fa;
+    }
+    
+    .btn-outline-primary:hover {
+      background-color: #3b82f6;
+      border-color: #3b82f6;
+      color: white;
+    }
+    
+    .text-primary {
+      color: #60a5fa !important;
+    }
+    
+    .border-primary {
+      border-color: rgba(59, 130, 246, 0.4) !important;
+    }
+    
+    hr {
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    
+    .alert {
+      border: none;
+      border-radius: 0.75rem;
+    }
+    
+    .file-input-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .file-input-wrapper input[type=file] {
+      position: absolute;
+      left: -9999px;
+    }
+    
+    .file-input-label {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 0.75rem;
+      color: #60a5fa;
+      border: 1px solid #60a5fa;
+      border-radius: 0.375rem;
+      background-color: transparent;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: all 0.15s ease-in-out;
+      text-decoration: none;
+    }
+    
+    .file-input-label:hover {
+      background-color: #3b82f6;
+      border-color: #3b82f6;
+      color: white;
+    }
+    
+    .selected-file {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #60a5fa;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-3">
+    <div class="main-container p-3">
+      <!-- Header -->
+      <div class="text-center mb-4">
+        <h1 class="display-5 fw-bold text-primary mb-3">
+          <i class="bi bi-code-slash me-3"></i>
+          HTML <i class="bi bi-arrow-right me-2"></i> Embeddings
+        </h1>
+        <p class="lead text-light">
+          Convert HTML files to text format for embedding processing
+        </p>
+      </div>
+
+      <!-- File Upload Section -->
+      <div class="card bg-dark border-primary mb-4">
+        <div class="card-header bg-primary bg-opacity-20 border-primary">
+          <h5 class="card-title mb-0">
+            <i class="bi bi-file-earmark-arrow-up me-2"></i>
+            File Upload
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="alert alert-info bg-primary bg-opacity-10 border-primary text-light">
+            <i class="bi bi-info-circle me-2"></i>
+            <strong>Note:</strong> Load an HTML file (local), or paste HTML into the text area below. 
+          </div>
+          
+          <div class="row align-items-end">
+            <div class="col-md-8">
+            <div class="row align-items-center">
+              <div class="file-input-wrapper col-md-6 col-12">
+                <input id="fileInput" type="file" accept=".html,.htm" />
+                <label for="fileInput" class="file-input-label">
+                  <i class="bi bi-folder2-open me-2"></i>
+                  <span id="fileInputText">Choose File</span>
+                </label>
+              </div>
+              <div class="col-md-6">
+              <div id="selectedFile" class="selected-file mx-1 my-2"></div>
+              </div>
+              </div>
+              
+              </div>
+              
+            
+            <div class="col-md-4">
+              <button id="processFile" class="btn btn-primary w-100">
+                <i class="bi bi-gear-fill me-2"></i>
+                Process File
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HTML Input Section -->
+      <div class="card bg-dark border-primary mb-4">
+        <div class="card-header bg-primary bg-opacity-20 border-primary">
+          <h5 class="card-title mb-0">
+            <i class="bi bi-code me-2"></i>
+            HTML Input
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="htmlInput" class="form-label text-light">
+              Paste your HTML code here:
+            </label>
+            <textarea 
+              id="htmlInput" 
+              class="form-control" 
+              rows="8" 
+              placeholder="<html>
+  <body>
+    <h1>Your HTML content here...</h1>
+    <p>Paste your HTML code here...</p>
+  </body>
+</html>"
+              style="font-family: 'Courier New', monospace;"
+            ></textarea>
+          </div>
+          <button id="processPaste" class="btn btn-outline-primary">
+            <i class="bi bi-play-fill me-2"></i>
+            Process HTML
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div class="card bg-dark border-primary">
+        <div class="card-header bg-primary bg-opacity-20 border-primary">
+          <h5 class="card-title mb-0">
+            <i class="bi bi-terminal me-2"></i>
+            Processing Log
+          </h5>
+        </div>
+        <div class="card-body">
+          <div id="log" class="bg-dark p-3 rounded border" style="min-height: 100px; font-family: 'Courier New', monospace; color: #94a3b8;">
+            <div class="text-muted">
+              <i class="bi bi-clock me-2"></i>
+              Ready to process HTML files...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="text-center mt-4 pt-3 border-top border-primary">
+        <small class="text-muted">
+          <i class="bi bi-shield-check me-1"></i>
+          Powered by Turndown.js, DOMPurify, and Bootstrap
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main processing pipeline -->
+  <script>
+    const EMBEDDING_MODEL = "text-embedding-3-small"; 
+    const MAX_TOKENS = 800;
+    const OVERLAP_TOKENS = 48;
+    const BATCH_SIZE = 32;
+    let apiKey;
+
+    const logEl = document.getElementById("log");
+    function log(msg) {
+      console.log(msg);
+      logEl.innerHTML += '<div class="text-info"><i class="bi bi-arrow-right me-2"></i>' + msg + '</div>';
+    }
+
+    // ---- API key handling ----
+    function setApiKey(key) {
+      return apiKey = key;
+    }
+    
+    function getApiKey() {
+      return apiKey;
+    }
+    
+    // ---- Sanitizer & HTML processing ----
+    function sanitizeHtml(html) {
+      const cleaned = DOMPurify.sanitize(html, {
+        WHOLE_DOCUMENT: false,
+        ALLOWED_TAGS: [
+          'p', 'br', 'ul', 'ol', 'li', 'em', 'strong', 'b', 'i', 'u',
+          'code', 'pre', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td',
+          'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div'
+        ],
+        ALLOWED_ATTR: ['href', 'colspan', 'rowspan'],
+        FORBID_TAGS: ['script', 'style'],
+        FORBID_ATTR: [/^on/i]
+      });
+      return cleaned.replace(/\u00A0/g, ' ');
+    }
+
+  // ---- HTML to embeddable text (with fallback) ----
+function htmlToEmbeddableText(html) {
+  // 1) Sanitize (uses your existing sanitizeHtml)
+  const cleaned = sanitizeHtml(html);
+  const doc = new DOMParser().parseFromString(cleaned, "text/html");
+
+  // 2) Remove empty/nav tables (same idea as your existing code)
+  doc.querySelectorAll("table").forEach(table => {
+    const text = table.textContent.replace(/\s+/g, "");
+    const hasMeaningfulText = /[A-Za-z0-9]/.test(text);
+    if (!hasMeaningfulText) table.remove();
+  });
+
+  // 3) Drop "See Also" blocks (keep this as you requested)
+  Array.from(doc.querySelectorAll("p")).forEach(p => {
+    if (/^\s*See Also:/i.test(p.textContent)) p.remove();
+  });
+
+  // ---- helpers ----
+  function collectInlineText(el) {
+    const parts = [];
+    const skipTags = new Set(["TABLE", "UL", "OL", "TR", "THEAD", "TBODY", "TFOOT"]);
+    (function walk(n) {
+      if (n.nodeType === Node.TEXT_NODE) {
+        const t = n.nodeValue.replace(/\s+/g, " ");
+        if (t.trim()) parts.push(t);
+        return;
+      }
+      if (n.nodeType !== Node.ELEMENT_NODE) return;
+      const name = n.nodeName;
+      if (skipTags.has(name)) return;
+      if (name === "BR") {
+        parts.push("\n");
+        return;
+      }
+      Array.from(n.childNodes).forEach(walk);
+    })(el);
+    return parts.join(" ").replace(/\s+/g, " ").trim();
+  }
+
+  function flattenTable(table) {
+    const lines = [];
+    const rows = Array.from(table.querySelectorAll("tr"));
+    if (!rows.length) return lines;
+
+    // Detect a "Code / Description" header to format as "Code: Description"
+    let start = 0;
+    let codeDesc = false;
+    const hdrCells = rows[0].querySelectorAll("th,td");
+    if (hdrCells.length >= 2) {
+      const hdrText = (hdrCells[0].textContent + " " + hdrCells[1].textContent).toLowerCase();
+      if (hdrText.includes("code") && hdrText.includes("description")) {
+        codeDesc = true;
+        start = 1;
+      }
+    }
+
+    for (let i = start; i < rows.length; i++) {
+      const cells = Array.from(rows[i].querySelectorAll("td,th"));
+      if (!cells.length) continue;
+
+      if (codeDesc && cells.length >= 2) {
+        const key = collectInlineText(cells[0]).replace(/^\W+|\W+$/g, "");
+        const val = collectInlineText(cells[1]);
+        if (key && val) lines.push(`${key}: ${val}`);
+        else {
+          const txt = cells.map(c => collectInlineText(c)).filter(Boolean).join(" | ");
+          if (txt) lines.push(txt);
+        }
+      } else {
+        const txt = cells.map(c => collectInlineText(c)).filter(Boolean).join(" | ");
+        if (txt) lines.push(txt);
+      }
+    }
+    return lines;
+  }
+
+  const out = [];
+
+  function traverse(node) {
+    if (!node) return;
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      const t = node.nodeValue.replace(/\s+/g, " ").trim();
+      if (t) out.push(t);
+      return;
+    }
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+
+    const name = node.nodeName;
+
+    // Emit in reading order
+    if (/^H[1-6]$/.test(name)) {
+      const t = collectInlineText(node);
+      if (t) out.push(t);
+      return;
+    }
+    if (name === "P") {
+      const t = collectInlineText(node);
+      if (t) out.push(t);
+      return;
+    }
+    if (name === "UL" || name === "OL") {
+      Array.from(node.querySelectorAll(":scope > li")).forEach(li => {
+        const t = collectInlineText(li);
+        if (t) out.push("- " + t);
+      });
+      return;
+    }
+    if (name === "TABLE") {
+      const lines = flattenTable(node);
+      lines.forEach(l => out.push(l));
+      return;
+    }
+    if (name === "PRE" || name === "CODE") {
+      const t = node.textContent.replace(/\s+/g, " ").trim();
+      if (t) out.push(t);
+      return;
+    }
+
+    // Default: continue depth-first to preserve order
+    Array.from(node.childNodes).forEach(traverse);
+  }
+
+  traverse(doc.body || doc);
+
+  // Final normalization: keep order, remove empties
+  const lines = out.map(s => s.replace(/\s+/g, " ").trim()).filter(Boolean);
+  return lines.join("\n");
+}
+    // ---- Token estimator ----
+    function estimateTokens(text) {
+      if (!text) return 0;
+      const words = text.trim().split(/\s+/).filter(Boolean).length;
+      return Math.max(1, Math.round(words * 1.3));
+    }
+
+    // ---- Token-aware chunker ----
+    function chunkTextByTokens(text, maxTokens = MAX_TOKENS, overlap = OVERLAP_TOKENS) {
+      const paragraphs = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+      const chunks = [];
+      let currentParts = [];
+      let currentTokens = 0;
+
+      function flushCurrent() {
+        if (currentParts.length === 0) return;
+        const chunkText = currentParts.join("\n\n").trim();
+        chunks.push({ text: chunkText, tokens: currentTokens });
+        currentParts = [];
+        currentTokens = 0;
+      }
+
+      for (const p of paragraphs) {
+        const tTokens = estimateTokens(p);
+        if (tTokens > maxTokens) {
+          const lines = p.split('\n').map(l => l.trim()).filter(Boolean);
+          let buf = [];
+          let bufTokens = 0;
+          for (const l of lines) {
+            const lTokens = estimateTokens(l);
+            if (bufTokens + lTokens > maxTokens) {
+              if (buf.length) {
+                currentParts.push(buf.join('\n'));
+                currentTokens = estimateTokens(currentParts.join('\n\n'));
+                flushCurrent();
+              }
+              if (lTokens > maxTokens) {
+                const words = l.split(/\s+/);
+                let wbuf = [];
+                for (const w of words) {
+                  if (estimateTokens(wbuf.join(' ')) + estimateTokens(w) > maxTokens) {
+                    chunks.push({ text: wbuf.join(' '), tokens: estimateTokens(wbuf.join(' ')) });
+                    wbuf = [w];
+                  } else {
+                    wbuf.push(w);
+                  }
+                }
+                if (wbuf.length) chunks.push({ text: wbuf.join(' '), tokens: estimateTokens(wbuf.join(' ')) });
+              } else {
+                chunks.push({ text: l, tokens: lTokens });
+              }
+              buf = [];
+              bufTokens = 0;
+            } else {
+              buf.push(l);
+              bufTokens += lTokens;
+            }
+          }
+          if (buf.length) {
+            currentParts.push(buf.join('\n'));
+            currentTokens = estimateTokens(currentParts.join('\n\n'));
+          }
+        } else {
+          if (currentTokens + tTokens + 2 > maxTokens) {
+            flushCurrent();
+            currentParts.push(p);
+            currentTokens = tTokens;
+          } else {
+            currentParts.push(p);
+            currentTokens += tTokens + 2;
+          }
+        }
+      }
+      flushCurrent();
+
+      if (overlap > 0 && chunks.length > 1) {
+        const overlapped = [];
+        for (let i = 0; i < chunks.length; i++) {
+          let txt = chunks[i].text;
+          if (i > 0) {
+            const prevWords = chunks[i - 1].text.split(/\s+/).filter(Boolean);
+            const takeWords = Math.round(overlap / 1.3) || 30;
+            const slice = prevWords.slice(-takeWords).join(' ');
+            txt = slice + "\n\n" + txt;
+          }
+          overlapped.push({ text: txt, tokens: estimateTokens(txt) });
+        }
+        return overlapped;
+      }
+      return chunks;
+    }
+
+    // ---- OpenAI embeddings call ----
+    async function getEmbeddingsBatchOpenAI(apiKey, texts) {
+      const res = await fetch("https://api.openai.com/v1/embeddings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({ model: EMBEDDING_MODEL, input: texts })
+      });
+      if (!res.ok) throw new Error(await res.text());
+      const data = await res.json();
+      return data.data.map(d => d.embedding);
+    }
+
+    // ---- Save JSON ----
+    function saveJSONToFile(obj, filename = "vectors.json") {
+      const blob = new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // ---- Main pipeline ----
+    async function processHtmlString(htmlString, options = {}) {
+      const { apiKey, sourceName = "pasted.html" } = options;
+      if (!apiKey) throw new Error("API key required");
+
+      log("Sanitizing HTML...");
+      const cleaned = sanitizeHtml(htmlString);
+      
+      log("Converting to compact text for embeddings...");
+      const embeddableText = htmlToEmbeddableText(cleaned);
+      console.log("Embeddable text:\n", embeddableText);
+
+      log("Chunking...");
+      const chunksMeta = chunkTextByTokens(embeddableText, MAX_TOKENS, OVERLAP_TOKENS);
+      log(`Produced ${chunksMeta.length} chunks.`);
+
+      const outputs = [];
+      for (let i = 0; i < chunksMeta.length; i += BATCH_SIZE) {
+        const batch = chunksMeta.slice(i, i + BATCH_SIZE);
+        const texts = batch.map(x => x.text);
+        log(`Requesting embeddings for batch ${i / BATCH_SIZE + 1} (${texts.length} items)...`);
+        const embeddings = await getEmbeddingsBatchOpenAI(apiKey, texts);
+        for (let j = 0; j < batch.length; j++) {
+          const idx = i + j;
+          outputs.push({
+            id: `${sourceName}::${idx}`,
+            embedding: embeddings[j],
+            text: batch[j].text,
+            tokens: batch[j].tokens,
+            metadata: {
+              source: sourceName,
+              chunkIndex: idx,
+              totalChunks: chunksMeta.length,
+              model: EMBEDDING_MODEL,
+              createdAt: new Date().toISOString()
+            }
+          });
+        }
+      }
+      return outputs;
+    }
+
+    // File input change handler
+    document.getElementById("fileInput").addEventListener("change", function(e) {
+      const file = e.target.files[0];
+      const textElement = document.getElementById("fileInputText");
+      const selectedElement = document.getElementById("selectedFile");
+      
+      if (file) {
+        textElement.textContent = file.name;
+        selectedElement.innerHTML = `<i class="bi bi-file-earmark-text me-1"></i>Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+      } else {
+        textElement.textContent = "Select HTML File";
+        selectedElement.innerHTML = "";
+      }
+    });
+
+    // ---- UI handlers ----
+    document.getElementById("processPaste").addEventListener("click", async () => {
+      logEl.innerHTML = '<div class="text-muted"><i class="bi bi-clock me-2"></i>Starting processing...</div>';
+      const html = document.getElementById("htmlInput").value;
+      if (!html) {
+        logEl.innerHTML = '<div class="text-warning"><i class="bi bi-exclamation-triangle me-2"></i>Please paste HTML content first.</div>';
+        return;
+      }
+      if (!apiKey) {
+        logEl.innerHTML = '<div class="text-danger"><i class="bi bi-key me-2"></i>API key not set. Call setApiKey() first.</div>';
+        return;
+      }
+      try {
+        const vectors = await processHtmlString(html, { apiKey, sourceName: "pasted.html" });
+        saveJSONToFile(vectors, "pasted_html.vectors.json");
+        logEl.innerHTML += '<div class="text-success mt-2"><i class="bi bi-check-circle me-2"></i>Done! Download should start.</div>';
+      } catch (err) {
+        logEl.innerHTML += '<div class="text-danger mt-2"><i class="bi bi-x-circle me-2"></i>Error: ' + err.message + '</div>';
+      }
+    });
+
+    document.getElementById("processFile").addEventListener("click", async () => {
+      logEl.innerHTML = '<div class="text-muted"><i class="bi bi-clock me-2"></i>Starting file processing...</div>';
+      const fileIn = document.getElementById("fileInput");
+      if (!fileIn.files || fileIn.files.length === 0) {
+        logEl.innerHTML = '<div class="text-warning"><i class="bi bi-exclamation-triangle me-2"></i>Please select a file first.</div>';
+        return;
+      }
+      const file = fileIn.files[0];
+      if (!apiKey) {
+        logEl.innerHTML = '<div class="text-danger"><i class="bi bi-key me-2"></i>API key not set. Call setApiKey() first.</div>';
+        return;
+      }
+      try {
+        const text = await file.text();
+        const vectors = await processHtmlString(text, { apiKey, sourceName: file.name });
+        saveJSONToFile(vectors, file.name + ".vectors.json");
+        logEl.innerHTML += '<div class="text-success mt-2"><i class="bi bi-check-circle me-2"></i>Done! Download should start.</div>';
+      } catch (err) {
+        logEl.innerHTML += '<div class="text-danger mt-2"><i class="bi bi-x-circle me-2"></i>Error: ' + err.message + '</div>';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -84,4 +84,8 @@
   </Profiles>
   <Source Name="chatbot.pls"/>
   <Source Name="chatbot_sup.html"/>
+  <Source Name="embed.pls"/>
+  <Source Name="embed_sup.html"/>
+  <Source Name="sunbelt_chat.pls"/>
+  <Source Name="sunbelt_chat_sup.html"/>
 </SunIDE_Project_File>

@@ -2,7 +2,7 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>basicsamples</ActiveProfile>
   <ProjectTitle>basicsamples</ProjectTitle>
-  <SelectedProgram>switch2.pls</SelectedProgram>
+  <SelectedProgram>json4.pls</SelectedProgram>
   <Profiles>
     <Name>basicsamples</Name>
     <Properties>
@@ -102,4 +102,6 @@
   <Source Name="file3.pls"/>
   <Source Name="keyin1.pls"/>
   <Source Name="button1.pls"/>
+  <Source Name="json3.pls"/>
+  <Source Name="json4.pls"/>
 </SunIDE_Project_File>
