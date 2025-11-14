@@ -2,7 +2,7 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>basicsamples</ActiveProfile>
   <ProjectTitle>basicsamples</ProjectTitle>
-  <SelectedProgram>dataset1.pls</SelectedProgram>
+  <SelectedProgram>dataset4.pls</SelectedProgram>
   <Profiles>
     <Name>basicsamples</Name>
     <Properties>
@@ -106,4 +106,7 @@
   <Source Name="json4.pls"/>
   <Source Name="createcsv.pls"/>
   <Source Name="dataset1.pls"/>
+  <Source Name="dataset2.pls"/>
+  <Source Name="dataset3.pls"/>
+  <Source Name="dataset4.pls"/>
 </SunIDE_Project_File>
