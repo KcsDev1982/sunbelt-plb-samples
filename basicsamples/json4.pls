@@ -29,12 +29,10 @@ Main           LFUNCTION
                JObj.SetString USING *NAME="Person.Phones[$1]", *INDEX1=2, *VALUE="705-555-3333"
 
 *----------------------------------------------------------------
-. Retrieve array elements using GetString
+. Retrieve element names using GetNames
 *----------------------------------------------------------------
-               FOR        Index FROM 0 TO 2
-                            JObj.GetString GIVING Temp$ USING *NAME="Person.Phones[$1]", *INDEX1=Index
-                            DISPLAY *N,"Phone[",Index,"]: ",Temp$
-               REPEAT
+               JObj.GetNames GIVING Temp$ Using "Person"
+  	       DISPLAY *N,"Names: ",Temp$
 
 *----------------------------------------------------------------
 . Store entire JSON structure
