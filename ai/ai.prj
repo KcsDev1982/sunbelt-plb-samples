@@ -2,7 +2,7 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>release</ActiveProfile>
   <ProjectTitle>AI</ProjectTitle>
-  <SelectedProgram>chatbot.pls</SelectedProgram>
+  <SelectedProgram>chat_gemini.pls</SelectedProgram>
   <Profiles>
     <Name>release</Name>
     <Properties>
@@ -88,4 +88,8 @@
   <Source Name="embed_sup.html"/>
   <Source Name="sunbelt_chat.pls"/>
   <Source Name="sunbelt_chat_sup.html"/>
+  <Source Name="chat_gemini.pls"/>
+  <Source Name="chatbot_v2.pls"/>
+  <Source Name="chat_gemini.html"/>
+  <Source Name="chatbot_v2_sup.html"/>
 </SunIDE_Project_File>

@@ -1,0 +1,531 @@
+<head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    .pre-question {
+      text-wrap: pretty;
+      width: max-content;
+      max-width: 500px;
+      padding: 1rem;
+    }
+
+    .pre-response {
+      margin: 0;
+      padding: 1rem 1rem 0;
+      text-wrap: pretty;
+      border-radius: 0.375rem;
+    }
+
+    .pre-response pre {
+      margin-bottom: 1rem;
+      border-radius: 0.375rem;
+    }
+
+    .pre-response p {
+      padding-bottom: 1rem;
+      margin-bottom: 0;
+    }
+
+    .pre-response blockquote {
+      border-left: 4px solid #ddd;
+      margin: 0;
+      padding-left: 1em;
+      color: #666;
+    }
+
+    pre code[class*="language-"] {
+      font-family: "Courier New", Consolas, monospace !important;
+    }
+
+    /* Ensure inline code never gets block code styling */
+    :not(pre) > code[class*="language-"] {
+      background: inherit !important;
+      color: inherit !important;
+      padding: 0.2em 0.4em !important;
+      font-size: 85% !important;
+      border-radius: 3px !important;
+    }
+
+    .btn {
+      float: right !important;
+    }
+
+    .btn.is-on {
+      background: #dc3545;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.65;
+      }
+    }
+
+    .loading-modal {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      max-width: 300px;
+      width: 90%;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #loadingOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      backdrop-filter: blur(2px);
+    }
+
+    .loading-text {
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay">
+    <div class="loading-modal">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Generating Response</div>
+    </div>
+  </div>
+
+  <!-- Button for microphone and data to hold results -->
+  <button
+    id="chatMic"
+    type="button"
+    class="btn btn-lg btn-primary"
+    style="display: none"
+  >
+    <i class="bi bi-mic-mute fs-6"></i>
+  </button>
+  <div id="chatQues" style="display: none" data-plbevent="click"></div>
+  <div id="chatResp" style="display: none" data-plbevent="click"></div>
+
+  <!-- Load Marked -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script type="text/javascript">
+    const SYSTEM_PROMPT = `
+	You are Gemini, an expert assistant for a chat application. Your main functions are:
+	- Providing accurate general knowledge.
+	- Offering extensive help with programming, web development, and all major coding languages.
+	
+	**Response Formatting Guidelines:**
+	1. For programming, configuration, or technical markup examples:
+	   - Always wrap examples in fenced code blocks with the correct language identifier 
+	     (e.g., \`\`\`python, \`\`\`javascript, \`\`\`html, \`\`\`bash, \`\`\`yaml).
+	   - For code or technical output not fitting a standard language, use a \`\`\`text code block.
+	2. For general knowledge or non-coding replies:
+	   - Use concise, readable Markdown (e.g., lists, tables, bold or italic text), focusing on clarity for users.
+	3. Never use raw or rendered markup outside of code fences. All technical or code-based content must be inside properly labeled code blocks.
+	4. Always tailor formatting to the subject: code and technical data in code blocks; all other information in easy-to-read Markdown.
+	5. If special expertise is requested, you are also an expert in Sunbelt PLB, visual pl/b (Programming Language for Business) -> provide accurate, detailed help for this language when needed.
+	
+	**Overall:**
+	- Maximize clarity and readability in all responses for users.
+	`;
+
+    // App object
+    const app = {
+      micBtn: document.getElementById("chatMic"),
+      questionEl: document.getElementById("chatQues"),
+      responseEl: document.getElementById("chatResp"),
+      loadingOverlay: document.getElementById("loadingOverlay"),
+      micIcon: null,
+      isMicOn: false,
+      rec: null,
+      model: "gemini-2.5-flash",
+      fallbackModel: "gemini-2.5-flash-lite",
+    };
+
+    function signalHost(element) {
+      if (!element) return;
+      element.dispatchEvent(new Event("click"));
+    }
+
+    function showloadingOverlay() {
+      app.loadingOverlay.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideloadingOverlay() {
+      app.loadingOverlay.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    function speechInit() {
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SR) {
+        app.micBtn.style.display = "none";
+        return;
+      }
+      app.isMicOn = false;
+      app.micIcon = app.micBtn.firstElementChild;
+      app.micBtn.style.display = "block";
+
+      app.rec = new SR();
+      app.rec.interimResults = false; // Only get final results
+
+      app.rec.addEventListener("start", startSpeechRecognition);
+      app.rec.addEventListener("end", endSpeechRecognition);
+      app.rec.addEventListener("result", resultOfSpeechRecognition);
+      app.rec.addEventListener("error", speechError);
+
+      app.micBtn.addEventListener("click", micBtnClick);
+    }
+
+    function micBtnClick() {
+      if (app.isMicOn) {
+        app.rec.stop();
+      } else {
+        app.questionEl.textContent = "<<empty>>";
+        app.rec.start();
+      }
+    }
+
+    function setMicState(btn, on) {
+      const icon = btn.querySelector("i");
+      btn.setAttribute("aria-pressed", String(on));
+      btn.classList.toggle("is-on", on);
+      if (icon) {
+        icon.classList.toggle("bi-mic", on);
+        icon.classList.toggle("bi-mic-mute", !on);
+      }
+    }
+
+    function startSpeechRecognition() {
+      app.isMicOn = true;
+      setMicState(app.micBtn, true);
+    }
+
+    function endSpeechRecognition() {
+      app.isMicOn = false;
+      setMicState(app.micBtn, false);
+    }
+
+    function resultOfSpeechRecognition(event) {
+      const current = event.resultIndex;
+      const transcript = event.results[current][0].transcript;
+      app.questionEl.textContent = transcript;
+      app.rec.stop();
+      signalHost(app.questionEl);
+    }
+
+    function speechError(e) {
+      console.warn("Speech error:", e.error);
+      app.questionEl.textContent = `Speech error: ${e.error}`;
+      app.rec.stop();
+      setMicState(app.micBtn, false);
+    }
+
+    // ---------- Load Prism Language Components ----------
+
+    function loadScript(src) {
+      return new Promise((res, rej) => {
+        const s = document.createElement("script");
+        s.src = src;
+        s.onload = () => res(src);
+        s.onerror = () => rej(new Error("Failed to load " + src));
+        document.head.appendChild(s);
+      });
+    }
+
+    async function initScripts() {
+      // Configure Prism BEFORE loading core
+      window.Prism = window.Prism || {};
+      Prism.manual = true;
+      Prism.disableWorkerMessageHandler = true;
+
+      const base = "https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/";
+      // core first
+      await loadScript(base + "prism-core.min.js");
+      // prerequisites
+      await loadScript(base + "prism-clike.min.js");
+      await loadScript(base + "prism-markup.min.js");
+      await loadScript(base + "prism-markup-templating.min.js");
+      // now dependents can load in parallel
+      await Promise.all([
+        loadScript(base + "prism-javascript.min.js"),
+        loadScript(base + "prism-java.min.js"),
+        loadScript(base + "prism-php.min.js"),
+        loadScript(base + "prism-python.min.js"),
+        loadScript(base + "prism-css.min.js"),
+      ]);
+    }
+
+    // ---------- Configure Marked.js ----------
+
+    let markedConfigured = false;
+
+    function configureMarked() {
+      if (markedConfigured) return;
+      try {
+        marked.setOptions({
+          gfm: true,
+          breaks: true,
+          headerIds: false,
+          mangle: false,
+          pedantic: false,
+          langPrefix: "",
+        });
+        markedConfigured = true;
+        console.log("Marked configured!");
+      } catch (e) {
+        console.error("Marked configuration error:", e);
+      }
+    }
+
+    // ---------- Markdown To Html ----------
+
+    function markdownToHtml(md) {
+      if (!md || /^\s*$/.test(md)) return { html: "", detached: null };
+      if (!markedConfigured) configureMarked();
+      md = String(md).replace(/\r\n?/g, "\n");
+      if (typeof marked === "undefined") return { html: md, detached: null };
+
+      // Parse the corrected Markdown string.
+      try {
+        const html = marked.parse(md);
+        // Create detached container
+        const container = document.createElement("div");
+        container.innerHTML = html;
+        return { html: container.innerHTML, detached: container };
+      } catch (error) {
+        console.error("Error processing markdown:", error);
+        return { html: md, detached: null };
+      }
+    }
+
+    // ---------- Highlight with Prism----------
+
+    function highlight(detachedElement, targetElement) {
+      try {
+        targetElement.innerHTML = detachedElement.innerHTML;
+
+        // Single pass: clean inline code classes
+        targetElement.querySelectorAll("code").forEach((code) => {
+          const isInline =
+            !code.parentElement || code.parentElement.tagName !== "PRE";
+          if (isInline) {
+            const cleanClasses = [...code.classList]
+              .filter((c) => !c.startsWith("language-"))
+              .join(" ");
+            code.className = cleanClasses;
+          }
+        });
+
+        // Highlight blocks
+        targetElement.querySelectorAll("pre > code").forEach((code) => {
+          const hasLang = [...code.classList].some((c) =>
+            c.startsWith("language-")
+          );
+          if (!hasLang) code.classList.add("language-plaintext");
+          Prism.highlightElement(code);
+        });
+      } catch (e) {
+        console.error("Highlight error:", e);
+      } finally {
+        targetElement.dataset.processed = targetElement.innerHTML;
+        targetElement.dataset.ready = "true";
+        signalHost(targetElement);
+      }
+    }
+
+    // ---------- Ask Gemini with retry and model fallback----------
+
+    async function askGemini(userQuest, apikey) {
+      showloadingOverlay();
+
+      const maxRetries = 3; // total attempts per model = maxRetries + 1
+      const baseDelayMs = 1000;
+      const timeoutMs = 30000;
+
+      const primaryModel = app.model;
+      const fallbackModel = app.fallbackModel;
+
+      // Helper: attempt requests with a given model
+      async function runWithModel(modelName) {
+        for (let attempt = 0; attempt <= maxRetries; attempt++) {
+          const ac = new AbortController();
+          const to = setTimeout(() => ac.abort(), timeoutMs);
+
+          try {
+            console.log(
+              `askGemini: model=${modelName}, attempt=${attempt + 1}/${
+                maxRetries + 1
+              }`
+            );
+
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apikey}`;
+
+            const response = await fetch(url, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              signal: ac.signal,
+              body: JSON.stringify({
+                contents: [{ role: "user", parts: [{ text: userQuest }] }],
+                systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+                generationConfig: {
+                  temperature: 0.7,
+                  topK: 40,
+                  topP: 0.95,
+                  maxOutputTokens: 4096,
+                },
+              }),
+            });
+
+            clearTimeout(to);
+
+            if (response.status === 503) {
+              throw new Error("Service Unavailable (503)");
+            }
+            if (!response.ok) {
+              throw new Error(`Gemini access error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            const geminiResp =
+              data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+
+            if (!geminiResp) {
+              throw new Error("Gemini response error: No content");
+            }
+
+            console.debug("Raw response received, length:", geminiResp.length);
+
+            // Markdown ? HTML
+            const { html, detached } = markdownToHtml(geminiResp);
+
+            if (detached) {
+              // Best case: parsed and detached
+              highlight(detached, app.responseEl);
+            } else if (html) {
+              // Fallback 1: HTML string only
+              app.responseEl.innerHTML = html;
+              app.responseEl.dataset.processed = html;
+              app.responseEl.dataset.ready = "true";
+              signalHost(app.responseEl);
+            } else {
+              // Fallback 2: plain text
+              app.responseEl.textContent = geminiResp;
+              app.responseEl.dataset.ready = "true";
+              signalHost(app.responseEl);
+            }
+
+            // SUCCESS: exit function entirely
+            return true;
+          } catch (e) {
+            clearTimeout(to);
+
+            console.error(
+              `Error in askGemini (model=${modelName}, attempt ${attempt + 1}/${
+                maxRetries + 1
+              }):`,
+              e.message
+            );
+
+            const isLastAttempt = attempt === maxRetries;
+            if (isLastAttempt) {
+              // Give up on this model
+              return false;
+            }
+
+            // Exponential backoff + jitter
+            const jitter = Math.random() * 1000;
+            const delay = baseDelayMs * Math.pow(2, attempt) + jitter;
+            console.log(
+              `Retrying (model=${modelName}) in ${delay.toFixed(0)}ms...`
+            );
+            await new Promise((resolve) => setTimeout(resolve, delay));
+          }
+        }
+
+        // Should never reach here
+        return false;
+      }
+
+      try {
+        // 1. Try primary model with its own retry budget
+        const primarySuccess = await runWithModel(primaryModel);
+        if (primarySuccess) return;
+
+        // 2. If primary failed, try fallback model with its own retry budget
+        if (fallbackModel && fallbackModel !== primaryModel) {
+          console.warn(
+            `Primary model ${primaryModel} failed after retries. Switching to fallback model ${fallbackModel}...`
+          );
+
+          const fallbackSuccess = await runWithModel(fallbackModel);
+          if (fallbackSuccess) return;
+        }
+
+        // 3. Final failure
+        console.error(
+          "All retries failed on both primary and fallback models."
+        );
+        app.responseEl.textContent = "Error: All models failed after retries.";
+        app.responseEl.dataset.ready = "true";
+        signalHost(app.responseEl);
+      } finally {
+        hideloadingOverlay();
+      }
+    }
+
+    // Initialize on load
+
+    async function boot() {
+      try {
+        await initScripts();
+        configureMarked();
+        speechInit();
+        console.log("App initialized successfully!");
+      } catch (e) {
+        console.error("Initialization error:", e);
+      }
+    }
+
+    if (document.readyState === "complete") boot();
+  </script>
+</body>

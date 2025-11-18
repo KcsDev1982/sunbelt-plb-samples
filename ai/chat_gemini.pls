@@ -1,13 +1,14 @@
 *---------------------------------------------------------------
 .
-. Program Name: chatbot.pls
-. Description:  PL/B AI and speech recognition
+. Program Name: chat_gemini.pls
+. Description:  PL/B AI and speech recognition using Gemini
 .
 . Revision History:
 .
-. Date: 09/20/2024
+. Date: 07/23/2025 SM
 . Original code
 .
+
                 INCLUDE         plbequ.inc
                 INCLUDE         plbmeth.inc
 
@@ -20,19 +21,16 @@ isWebCliApp     BOOLEAN
 isSmallScreen   BOOLEAN
 
 // Global data
-mainForm        PLFORM          chatbot.plf
+mainForm        PLFORM          chatbot_gemini.plf
 chatDtMessages  DATATABLE
 Client          CLIENT
 jsonData        DIM             200
 emptyAns        INIT            "<<empty>>"
 
-
                 %ENCRYPTON
-eapiKey         INIT            "Add your OpenAI API key here"
+apiKey          INIT            "Add your Gemini API key here" // gemini
                 %ENCRYPTOFF
 
-*---------------------------------------------------------------
-// <program wide variables>
 *................................................................
 .
 . Code start
@@ -148,6 +146,7 @@ subItem         FORM            5
                 CALC            item = ( eventResult / 100 )
                 CALC            subItem = ( eventResult - ( item * 100 ) )
                 chatDtMessages.DeleteRow USING item
+
                 FUNCTIONEND
 *................................................................
 .
@@ -157,16 +156,27 @@ AddCard         LFUNCTION
 type            DIM             20
 info            DIM             ^
                 ENTRY
+title           DIM             10
 footer          DIM             30
 dateTime        DATETIME
-cleanInfo       DIM             10240
+cleanInfo       DIM             64000
 
                 dateTime.SetToNow Using  $TRUE
                 dateTime.GetAsString Giving footer Using "Time: %h:%M:%S %a"
-
-                PACK            cleanInfo,"<pre style='text-wrap: pretty'>",info,"</pre>"
-
-                chatDtMessages.AddRow USING "ChatBot":
+                
+                                // For questions, wrap in pre tag for readability
+                IF              (type == "Question")
+                PACK            cleanInfo,"<pre class='bg-light text-secondary ms-4 shadow-sm pre-question'>":
+                                info,"</pre>"
+                MOVE            "Me", title
+                  
+                ELSE            // For responses
+                PACK            cleanInfo,"<div class='bg-light shadow-sm pre-response'>":
+                                info,"</div>"
+                MOVE            "Chatbot", title
+                ENDIF
+                
+                chatDtMessages.AddRow USING title:
                                 *subitem1=type:
                                 *subitem2=cleanInfo:
                                 *subitem3="Remove":
@@ -181,54 +191,47 @@ SetupCards      LFUNCTION
                 ENTRY
                 
                 CREATE          chatDtMessages
-
                 chatDtMessages.AddColumn Using 0, *ContentType=$TC_HEADER
                 chatDtMessages.AddColumn Using 1, *ContentType=$TC_TITLE
                 chatDtMessages.AddColumn Using 2, *ContentType=$TC_DETAILS
                 chatDtMessages.AddColumn Using 3, *ContentType=$TC_BUTTON1
                 chatDtMessages.AddColumn Using 4, *ContentType=$TC_FOOTER
                 chatDtMessages.AddColumn Using 5
-
-                SETPROP         chatDtMessages.columns(2), *ALIGNMENT=$CENTER
+                
                 EVENTREG        chatDtMessages,$UPDATED,CardBtn
- 
+                 
                 FUNCTIONEND
 
 *................................................................
 .
-. Ask the question to chatGPT
+. Ask the question to Gemini
 .
 AskQuestion     LFUNCTION
                 ENTRY
 chars           FORM            4
-jsCall          DIM             4096
-apiKey          DIM             200
-question        DIM             2048
-
+jsCall          DIM             8192
+decryptedApiKey DIM             200
+question        DIM             8192
+result          FORM            4
 
                 GETPROP         chatEdtQuestion, text=question
                 CHOP            question
                 COUNT           chars from question
+                
+                chatHtmlSpeech.SetAttr using "chatResp","text",emptyAns // Clear previous response
+                
+                MOVE            apiKey,decryptedApiKey // Decrypt API key
+                DECRYPT         decryptedApiKey
 
-                chatHtmlSpeech.SetAttr using "chatResp","text",emptyAns
-
-                MOVE            eapiKey,apiKey
-                DECRYPT         apiKey
-.
-. Limit question to 2000 characters
-.
-                IF              (chars > 0 AND chars < 2000 )
-                CALL            AddCard Using "Question",question
-.
-. Setup and call the aysnc javascript routine
-.
-                PACK            jsCall Using "askGpt('",question,"','",apiKey,"');"
+                IF              (chars > 0 AND chars < 4000 ) // Limit question to 4000 characters
+                CALL            AddCard Using "Question", question
+                PACK            jsCall Using "askGemini('",question,"','",decryptedApiKey,"');"
                 Client.jsrun    Using jsCall
                 Client.FlushMessages
                 ENDIF
-
+                
                 SETPROP         chatEdtQuestion, text=""
- 
+                 
                 FUNCTIONEND
 
 *................................................................
@@ -237,33 +240,64 @@ question        DIM             2048
 .
 ChatEvent       LFUNCTION
                 ENTRY
-data            DIM             10240
-.
-. Look for and handle a chat response
-.
+data            DIM             64000
+cleanData       DIM             64000
+readyFlag       DIM             10
+result          FORM            4
+
                 SCAN            "chatResp" in JsonData
-                IF              EQUAL
-                chatHtmlSpeech.GetAttr giving data using "chatResp","text"
-                IF              (data != emptyAns )
+                IF              EQUAL // Check if the response is ready
+
+                chatHtmlSpeech.GetAttr giving readyFlag using "chatResp","data-ready"
+                CHOP            readyFlag
+                
+                IF              (readyFlag == "true")
+                                
+                CLEAR           data // Clear data first             
+.
+. Try methods in order until we get content
+. Method 1: Try processed content
+.
+                chatHtmlSpeech.GetAttr giving data using "chatResp","data-processed"
                 CHOP            data
-                CALL            AddCard Using "Response",data
+.
+. Method 2: If processed is empty, try innerHTML
+.
+                IF              (data == "")
+                CLEAR           data
+                chatHtmlSpeech.GetAttr giving data using "chatResp","innerHTML"
+                CHOP            data
+                ENDIF
+.
+. Method 3: If still empty, try text content
+.
+                IF              (data == "")
+                CLEAR           data
+                chatHtmlSpeech.GetAttr giving data using "chatResp","text"
+                CHOP            data
+                ENDIF
+.
+. If we got content by any method, add the card
+.
+                IF              (data != "")
+                MOVE            data,cleanData
+                CALL            AddCard Using "Response",cleanData
                 SETFOCUS        chatEdtQuestion
                 ENDIF
                 ENDIF
-
-.
-. Look for and handle a speech recognition event
-.
+                ENDIF
+                
                 SCAN            "chatQues" in JsonData
                 IF              EQUAL
+                CLEAR           data
                 chatHtmlSpeech.GetAttr giving data using "chatQues","text"
-                IF              (data != emptyAns )
                 CHOP            data
+                IF              (data != "" AND data != "<<empty>>")
                 SETPROP         chatEdtQuestion, text=data
                 SETFOCUS        chatEdtQuestion
                 ENDIF
                 ENDIF
-
+                
                 FUNCTIONEND
 
 *................................................................
@@ -275,12 +309,11 @@ Main            LFUNCTION
 result          FORM            4
 
                 CALL            CheckStatus
-
                 IF              (!isGui)
                 KEYIN           "This runtime can't run this program. ",result
                 STOP
                 ENDIF
-
+                
                 IF              (!isWebview)
                 ALERT           STOP,"This program requires WebView support.",result
                 STOP
@@ -294,14 +327,14 @@ result          FORM            4
                 ENDIF
 
                 FORMLOAD        mainForm
-
                 CALL            SetupCards
                 chatDtMessages.HtmlBind Using chatHtmlMessages,$TBL_HTML_CARD
-
-                CALL            LoadSupportHtml Using chatHtmlSpeech,"chatbot_sup.html"
-                EVENTREG        chatHtmlSpeech,$JQueryEvent,ChatEvent,ARG1=JsonData
-
+                
+                CALL            LoadSupportHtml Using chatHtmlSpeech,"chat_gemini.html" // Load the HTML file
+                
+                EVENTREG        chatHtmlSpeech,$JQueryEvent,ChatEvent,ARG1=JsonData // Register event handler for JavaScript events
+                
                 chatFrmMain.SetAsClient
                 Client.SetUTF8Convert Using 0
- 
+                 
                 FUNCTIONEND
