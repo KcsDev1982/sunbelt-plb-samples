@@ -4,7 +4,7 @@
 .
 DtlOpen
                 TRAP            DtlPrep IF IO
-                OPEN            DTLFILE,"DETAIL.ISI"
+                OPEN            DTLFILE,"ORDERDETAIL.ISI"
                 TRAPCLR         IO
 *
 .Build a collection of the input objects

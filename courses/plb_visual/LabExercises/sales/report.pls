@@ -16,7 +16,7 @@ REPORT
 .
 		OPEN	CUSTLIST
 		OPEN	ORDFILE,"ORDER.ISI"
-		OPEN	DTLFILE,"DETAIL.ISI"
+		OPEN	DTLFILE,"ORDERDETAIL.ISI"
 *
 .Open the printer
 
@@ -35,7 +35,8 @@ REPORT
 		IF			OVER
 		PACK		MESSAGE WITH "Unable to locate customer ",ORDCUST
 		ALERT		STOP,Message,Reply,"Error"
-		PRTCLOSE	P,ABORT
+		PRTCLOSE	P
+		RETURN
 		ENDIF
 *
 .Print the order line

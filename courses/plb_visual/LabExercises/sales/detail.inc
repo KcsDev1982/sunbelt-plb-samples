@@ -10,6 +10,6 @@ DTLPRICE        FORM            7.2
 DTLDATA         VARLIST         DTLORD,DTLITEM,DTLDESC,DTLQTY,DTLPRICE
 .  
 DTLKEY          DIM             20
-DTLFILE         IFILE           NAME="DETAIL.ISI"
+DTLFILE         IFILE           NAME="ORDERDETAIL.ISI"
 .
 DTLTEXT         COLLECTION
