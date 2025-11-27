@@ -347,7 +347,7 @@
 
       try {
         const response = await fetch(
-          "https://api.openai.com/v1/chat/completions",
+          "https://api.openai.com/v1/responses",
           {
             method: "POST",
             headers: {
@@ -356,10 +356,8 @@
             },
             body: JSON.stringify({
               model: app.model,
-              messages: [
-                { role: "system", content: "You are a helpful assistant." },
-                { role: "user", content: userQuest },
-              ],
+              instructions: "You are a helpful assistant.",
+              input: userQuest,
             }),
           }
         );
@@ -370,11 +368,11 @@
 
         const data = await response.json();
 
-        if (!data.choices?.[0]?.message?.content) {
+        if (!data.output?.[1]?.content?.[0]?.text) {
           throw new Error("GPT response error: No content");
         }
 
-        const chatGPTResp = data.choices[0].message.content.trim();
+        const chatGPTResp = data.output[1].content[0].text.trim();
         console.debug("Raw response received, length:", chatGPTResp.length);
 
         // FIRST: Set the plain text content immediately

@@ -2,7 +2,7 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>basicsamples</ActiveProfile>
   <ProjectTitle>basicsamples</ProjectTitle>
-  <SelectedProgram>dataset4.pls</SelectedProgram>
+  <SelectedProgram>datetime3.pls</SelectedProgram>
   <Profiles>
     <Name>basicsamples</Name>
     <Properties>
@@ -109,4 +109,5 @@
   <Source Name="dataset2.pls"/>
   <Source Name="dataset3.pls"/>
   <Source Name="dataset4.pls"/>
+  <Source Name="datetime3.pls"/>
 </SunIDE_Project_File>
