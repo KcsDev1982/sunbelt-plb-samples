@@ -259,7 +259,7 @@ noCtlFile
 
 *................................................................
 .
-. Load the staus line
+. Load the status line
 .
 LoadStatus      LFUNCTION
 edtParam        EDITTEXT        ^
@@ -270,7 +270,7 @@ runVersion      DIM             50
 
                 GETPROP         edtParam, text=S$CMDLIN
 
-                IF              (isWebSrv)
+                IF              (isWebView)
                 CALL            GetBrowser Using statusLine
                 ELSE
                 CLOCK           VERSION, runVersion
