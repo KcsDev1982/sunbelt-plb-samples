@@ -1,0 +1,110 @@
+The Following instructions are for .tar distributed UNIX software 9.7 or later.
+For pre 9.7 software, please see below at heading PRE 9.7
+
+ 1. Make sure 32-bit support is enabled if installing a 32-bit product.
+    The checklib.sh can verify that the necessary libraries are available to install.
+
+ 2. Go into super user mode with the 'su' command.
+
+ 3. Create a directory '/home/sunbelt.install' and change to it.
+
+ 4. Untar the downloaded file with the following command:
+
+	tar -xvf {path to tar file}/{download}.tar
+	
+ 5. Change the permissions on the install script as follows:
+
+	chmod +x suninst
+	
+ 6. Run './suninst' and follow the on screen instructions.  The default
+    directory is '/home/sunbelt/{product.version}/'. This allows for
+    multiple versions of a product to be installed without having to change
+    the install directory.
+
+ 7. For PL/B, add the following three lines your '.profile'.  These lines
+    assume the software was installed in the default directory.  If not, then
+    simply change the '{install path}' to the directory where the software was
+    installed
+
+	PLB_SYSTEM={install path};export PLB_SYSTEM
+	PLB_PATH={install path};export PLB_PATH
+	PATH=$PATH:{install path}
+
+    For SUNDM, modify 'sundm.cfg' as necessary for your system.
+
+    For Application Server modify 'plbserve.ini' as necessary for your system.
+
+    For PLB Web Server modify 'plbwebsrv.ini' as necessary for your system.
+
+ 8. 'login' again to activate the '.profile' commands.
+
+ 9. Run the 'env' command and make sure the above environment variables are
+    present.
+
+10. For PLB, Run the 'env' command and note the 'TERM=???' entry.  Make sure
+    there is a '???.def' file in "{install path}".
+
+11. If '???.def' does not exist, you must create one by running 'makedef'.
+
+12. Please read any file that ends in .RFM or .ME for other information that
+    may apply to your particular system
+
+===============================================================================
+
+PRE 9.7
+
+The Following instructions are for .tar distributed UNIX software 8.4 to 9.6.
+
+ 1. Go into super user mode with the 'su' command.
+
+ 2. Create a directory '/.invisible' and change to it.
+
+ 3. Untar the plbinnvv.tar or plbcnnvv.tar file with the following command:
+
+	tar -xvf {path to tar file}/{download}.tar
+	
+    (where nn is the operating system type and vv is the runtime version)
+    (if your version contains a '.gz' at the end, it is compressed
+    using gzip and will need to be decompressed using gunzip )
+
+ 4. Change the permissions on the install script as follows:
+
+	chmod +x suninst
+	
+ 5. Run './suninst loaded' and follow the on screen instructions.
+
+ 6. For PL/B, add the following three lines your '.profile'.  These lines
+    assume the software was installed in the default directory.  If not, then
+    simply change the '/usr/plc' to the directory where the software was
+    installed
+
+	PLB_SYSTEM=/usr/plc;export PLB_SYSTEM
+	PLB_PATH=/usr/plc;export PLB_PATH
+	PATH=$PATH:/usr/plc
+
+    For SUNDM, modify the 'sundm.cfg' file as necessary for your system.
+
+ 7. 'login' again to activate the '.profile' commands.
+
+ 8. Run the 'env' command and make sure the above environment variables are
+    present
+
+ 9. Run the 'env' command and note the 'TERM=???' entry.  Make sure there is a
+    '???.def' file in /usr/plc
+
+10. If '???.def' does not exist, you must create one by running 'makedef'.
+
+11. Please read any file that ends in .RFM or .ME for other information that
+    may apply to your particular system
+
+===============================================================================
+
+The install procedure has a default directory for each product being installed.
+You can override the default and specify any other directory in which to
+install the software.  If the directory is not already in the PATH environment
+variable, you must modify the PATH variable to include the directory.
+
+Again, thank you for your interest and do not hesitate to call if we can be of
+service. We can be reached at the email: support.scsi@sunbelt-plb.com
+
+

@@ -23,6 +23,7 @@ Sample code and projects for the Programming Language for Business (PL/B).
 * install_helper - Powershell scripts to make shortcuts
 * jquerymobile - Jquery Mobile sample for plbwebsrv
 * legacy_demo  - Legacy sample programs originally released with PLBWIN
+* linux_extras - Additions files to help linux installations
 * plbwebcli    - Samples for use with PlbWebCli application
 * printing     - Sample programs using Advanced Printing/PDF
 * rest_client  - Sample programs accessing REST services
