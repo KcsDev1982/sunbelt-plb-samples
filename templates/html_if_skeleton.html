@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Iframe Sample Application</title> 
+    <style>
+    /*************************************************************
+    Custom Styles
+    **************************************************************/
+    </style>
+   </head>
+
+   <body>
+    <!-- Main HTML content -->
+
+    <div class="container mt-5">
+      <h2>Sample Edit Field</h2>
+      <form>
+        <div class="mb-3">
+          <label for="sampleInput" class="form-label">Edit Field</label>
+          <input type="text" class="form-control" id="sampleInput" placeholder="Type something...">
+        </div>
+        <button id="submit" type="button" class="btn btn-primary">Send Msg</button>
+      </form>
+      <div class="mb-3">
+      <iframe id='plbFrame' src="file://c:/sunbelt/templates/html_if_skeleton1.html" width="100%" height="100%" frameborder="1" scrolling="no"></iframe> 
+      </div>
+    </div>
+
+    <!-- Custom Code -->
+    <script type="text/javascript"> 
+    function plbSendMsg( frameName, msgType, msgArg1, msgArg2 ) {
+	var rMsg = { 'plbmsg' : 0 };
+	var iframe = document.getElementById(frameName);
+
+	rMsg.plbmsg = msgType;
+	rMsg.arg1 = msgArg1;
+        rMsg.arg2 = msgArg2;
+
+	iframe.contentWindow.postMessage(JSON.stringify(rMsg), '*');
+	}
+
+      function plbGetGuid() {
+	const guid = crypto.randomUUID();
+	return guid;
+	}
+      </script>
+   </body>
+ </html>
+

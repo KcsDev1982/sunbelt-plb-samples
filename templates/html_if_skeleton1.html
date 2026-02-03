@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Iframe Sample</title> 
+    <style>
+    /*************************************************************
+    Custom Styles
+    **************************************************************/
+    </style>
+   </head>
+
+   <body>
+    <!-- Main HTML content -->
+    <div class="container mt-5">
+      <h2>Sample Iframe</h2>
+        <div class="mb-3">
+         <div id='plbMessage'>Hello from iframe</div>
+        </div>
+    </div>
+    
+     <!-- Custom Code -->
+    <script type="text/javascript">
+      /*
+       *  Handle message requests
+       */	  
+      window.addEventListener('message', (event) => {
+        var rMsg;
+	const msgData = event.data.slice(0,10);
+	if ( msgData == '{"plbmsg":' ) {	
+	  try {
+	    rMsg = JSON.parse(event.data);
+	  }
+	 catch (exception) {
+	   console.log(exception);
+	   return;
+	 }
+	alert( "iframe msg: " + event.data );		
+	switch (rMsg.plbmsg) {
+	case 1:
+	  document.getElementById('plbMessage').innerText = rMsg.arg2;
+	 break;
+	}
+      } 
+    });
+	
+    </script>
+  </body>
+</html>

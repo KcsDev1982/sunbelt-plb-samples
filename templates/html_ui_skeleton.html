@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML UI Sample Application</title> 
+    <style>
+    /*************************************************************
+    Custom Styles
+    **************************************************************/
+    </style>
+   </head>
+
+   <body>
+    <!-- Main HTML content -->
+
+    <div class="container mt-5">
+      <h2>Sample Edit Field</h2>
+      <form>
+        <div class="mb-3">
+          <label for="sampleInput" class="form-label">Edit Field</label>
+          <input type="text" class="form-control" id="sampleInput" placeholder="Type something...">
+        </div>
+        <button id="submit" type="button" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <!-- Custom Code -->
+    <script type="text/javascript"> 
+      function plbGetGuid() {
+	const guid = crypto.randomUUID();
+	return guid;
+	}
+      </script>
+   </body>
+ </html>
+
