@@ -34,8 +34,27 @@ elif [ -x "$arg1" ] && file "$arg1" | grep -q 'ELF'; then
    echo
    echo "The '$arg1' file is an ELF binary executable ok for 'ldd' check!!"
 else
+   if [ -x "$arg1" ]; then
+    echo
+    echo "The '$arg1' file does have execution permissions!!"
+   else
+    echo
+    echo "The '$arg1' file does NOT have execution permissions!!"
+   fi
+
+   if file "$arg1" | grep -q 'ELF'; then
+    echo
+    echo "The '$arg1' file is an ELF binary!"
+   else
+    echo
+    echo "The '$arg1' file is NOT an ELF binary!"
+   fi
+
    echo
-   echo "The '$arg1' file is not an ELF binary executable!!"
+   
+   ldd $arg1
+
+   echo  
    echo "Exiting script!"
    echo
    exit 1;
