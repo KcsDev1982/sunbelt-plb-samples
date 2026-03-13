@@ -2,7 +2,7 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>release</ActiveProfile>
   <ProjectTitle>AI</ProjectTitle>
-  <SelectedProgram>sunbelt_chat_resp.pls</SelectedProgram>
+  <SelectedProgram>C:\Sunbelt\sunbelt-plb-samples\ai\aiobj_gem.pls</SelectedProgram>
   <Profiles>
     <Name>release</Name>
     <Properties>
@@ -94,4 +94,6 @@
   <Source Name="chatbot_v2_sup.html"/>
   <Source Name="sunbelt_chat_resp.pls"/>
   <Source Name="sunbelt_chat_resp_sup.html"/>
+  <Source Name="aiobj_gem.pls"/>
+  <Source Name="aiobj_gpt.pls"/>
 </SunIDE_Project_File>
