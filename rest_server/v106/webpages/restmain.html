@@ -1,0 +1,75 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/resttemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src *; img-src * data: ;style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Phone Messages</title>
+<!-- InstanceEndEditable -->
+<link href="restsupp.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="restsupp.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<header>
+    <h1 class="centerInDiv">Phone Messages</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="restmain.html">Main Page</a></li>
+      <li><a href="restentry.html">Message Entry</a></li>
+      <li><a href="restquery.html">Message Lookup</a></li>
+    </ul>
+  </nav>
+  <div id="content">
+  <!-- InstanceBeginEditable name="MainArea" -->
+  <div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+    <table border="1" cellpadding="0" cellspacing="0" class="center">
+      <tr>
+        <td><p lang="en-US">Method</p></td>
+        <td><p lang="en-US">URL</p></td>
+        <td><p lang="en-US">Action</p></td>
+      </tr>
+      <tr>
+        <td><p lang="en-US">GET</p></td>
+        <td><p lang="en-US">/MyServices/phonemsg</p></td>
+        <td><p lang="en-US">Retrieves all messages</p></td>
+      </tr>
+      <tr>
+        <td><p lang="en-US">GET</p></td>
+        <td><p lang="en-US">/MyServices/phonemsg/search/Bob</p></td>
+        <td><p lang="en-US">Searches for messages sent to Bob</p></td>
+      </tr>
+      <tr>
+        <td><p lang="en-US">GET</p></td>
+        <td><p lang="en-US">/MyServices/phonemsg/2</p></td>
+        <td><p lang="en-US">Retrieves message based on primary key</p></td>
+      </tr>
+      <tr>
+        <td><p lang="en-US">POST</p></td>
+        <td><p lang="en-US">/MyServices/phonemsg</p></td>
+        <td><p lang="en-US">Adds a new message</p></td>
+      </tr>
+      <tr>
+        <td><p lang="en-US">PUT</p></td>
+        <td><p lang="en-US">/MyServices/phonemsg/2</p></td>
+        <td><p lang="en-US">Updates message based on primary key</p></td>
+      </tr>
+      <tr>
+        <td><p lang="en-US">DELETE</p></td>
+        <td><p lang="en-US">/MyServices/phonemsg/2</p></td>
+        <td><p lang="en-US">Deletes message based on primary key</p></td>
+      </tr>
+    </table>
+  </div>
+  <!-- InstanceEndEditable --></div>
+<footer>
+    <h2  class="centerInDiv">Test Pages for PlbWebServer REST</h2>
+  </footer>
+</body>
+<!-- InstanceEnd --></html>

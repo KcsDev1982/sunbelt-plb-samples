@@ -2,11 +2,11 @@
 <SunIDE_Project_File Version="10.0">
   <ActiveProfile>phonemsg</ActiveProfile>
   <ProjectTitle>phonemsg</ProjectTitle>
-  <SelectedProgram>c:\sunbelt\sunbelt-plb-samples-main\rest_server\phonemsg.pls</SelectedProgram>
+  <SelectedProgram>C:\Sunbelt\sunbelt-plb-samples-main\rest_server\v106\phonemsg.pls</SelectedProgram>
   <Profiles>
     <Name>phonemsg</Name>
     <Properties>
-      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples-main\rest_server\</SourceFolder>
+      <SourceFolder>C:\Sunbelt\sunbelt-plb-samples-main\rest_server\v106\</SourceFolder>
       <Compiler/>
       <CompilerIni/>
       <CompilerOptions>-S,ZI=0,WS1</CompilerOptions>
@@ -83,23 +83,4 @@
     </Properties>
   </Profiles>
   <Source Name="phonemsg.pls"/>
-  <Source Name="phonefcgi.pls"/>
-  <OpenFile>
-    <Name>c:\Sunbelt\sunbelt-plb-samples-main\rest_server\phonemsg.pls</Name>
-    <X>1</X>
-    <Y>1</Y>
-    <Selected>1</Selected>
-    <Program>C:\Sunbelt\sunbelt-plb-samples-main\rest_server\phonemsg.pls</Program>
-    <Position/>
-    <ReadOnly>0</ReadOnly>
-  </OpenFile>
-  <OpenFile>
-    <Name>c:\Sunbelt\sunbelt-plb-samples-main\rest_server\phonefcgi.pls</Name>
-    <X>1</X>
-    <Y>1</Y>
-    <Selected>0</Selected>
-    <Program>C:\Sunbelt\sunbelt-plb-samples-main\rest_server\phonefcgi.pls</Program>
-    <Position/>
-    <ReadOnly>0</ReadOnly>
-  </OpenFile>
 </SunIDE_Project_File>

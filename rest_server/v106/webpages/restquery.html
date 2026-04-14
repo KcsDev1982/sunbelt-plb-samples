@@ -1,0 +1,55 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/resttemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src *; img-src * data: ;style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Phone Messages</title>
+<!-- InstanceEndEditable -->
+<link href="restsupp.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="restsupp.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<script type="text/javascript">
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<header>
+    <h1 class="centerInDiv">Phone Messages</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="restmain.html">Main Page</a></li>
+      <li><a href="restentry.html">Message Entry</a></li>
+      <li><a href="restquery.html">Message Lookup</a></li>
+    </ul>
+  </nav>
+  <div id="content">
+  <!-- InstanceBeginEditable name="MainArea" -->
+<div class="inside">
+<p>
+  <label for="searchto">To Filter:</label>
+  <input type="text" name="searchto" id="searchto">
+</p>
+<p>&nbsp;</p>
+<table width="100%" border="1" id="MsgTable">
+  <tr>
+    <th>Identifier</th>
+    <th>To</th>
+    <th>From</th>
+    <th>Phone Number</th>
+    <th>Message</th>
+    <th>Action</th>
+  </tr>
+</table>
+<input name="button" type="button" id="button" onClick="MM_callJS('doRestGet();')"  value="Fetch All Messages">
+</div><!-- InstanceEndEditable --></div>
+<footer>
+    <h2  class="centerInDiv">Test Pages for PlbWebServer REST</h2>
+  </footer>
+</body>
+<!-- InstanceEnd --></html>

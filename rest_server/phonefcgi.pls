@@ -1,7 +1,9 @@
 *---------------------------------------------------------------
 .
-. Program Name: phonemsg
+. Program Name: phonefcgi
 . Description:  A sample program for the REST API
+.               This program is written to demonstrate the
+.               Fast CGI support
 .
 . Revision History:
 .
@@ -66,7 +68,6 @@ MsgJsonText     DIM             40960
 .
 RestNotImpl     LFUNCTION
                 ENTRY
-                DBDISCONNECT    PhoneMsgDb
                 Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented" *ExtraHdrs="", *Options=0
                 FUNCTIONEND
 
@@ -83,7 +84,6 @@ RestDelete      LFUNCTION
                 PACK            SqlCommand Using "Delete from msgs where id=",UriParts(4)
                 DBSEND          PhoneMsgDb;SqlCommand
                 DBEXECUTE       PhoneMsgDb
-                DBDISCONNECT    PhoneMsgDb
                 Runtime.HttpResponse Using *HttpCode=200,*MimeType="application/json", *Body="Delete Complete", *ExtraHdrs="", *Options=0
                 FUNCTIONEND
 
@@ -184,7 +184,6 @@ RestGetAll      LFUNCTION
 RestOptions     LFUNCTION
                 ENTRY
 OptionHdr       INIT            "Allow: GET,POST,PUT,DELETE,OPTIONS",0xD,0xA
-                DBDISCONNECT    PhoneMsgDb
                 Runtime.HttpResponse Using *HttpCode=200,*MimeType="text/html", *Body="", *ExtraHdrs=OptionHdr, *Options=0
                 FUNCTIONEND
 
@@ -198,8 +197,12 @@ OptionHdr       INIT            "Allow: GET,POST,PUT,DELETE,OPTIONS",0xD,0xA
 RestFetchData   LFUNCTION
                 ENTRY
 HtmlData        DIM             4096
+ReqResult       FORM            5
 
-                STREAM          *STDIN,HtmlData
+                Runtime.HttpStdinSize giving ReqResult
+                DISPLAY         ReqResult
+                Runtime.HttpStdinData giving HtmlData
+                DISPLAY         HtmlData
                 MsgJson.Parse   Using HtmlData
 
                 MsgJson.GetString Giving MsgTo USING "to"
@@ -238,7 +241,6 @@ LocationHdr     DIM             200
                 DBSEND          PhoneMsgDb;"select last_insert_rowid()"
                 DBEXECUTE       PhoneMsgDb
                 DBFETCH         PhoneMsgDb,F10;MsgId
-                DBDISCONNECT    PhoneMsgDb
                 PACK            LocationHdr Using "Location: http://", Host, Uri, "/", MsgId, LineTerm
                 Runtime.HttpResponse Using *HttpCode=201,*MimeType="text/html", *Body=" created", *ExtraHdrs=LocationHdr, *Options=0
                 FUNCTIONEND
@@ -281,7 +283,6 @@ RestPut         LFUNCTION
                 Runtime.HttpResponse Using *HttpCode=501,*MimeType="text/html", *Body="Not Implemented" *ExtraHdrs="", *Options=0
                 ENDIF
                 FUNCTIONEND
-
 *................................................................
 .
 . RestAction
@@ -343,22 +344,23 @@ RestAction      LFUNCTION
 
                 ENDSWITCH
                 FUNCTIONEND
-
 *................................................................
 .
 . Main - Main program entry point
 .
 Main            LFUNCTION
                 ENTRY
+ReqResult       FORM            5
+nCount          FORM            6
 
                 GETMODE         *GUI=GUI
                 IF              ( GUI != 0 )
-                WINHIDE
+                WINSHOW
                 ENDIF
 .
 . Start by creating a default database if one is not availiable
 .
-                DBCONNECT       PhoneMsgDb, "SQLITE;;phonemsg.db","",""
+                DBCONNECT       PhoneMsgDb, "SQLITE;;phonefcgi.db","",""
                 DBSEND          PhoneMsgDb;"create table msgs(id integer primary key, msgto char(20), msgfrom char(20), msgphone char(16), msgdata char(200) )"
                 EXCEPTSET       SkipBuild IF DBFAIL
                 DBEXECUTE       PhoneMsgDb
@@ -370,8 +372,41 @@ Main            LFUNCTION
                 DBEXECUTE       PhoneMsgDb
 SkipBuild       EXCEPTCLEAR     DBFAIL
 .
-. Preform the requested action
+. Decoding the requested action
 .
+.
+                LOOP
+ 
+                Runtime.HttpRequest Giving ReqResult Using *Timeout=3
+
+                SWITCH          ReqResult
+
+                CASE            0       // A request was made
                 CALL            RestAction
+                ADD             "1", nCount
+                DISPLAY         nCount, " ", *LL, Request, " ", Uri
+
+                CASE            1       // Shutdown message received from PWS server!
+                DBDISCONNECT    PhoneMsgDb
+                SHUTDOWN
+
+                CASE            2       // Time out
+                IF              ( GUI != 0 )
+                EVENTCHECK
+                ENDIF
+
+                CASE            3       // Previous request still outstanding
+                CALL            RestNotImpl
+
+                DEFAULT         // Error
+                DBDISCONNECT    PhoneMsgDb
+                SHUTDOWN
+                
+                ENDSWITCH
+
+                REPEAT
 
                 FUNCTIONEND
+.
+.
+.
