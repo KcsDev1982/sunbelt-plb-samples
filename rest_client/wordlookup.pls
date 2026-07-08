@@ -71,7 +71,7 @@ HttpResult      DIM             80
 
                 GETPROP         edtWord,Text=Word
                 PACK            Resource with "/api/v2/entries/en/",Word
-                MOVE            ($HTTP_FLAG_NOHEADER+$HTTP_FLAG_HTTP11+$HTTP_FLAG_SSL+$HTTP_FLAG_USESUNSSL) to Flags
+                MOVE            ($HTTP_FLAG_NOHEADER+$HTTP_FLAG_HTTP11+$HTTP_FLAG_SSL+$HTTP_FLAG_TLSV12+$HTTP_FLAG_USESSLDEFS) to Flags
 
                 HTTP            RestUrl,Resource,*HttpResult=HttpResult,*Result=Response,*Flags=Flags
 
