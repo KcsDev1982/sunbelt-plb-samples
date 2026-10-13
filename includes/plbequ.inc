@@ -7,7 +7,7 @@ $PLBEQU_LOADED EQU  1			;Flag that PLBEQU is loaded
 *==============================================================================
 . GUI designer support equates
 .
-. Last Revision	Date:  07 Aug 2025
+. Last Revision	Date:  05 Oct 2026
 .
 . Revision History:
 .
@@ -244,6 +244,9 @@ $PLBEQU_LOADED EQU  1			;Flag that PLBEQU is loaded
 .::		Added $MAIL_FLAG_USEIPV6 options value for MAILSEND.	 :10.7
 .:: 07 Aug 25 - Added DATASET properties: COUNT, DATAFILTER, DATATYPE,	 :10.8
 .:: 		MAXITEMS and NULLSIZE.					 :10.8 
+.:: 12 Feb 26 - Added $ANSWER event.					 :10.8A
+.:: 17 Sep 26 - Added OPEN/PREP File Access Mode bit mask integers.	 :10.9
+.:: 05 Oct 26 - Updated for the 10.9 release.				 :10.9
 .::
 	 %ENDIF								 :8.3A
 .
@@ -286,11 +289,16 @@ $PLBHTTP EQU	   1		;1 ==> include HTTP integers
 	 %IFNDEF   $PLBMAILSEND						  10.3A
 $PLBMAILSEND EQU   1		;1 ==> include MAILSEND integers
 	 %ENDIF
-
 .
 	 %IFNDEF   $PLBGETMODE						  9.9A
 $PLBGETMODE EQU	   1		;1 ==> include GETMODE integers
 	 %ENDIF
+.
+	 %IFNDEF   $FILE_ACCESS_MODES					  10.9
+$FILE_ACCESS_MODES EQU	   1		;1 ==> include GETMODE integers
+	 %ENDIF
+.
+
 .
 	 %IFNDEF   $PLBEQU						  8.1E
 $PLBEQU	  EQU	   1		;Flag that PLBEQU is used.		  8.1E
@@ -352,6 +360,7 @@ $CHILDSIG     EQU    33			;9.8 PL/B Web Server ONLY
 $RUNSUSPEND   EQU    34			;9.9 PL/B Web Server RUNTIME ONLY
 $RUNRESUME    EQU    35			;9.9 PL/B Web Server RUNTIME ONLY
 $RUNIDLE      EQU    36			;9.9 PL/B Web Server RUNTIME ONLY
+$ANSWER       EQU    37			;10.8A PL/B AI Runtimes ONLY
 .
 $JQueryEvent  EQU    200		;9.9A PL/B Web Server RUNTIME ONLY
 $JQUERY       EQU    200
@@ -8854,7 +8863,55 @@ $GetMode_KeyState_VK_SCROLL	INTEGER	4,"0x00000020"			  9.9A
 *---End	GETMODE keyword values-------------------------------------------------
 .
 	 %ENDIF				;PLBGETMODE
+.
+	 %IF $FILE_ACCESS_MODES = 1	;1 ==> Include OPEN/PREP integers 10.9
+.
+*===Begin File Access Mode values==============================================
+.
+.   The OPEN/PREPARE instruction MODE bit mask values.
+.------------------------------------------------------------------------------
+.
+$CMP_EOR_MASK       INTEGER  4,"0xF"          //AFILE, FILE, IFILE
+$CMP_EOR_CR         INTEGER  4,"0x1"          //AFILE, FILE, IFILE
+$CMP_EOR_CRLF       INTEGER  4,"0x2"          //AFILE, FILE, IFILE
+$CMP_EOR_LF         INTEGER  4,"0x4"          //AFILE, FILE, IFILE
+$CMP_EOR_LFCR       INTEGER  4,"0x8"          //AFILE, FILE, IFILE
 
+$CMP_OPEN_MASK      INTEGER  4,"0x70"         //AFILE, FILE, IFILE
+$CMP_SHARE          INTEGER  4,"0x0"          //AFILE, FILE, IFILE
+$CMP_EXCLUSIVE      INTEGER  4,"0x10"         //AFILE, FILE, IFILE
+$CMP_SHARENF        INTEGER  4,"0x20"         //AFILE, FILE, IFILE
+$CMP_READ           INTEGER  4,"0x40"         //AFILE, FILE, IFILE
+
+$CMP_NOTEMPCLOSE    INTEGER  4,"0x80"         //AFILE, FILE, IFILE
+
+$CMP_ISI_BLOCK      INTEGER  4,"0x100"        //IFILE
+
+$CMP_NOPREPTRUNC    INTEGER  4,"0x400"        //AFILE, FILE, IFILE
+$CMP_BY_OSTYPE      INTEGER  4,"0x800"        //AFILE, IFILE - PREP only
+
+$CMP_NO_TRAN        INTEGER  4,"0x1000"       //AFILE, FILE, IFILE
+$CMP_PREP87         INTEGER  4,"0x2000"       //AFILE, IFILE - PREP only
+
+$CMP_ISICOMPACT     INTEGER  4,"0x8000"       //IFILE
+$CMP_NOISICOMPACT   INTEGER  4,"0x10000"      //IFILE
+
+$CMP_RESERVED_1     INTEGER  4,"0x20000"      //AFILE, FILE, IFILE - DO NOT USE
+$CMP_RESERVED_2     INTEGER  4,"0x40000"      //AFILE, FILE, IFILE - DO NOT USE
+$CMP_RESERVED_3     INTEGER  4,"0x80000"      //AFILE, FILE, IFILE - DO NOT USE
+
+$CMP_DONOTUSEIP     INTEGER  4,"0x100000"     //AFILE, FILE, IFILE
+$CMP_NOSQLIO        INTEGER  4,"0x200000"     //AFILE, FILE, IFILE
+
+$CMP_NOSHRINK       INTEGER  4,"0x400000"     //IFILE
+$CMP_LOCALCDF       INTEGER  4,"0x1000000"    //AFILE, FILE, IFILE
+
+$CMP_RESERVED       INTEGER  4,"0x80000000"   //AFILE, FILE, IFILE - DO NOT USE
+.
+*---End	File Access Mode values------------------------------------------------
+.
+	 %ENDIF				;FILE_ACCESS_MODES
+.
 *------------------------------------------------------------------------------
 	 %ENDIF				;$PLBEQU_LOADED			  9.1F
 .

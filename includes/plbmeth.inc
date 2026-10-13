@@ -7,7 +7,7 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 *==============================================================================
 . PLB METHOD support definitions
 .
-. Last Revision Date:  08 Aug 2025
+. Last Revision Date:  10 Sept 2026
 .
 . Revision History:
 .
@@ -142,13 +142,16 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 .:: 06 Mar 23 - Added $TV_XMLWR_NOLABEL_KEEP flag to TREEVIEW SaveXmlFile:10.5B
 .:: 		method Options.						 :10.5B
 .:: 02 Oct 23 - Added the MODULE object.                                 :10.6
-.::             Updated methods for the 10.6 release.
+.::             Updated methods for the 10.6 release.                    :10.6
 .:: 04 Mar 24 - Updated for the 10.6A release.				 :10.6A
 .:: 29 Aug 24 - Updated for MPI methods and properties.                  :10.7
 .:: 06 Sep 24 - Added $BS5_OPTION_NO_WINBORDER.                          :10.7
 .:: 21 Oct 24 - Added $MONITOR_FLAGPLBXLATRECT for MonitorInfo.		 :10.7A
-.:: 08 Aug 25 - Added DATASET and JSON objects with methods.		 :10.8
-.::
+.:: 08 Aug 25 - Added DATASET and JSONDATA objects with methods.	 :10.8
+.:: 12 Feb 26 - Added AIOBJECT, $ANSWER event, JSONDATA GetDouble method :10.8A
+.:: 10 Sep 26 - Added REGEX object, New HTMLCONTROL methods, and         :10.9
+.::             the RUNTIME SetWebStartUrl method.                       :10.9
+.::             
          %ENDIF                                                          :8.3A
 *------------------------------------------------------------------------------
 .
@@ -223,6 +226,26 @@ $PLBMETH EQU       1			;Flag that PLBMETH is used.
 . 
 *------------------------------------------------------------------------------
 . Object Characteristics
+*------------------------------------------------------------------------------
+.   AIOBJECT                                                              10.8A
+.
+. Events:
+.
+.   $ANSWER       EQU    37                                        
+.
+. Properties:
+.
+.   None  
+.
+. Methods:
+.
+.   Initialize          GIVING {nvar}  USING *Model={svarslit}:
+.                                            *Key={svarslit}:         
+.                                            *Instructions={svarslit} Optional
+.   Question            GIVING {nvar}  USING *Input={svarslit}:                                   
+.                                            *Body={svarslit}         Optional
+.   Response            GIVING {svar}
+.
 *------------------------------------------------------------------------------
 .   ANIMATE                                                               9.0
 .
@@ -2283,13 +2306,13 @@ $FTP_LIST_MLSD           EQU 2                                           10.6A
 .
 . Methods:
 .
-.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.   AddWebClass		 GIVING {nvar} USING *Classes={svarslit}:  10.6
 .                                            *Flags={dnumnvar}     Optional 
 .   ContextMenu          GIVING {nvar} USING *Flags={dnumnvar}
-.   DisableJqEvent       GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY
+.   DisableJqEvent       GIVING {nvar} USING *Events=(svarslit}:   
 .                                            *Selector={svarslit}: Optional
 .                                            *Flags={dnumnvar}     Optional
-.   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:   PWS ONLY
+.   EnableJqEvent        GIVING {nvar} USING *Events=(svarslit}:  
 .                                            *Selector={svarslit}: Optional
 .                                            *Flags={dnumnvar}     Optional
 .   Focus                GIVING {nvar} USING *Id={svarslit}:
@@ -2297,28 +2320,76 @@ $FTP_LIST_MLSD           EQU 2                                           10.6A
 .   GetAttr              GIVING {nvar} USING *Id={svarslit}:
 .                                            *Name={svarslit}:
 .                                            *Flags={dnumnvar}     Optional
+.   GetChecked           GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
+.   GetClass             GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
 .   GetCss               GIVING={svar} USING *Id={svarslit}:
 .                                            *Name={svarslit}:
 .                                            *Flags={dnumnvar}     Optional 
-.   GetWebId             GIVING {svar} USING *Flags={dnumnvar}     PWS ONLY
-.   GetWebStyle          GIVING {svar} USING *CssName={svarslit}:  PWS ONLY
+.   GetDisabled          GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
+.   GetEnable            GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
+.   GetEvents            GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
+.   GetHTML              GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
+.   GetTabId             GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
+.   GetText              GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
+.   GetValue             GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Flags={dnumnvar}     Optional
+.   GetWebId             GIVING {svar} USING *Flags={dnumnvar}    
+.   GetWebStyle          GIVING {svar} USING *CssName={svarslit}: 
 .                                            *Flags={dnumnvar}     Optional
 .   InnerHtml            GIVING {nvar} USING *Html={svarslit}:
 .                                            *Flags={dnumnvar}     Optional
+.   LoadHTML             GIVING {nvar} USING *HtmlFile={svarlit}:            10.9
+.                                            *Flags={dnumnvar}     Optional
+.   SetAsClient          GIVING {nvar}                                       10.9
 .   SetAttr              GIVING {nvar} USING *Id={svarslit}:
 .                                            *Name={svarslit}:
 .                                            *Value={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetChecked           GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Value={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetClass             GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Class={svarslit}:
 .                                            *Flags={dnumnvar}     Optional
 .   SetCss               GIVING {nvar} USING *Id={svarslit}:
 .                                            *Name={svarslit}:
 .                                            *Value={svarslit}:
 .                                            *Flags={dnumnvar}     Optional
-.   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}:  PWS ONLY
+.   SetDisabled          GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Value={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetEnable            GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Enable={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetEvents            GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Event={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetHTML              GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Html={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetTabId             GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *TabId={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetText              GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Text={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetValue             GIVING {nvar} USING *Id={svarslit}:                 10.9
+.                                            *Value={svarslit}:
+.                                            *Flags={dnumnvar}     Optional
+.   SetWebStyle          GIVING {nvar} USING *CssName={svarslit}:  
 .                                            *StrValue={svarslit}:
 .                                            *Flags={dnumnvar}     Optional
 .   UpdateEvents         GIVING {nvar} USING *Flags={dnumnvar}     Optional
 .   MakePict             GIVING {pict}
-.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}: WEB ONLY 10.6
+.   RemoveWebClass	 GIVING {nvar} USING *Classes={svarslit}:  10.6
 .                                            *Flags={dnumnvar}    Optional 
 .
 . Method Constants:
@@ -2334,7 +2405,11 @@ $HTML_CONTEXTMENU_ON	EQU	1
 $HTML_HAS_EVENTS	EQU	1
 $HTML_FROM_URL		EQU	2	;HTML parameter is a URL
 $HTML_USE_SCROLLBARS	EQU	4	;Plbwin only
-$HTML_3D_BORDER	EQU	8	;Plbwin only
+$HTML_3D_BORDER	        EQU	8	;Plbwin only
+.
+. For GetAttr/SetAttr *Flags={dnumnvar}
+.
+$ATTR_IS_BOOLEAN	EQU	1
 .
 *------------------------------------------------------------------------------
 .   ICON                                                                
@@ -2446,7 +2521,7 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .   WriteBmpFile         GIVING {nvar} USING *FileName={svarslit}
 .
 *------------------------------------------------------------------------------
-.   JSON                                                                  10.8
+.   JSONDATA                                                              10.8
 .
 . Events:
 .
@@ -2462,6 +2537,11 @@ $HTML_3D_BORDER	EQU	8	;Plbwin only
 .                                            *Options={dnumnvar}      Optional
 .   Store               GIVING {svar}  USING *Options={dnumnvar}      Optional
 .   StoreSize           GIVING {nvar}  USING *Options={dnumnvar}      Optional
+.   GetDouble           GIVING {svar}  USING *Name={svarslit}:
+.                                            *Format={svarslit}:
+.                                            *Index1={dnumnvar}:      Optional
+.                                            *Index2={dnumnvar}:      Optional
+.                                            *Index3={dnumnvar}       Optional
 .   GetNumber           GIVING {nvar}  USING *Name={svarslit}:
 .                                            *Index1={dnumnvar}:      Optional
 .                                            *Index2={dnumnvar}:      Optional
@@ -3785,6 +3865,65 @@ DEG_270  Integer 4,"270"
 .
 .
 *------------------------------------------------------------------------------
+.   REGEX                                                                10.9
+.
+. Events:
+.
+.   None                                        
+.
+. Properties:
+.
+.   None  
+.
+. Methods:
+.
+.   Compile             GIVING {nvar}  USING *Pattern={svarslit}:       
+.                                            *Options={dnumnvar}      Optional 
+.   Count               GIVING {nvar}  USING *Text={svarslit}:       
+.                                            *Options={dnumnvar}      Optional 
+.   GetMatch            GIVING {svar}
+.   GetMaxCaptures      GIVING {nvar}
+.   IsCompiled          GIVING {nvar}
+.   IsMatch             GIVING {nvar}  USING *Text={svarslit}:       
+.                                            *Options={dnumnvar}      Optional 
+.   Match               GIVING {svar}  USING *Text={svarslit}:       
+.                                            *Options={dnumnvar}      Optional 
+.   MatchAll            GIVING {svar}  USING *Text={svarslit}:    
+.                                            *Delimiter={svarslit}:   Optional  
+.                                            *Options={dnumnvar}      Optional 
+.   Replace             GIVING {svar}  USING *Text={svarslit}:     
+.                                            *Value={svarslit}:    
+.                                            *Options={dnumnvar}      Optional 
+.   ReplaceAll          GIVING {svar}  USING *Text={svarslit}:    
+.                                            *Value={svarslit}:    
+.                                            *Options={dnumnvar}      Optional 
+.   ReplaceEx           GIVING {svar}  USING *Text={svarslit}:     
+.                                            *Value={svarslit}:    
+.                                            *Options={dnumnvar}:     Optional 
+.                                            *Start={dnumnvar}:       Optional
+.                                            *Occurrence={dnumnvar}:  Optional
+.                                            *Flags={svarslit}        Optional
+.   Reset               GIVING {nvar}
+.   Search              GIVING {nvar}  USING *Text={svarslit}:       
+.                                            *Options={dnumnvar}      Optional 
+.   Split               GIVING {svar}  USING *Text={svarslit}:    
+.                                            *Delimiter={svarslit}:   Optional  
+.                                            *Options={dnumnvar}      Optional 
+.   Test                GIVING {nvar}  USING *Pattern={svarslit}:   
+.                                            *Text={svarslit}:    
+.                                            *Options={dnumnvar}      Optional 
+.
+. Options Values
+.
+$REGEX_OPT_NOCASE	EQU	1   // Case-insensitive (ASCII A-Z only)
+$REGEX_SPLIT_KEEP_EMPTY EQU     2   // Split method only: keep empty fields
+$REGEX_SPLIT_FIRST_ONLY EQU     4   // Split method only: split at the first separator
+$REGEX_OPT_MULTILINE	EQU	8   // ^ and $ also match at line breaks
+$REGEX_OPT_DOTALL       EQU    16   // . also matches CR and LF
+$REGEX_OPT_NOTEMPTY     EQU    32   // Reject empty (zero-length) matches
+.
+.
+*------------------------------------------------------------------------------
 .   RICHEDITTEXT                                                          9.0B
 .
 . Events:
@@ -4008,6 +4147,8 @@ $ACTIONPASTE       Integer 4,"5"
 .   SetWebTheme     GIVING {nvar} USING *Theme={dnumnvar}:       Optional 10.6
 .                                       *Context={dnumnvar}:     Optional
 .                                       *Options={dnumnvar}      Optional
+.   SetWebStartUrl  GIVING {nvar} USING *Url={svarslit}:                  10.9
+.                                       *Options={dnumnvar}      Optional
 .   SignalChild     GIVING {nvar} USING *ChildId={svarslit}:		  9.8
 .                                       *Options={dnumnvar}   Optional
 .   VerifyUtf       GIVING {nvar} USING *STRING={svarslit}:               10.1B
@@ -4109,7 +4250,7 @@ $JQMPAGE_WEBID			EQU 4 ;Return the WEBID of the current or given position page
 $JQMPAGE_REMOVE			EQU 5 ;Remove the current or given position page from the stack
 $JQMPAGE_REMOVEALL		EQU 6 ;Clear the page stack
 .
-. VerifyUTF Medhod *Flags Values
+. VerifyUTF Method *Flags Values
 .
 $VERIFYUTF_DEFAULT      EQU 0 ;Verify that input string is valid UTF-8.    10.1B
 $VERIFYUTF_LOGICAL_LEN  EQU 1 ;Return evaluated logical length of string.  10.1B

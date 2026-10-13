@@ -7,7 +7,7 @@ $PLBREFL           EQU          1			;Flag that PLBREFL is used.
 *==============================================================================
 . PLB METHOD support definitions
 .
-. Last Revision Date:  20 Jan 2021
+. Last Revision Date:  12 Aug 2026
 .
 . Revision History:
 .
@@ -17,6 +17,11 @@ $PLBREFL           EQU          1			;Flag that PLBREFL is used.
 .:: 20 Jan 21 - Modified the ReflDataLabel and ReflExecLabel 'name' 	 :10.3A
 .:: 		member to have a size of 64 in support of PL/B labels
 .:: 		in the PLBM meta data that are longer than 32 characters.
+.:: 22 Jan 25 - Add definitons for UDA address in labels.                :10.7A
+.:: 03 Apr 25 - Added itype field to ReflProperty                        :10.7B
+.:: 05 Aug 26 - Added label reference 'count' to ReflDataLabel and       :10.8B
+.::		ReflDataLabel records.					 :10.8B
+.:: 12 Aug 26 - Added hash IDX 'hashIdx' to ReflDataLabel record.	 :10.8B
 
                    %ENDIF
 *------------------------------------------------------------------------------
@@ -137,6 +142,7 @@ REFL_GET_INFUNC    EQU          2	// Return labels in functions as well
 REFL_GET_PARTIAL   EQU          4	// Filter by partial label
 REFL_GET_EXACT     EQU          8	// Fetch an exact label
 REF_GET_FULL_DESC  EQU          16	// Fetch the full description
+REF_GET_ADDRESS    EQU          32      // Fetch address member
 .
 . GetFuncData and GetFuncExec
 .
@@ -164,6 +170,9 @@ type               DIM          1		// Type id
 typeDesc           DIM          100		// Type description
 isRecord           DIM          1		// Record indicator (Y or N)
 recordLevel        FORM         2		// Record level
+address            FORM         10              // UDA address
+count		   FORM		7		// Reflection label reference count
+hashIdx		   FORM		10		// Reflection label hash IDX
                    RECORDEND
 
 *------------------------------------------------------------------------------
@@ -205,6 +214,7 @@ isExtern           DIM          1		// EXTERN indicator (Y or N)
 alias              DIM          32		// EXTERN alias name
 loadmod            DIM          250		// EXTERN load module name
 entry              DIM          32		// EXTERN subroutine name
+count		   FORM		7		// Reflection label reference count
                    RECORDEND
 
 *------------------------------------------------------------------------------
@@ -248,6 +258,7 @@ create             DIM          1 		// Create flag (C or blank)
 get                DIM          1 		// Get flag (G or blank)
 set                DIM          1 		// Set flag (S or blank)
 syntax             DIM          40		// syntax
+itype              DIM          4               // Debug ITYPE
                    RECORDEND
 
 *------------------------------------------------------------------------------

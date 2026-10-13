@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Runtime_Errors>
-  <Version>10.8</Version>
+  <Version>10.9</Version>
   <Error Number="A01" SubCode= "" Type="Interrupts Prevented" Description="FILEPI already in effect. Another FILEPI may not be initiated until current one expires or a FILEPI 0 or PI 0 is executed." />
   <Error Number="A02" SubCode= "" Type="Interrupts Prevented" Description="A FILEPI referenced one or more unopened files." />
   <Error Number="A03" SubCode= "" Type="Interrupts Prevented" Description="A FILEPI was executed against a file that has been opened with record locking." />
@@ -1189,7 +1189,7 @@
 	<Error Number="I83" SubCode= "213" Type="I/O" Description="During an XML read operation, no element open." />
 	<Error Number="I83" SubCode= "214" Type="I/O" Description="During an XML read operation, internal state error.." />
 	<Error Number="I83" SubCode= "215" Type="I/O" Description="During an XML read operation, attribute not open." />
-	<Error Number="I83" SubCode= "216" Type="I/O" Description="During an XML read operation, rror detected parsing XML data file." />
+	<Error Number="I83" SubCode= "216" Type="I/O" Description="During an XML read operation, error detected parsing XML data file." />
 	<Error Number="I83" SubCode= "301" Type="I/O" Description="During an XML write operation, a write operation has already been started." />
 	<Error Number="I83" SubCode= "302" Type="I/O" Description="During an XML write operation, unable to create specified XML file." />
 	<Error Number="I83" SubCode= "303" Type="I/O" Description="During an XML write operation, unable to open specified XML file.." />
@@ -1205,7 +1205,7 @@
 	<Error Number="I83" SubCode= "313" Type="I/O" Description="During an XML write operation, no element open." />
 	<Error Number="I83" SubCode= "314" Type="I/O" Description="During an XML write operation, internal state error.." />
 	<Error Number="I83" SubCode= "315" Type="I/O" Description="During an XML write operation, attribute not open." />
-	<Error Number="I83" SubCode= "316" Type="I/O" Description="During an XML write operation, rror detected parsing XML data file." />	
+	<Error Number="I83" SubCode= "316" Type="I/O" Description="During an XML write operation, error detected parsing XML data file." />	
 	<Error Number="I84" SubCode= "" Type="I/O" Description="A problem occurred during XML operations." />
 	<Error Number="I84" SubCode= "1" Type="I/O" Description="During an XML operation, out of memory." />
 	<Error Number="I84" SubCode= "2" Type="I/O" Description="During an XML operation, unknown or unsupported tag found in the schema file." />
@@ -1252,7 +1252,7 @@
 	<Error Number="I84" SubCode= "213" Type="I/O" Description="During an XML read operation, no element open." />
 	<Error Number="I84" SubCode= "214" Type="I/O" Description="During an XML read operation, internal state error.." />
 	<Error Number="I84" SubCode= "215" Type="I/O" Description="During an XML read operation, attribute not open." />
-	<Error Number="I84" SubCode= "216" Type="I/O" Description="During an XML read operation, rror detected parsing XML data file." />
+	<Error Number="I84" SubCode= "216" Type="I/O" Description="During an XML read operation, error detected parsing XML data file." />
 	<Error Number="I84" SubCode= "301" Type="I/O" Description="During an XML write operation, a write operation has already been started." />
 	<Error Number="I84" SubCode= "302" Type="I/O" Description="During an XML write operation, unable to create specified XML file." />
 	<Error Number="I84" SubCode= "303" Type="I/O" Description="During an XML write operation, unable to open specified XML file.." />
@@ -1268,7 +1268,7 @@
 	<Error Number="I84" SubCode= "313" Type="I/O" Description="During an XML write operation, no element open." />
 	<Error Number="I84" SubCode= "314" Type="I/O" Description="During an XML write operation, internal state error.." />
 	<Error Number="I84" SubCode= "315" Type="I/O" Description="During an XML write operation, attribute not open." />
-	<Error Number="I84" SubCode= "316" Type="I/O" Description="During an XML write operation, rror detected parsing XML data file." />	
+	<Error Number="I84" SubCode= "316" Type="I/O" Description="During an XML write operation, error detected parsing XML data file." />	
 	<Error Number="I85" SubCode= "" Type="I/O" Description="A problem occurred during schema operations." />
 	<Error Number="I85" SubCode= "100" Type="I/O" Description="During schema operations, a column/field name was not found." />
 	<Error Number="I85" SubCode= "101" Type="I/O" Description="During schema operations, partial IO is not allowed." />
@@ -1665,6 +1665,7 @@
   <Warning Number="416"  Description="Unclear comment syntax. Possible missing USING!" />
   <Warning Number="424"  Description="Possible numeric expression operation ignored!" />
   <Warning Number="437"  Description="CLASS '.plc' not used! Can not open/access/load!" />
+  <Warning Number="443"  Description="Preposition not used! Comma or 'GIVING' can be used!" />
 	
 </Runtime_Errors>
 
