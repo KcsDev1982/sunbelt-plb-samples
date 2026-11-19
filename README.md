@@ -18,6 +18,7 @@ Sample code and projects for the Programming Language for Business (PL/B).
 * files        - Sample programs that manipulate file data
 * htmlcontrol_designer - Designers for the HTMLCONTROL object
 * http_root    - Additional files for the plbwebsrv http_root
+* html_ui      - Samples using Bootstrap 5 HTML UI
 * includes     - Latest Sunbelt include files
 * ini_templates - Latest template configuration files
 * install_helper - Powershell scripts to make shortcuts
